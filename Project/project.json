@@ -1,0 +1,28 @@
+{
+    "project_name": "RAIManipulationDemo",
+    "version": "1.0.0",
+    "project_id": "{D449723A-DAFB-47CE-89EA-418BF44D4369}",
+    "origin": "The primary repo for RAIManipulationDemo goes here: i.e. http://www.mydomain.com",
+    "license": "What license RAIManipulationDemo uses goes here: i.e. https://opensource.org/licenses/Apache-2.0 Or https://opensource.org/licenses/MIT etc.",
+    "display_name": "RAIManipulationDemo",
+    "summary": "A short description of RAIManipulationDemo.",
+    "canonical_tags": [
+        "Project"
+    ],
+    "user_tags": [
+        "RAIManipulationDemo"
+    ],
+    "icon_path": "preview.png",
+    "engine": "o3de",
+    "external_subdirectories": [
+        "Gem"
+    ],
+    "gem_names": [
+        "RAIManipulationDemo",
+        "Atom",
+        "CameraFramework",
+        "ImGui"
+    ],
+    "restricted": "RAIManipulationDemo",
+    "engine_version": "2.3.0"
+}

@@ -12,7 +12,7 @@ namespace RAIManipulationDemo
         , protected RAIManipulationDemoRequestBus::Handler
     {
     public:
-        AZ_COMPONENT_DECL(RAIManipulationDemoSystemComponent);
+        AZ_COMPONENT(RAIManipulationDemoSystemComponent, "{9B715194-134E-4EA3-9B92-3DFB44FEC779}");
 
         static void Reflect(AZ::ReflectContext* context);
 

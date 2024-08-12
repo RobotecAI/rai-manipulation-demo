@@ -1,0 +1,11 @@
+[Bb]uild/
+[Cc]ache/
+[Uu]ser/
+[Uu]ser_test*/
+_savebackup/
+CMakeUserPresets.json
+cmake-*
+.idea
+.vscode
+.command_settings
+*.bak*

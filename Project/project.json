@@ -1,11 +1,11 @@
 {
     "project_name": "RAIManipulationDemo",
     "version": "1.0.0",
-    "project_id": "{D449723A-DAFB-47CE-89EA-418BF44D4369}",
+    "project_id": "{C930C5B9-4B70-40B7-88F4-A7E927D6A677}",
     "license": "Apache-2.0",
     "license_url": "https://opensource.org/licenses/Apache-2.0",
     "origin": "Robotec.ai",
-    "origin_url": "https:://robotec.ai",
+    "origin_url": "https://robotec.ai",
     "display_name": "RAIManipulationDemo",
     "summary": "Robotic Arm Manipulation Demo using RAI and ROS 2 in O3DE.",
     "canonical_tags": [
@@ -19,12 +19,29 @@
     "external_subdirectories": [
         "Gem"
     ],
+    "restricted": "RAIManipulationDemo",
+    "engine_version": "4.2.0",
     "gem_names": [
-        "RAIManipulationDemo",
         "Atom",
         "CameraFramework",
-        "ImGui"
-    ],
-    "restricted": "RAIManipulationDemo",
-    "engine_version": "2.3.0"
+        "DebugDraw",
+        "EditorPythonBindings",
+        "EMotionFX",
+        "ImGui",
+        "LyShine",
+        "PhysX5",
+        "PhysX5Debug",
+        "PrimitiveAssets",
+        "PrefabBuilder",
+        "ScriptCanvasPhysics",
+        "ScriptEvents",
+        "StartingPointInput",
+        "TextureAtlas",
+        "WhiteBox",
+        "DiffuseProbeGrid",
+        "Compression",
+        "WarehouseAssets",
+        "WarehouseAutomation>=1.1.0",
+        "ROS2>=3.1.0"
+    ]
 }

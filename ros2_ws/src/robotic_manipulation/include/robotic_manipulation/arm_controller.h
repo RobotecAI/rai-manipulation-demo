@@ -19,6 +19,9 @@ public:
   std::vector<double> GetEffectorPose();
   bool GetGripper();
 
+  std::vector<double> CaptureJointValues();
+  void SetJointValues(std::vector<double> const &jointValues);
+
 private:
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_pandaArm;
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_hand;

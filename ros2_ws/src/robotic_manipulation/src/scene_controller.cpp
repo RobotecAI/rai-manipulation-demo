@@ -39,7 +39,7 @@ void SceneController::SpawnToy(ToyType type, double x, double y, double z,
   auto request = std::make_shared<gazebo_msgs::srv::SpawnEntity::Request>();
   switch (type) {
   case Cube:
-    request->name = "toy_cube";
+    request->name = "cube";
     break;
   case Triangle:
     request->name = "toy_triangle";

@@ -206,6 +206,14 @@
                 "EditorWhiteBoxComponent": {
                     "$type": "EditorWhiteBoxComponent",
                     "Id": 7782982949227642333,
+                    "Material": {
+                        "Tint": [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        "UseTexture": false
+                    },
                     "RenderData": {
                         "Faces": [
                             {
@@ -652,7 +660,15 @@
                                     0.0
                                 ]
                             }
-                        ]
+                        ],
+                        "Material": {
+                            "Tint": [
+                                1.0,
+                                0.0,
+                                0.0
+                            ],
+                            "UseTexture": false
+                        }
                     }
                 },
                 "TransformComponent": {

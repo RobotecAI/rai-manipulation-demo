@@ -29,13 +29,39 @@ int main(int argc, char *argv[]) {
   auto armController = std::make_shared<ArmController>();
 
   std::vector<std::unique_ptr<Scenario>> scenarios;
+
+  int first_scenario = 0;
+  if (argc > 1) {
+    first_scenario = std::stoi(argv[1]);
+  }
+  int last_scenario = 5;
+  if (argc > 2) {
+    last_scenario = std::stoi(argv[2]);
+  }
+  enum RunMode {
+    VLA,
+    RECORD,
+    PLAY,
+  };
+  RunMode mode;
+  if (argc > 3) {
+    if (std::string(argv[3]) == "vla") {
+      mode = VLA;
+    } else if (std::string(argv[3]) == "record") {
+      mode = RECORD;
+    } else if (std::string(argv[3]) == "play") {
+      mode = PLAY;
+    }
+  } else {
+    mode = PLAY;
+  }
   /*
-  for (int i = 0; i < 50; i++) {
+  for (int i = first_scenario; i < last_scenario; i++) {
     scenarios.push_back(std::make_unique<MoveToyScenario>(false, i));
     scenarios.push_back(std::make_unique<MoveToyScenario>(true, i));
   }
   */
-  for (int i = 188; i < 300; i++) {
+  for (int i = first_scenario; i < last_scenario; i++) {
     scenarios.push_back(std::make_unique<Pickup>(i));
   }
 
@@ -83,22 +109,37 @@ int main(int argc, char *argv[]) {
               }
             });
 
-    while (true) {
-      std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(30000));
   };
 
+  std::vector<double> startingPose;
   for (auto &scenario : scenarios) {
-    // auto &scenario = scenarios[0];
     scenario->Prepare(sceneController, *armController);
 
-    RosbagRecorder recorder(scenario->GetName(), armController);
-    recorder.BeginRecording();
-    scenario->Play(*armController);
-    recorder.EndRecording();
+    if (startingPose.empty()) {
+      startingPose = armController->CaptureJointValues();
+    } else {
+      armController->SetJointValues(startingPose);
+    }
+
+    switch (mode) {
+    case VLA:
+      vla_test();
+      break;
+    case RECORD: {
+      RosbagRecorder recorder(scenario->GetName(), armController);
+      recorder.BeginRecording();
+      scenario->Play(*armController);
+      recorder.EndRecording();
+    } break;
+    case PLAY:
+      scenario->Play(*armController);
+      break;
+    }
 
     scenario->CleanUp(sceneController, *armController);
   }
+  armController->SetJointValues(startingPose);
 
   executor.cancel();
   spinner.join();

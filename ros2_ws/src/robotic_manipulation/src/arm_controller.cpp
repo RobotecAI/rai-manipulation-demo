@@ -54,19 +54,19 @@ void ArmController::MoveThroughWaypoints(
 }
 
 void ArmController::Open() {
+  gripper.store(true);
   m_hand->setNamedTarget("open");
   if (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to open hand");
   }
-  gripper.store(true);
 }
 
 void ArmController::Close() {
+  gripper.store(false);
   m_hand->setNamedTarget("close");
   if (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to close hand");
   }
-  gripper.store(false);
 }
 
 std::vector<double> ArmController::GetEffectorPose() {
@@ -81,3 +81,14 @@ std::vector<double> ArmController::GetEffectorPose() {
 };
 
 bool ArmController::GetGripper() { return gripper.load(); }
+
+std::vector<double> ArmController::CaptureJointValues() {
+  return m_pandaArm->getCurrentJointValues();
+}
+
+void ArmController::SetJointValues(std::vector<double> const &jointValues) {
+  m_pandaArm->setJointValueTarget(jointValues);
+  if (m_pandaArm->move() != moveit::core::MoveItErrorCode::SUCCESS) {
+    RCLCPP_ERROR(m_node->get_logger(), "Failed to set joint values");
+  }
+}

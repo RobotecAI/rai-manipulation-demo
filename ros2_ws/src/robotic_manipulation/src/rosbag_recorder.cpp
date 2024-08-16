@@ -25,19 +25,24 @@ void RosbagRecorder::BeginRecording() {
   m_recording = true;
   m_recordingThread = std::thread([&]() {
     auto mutex = std::mutex();
-    auto latest_image = sensor_msgs::msg::Image::SharedPtr();
+    //auto latest_image = sensor_msgs::msg::Image::SharedPtr();
+    auto image_topics = std::vector<std::string>{"/vla_image", "/vla_image2", "/vla_image3", "/vla_image4"};
+    auto latest_images = std::vector<sensor_msgs::msg::Image::SharedPtr>(image_topics.size());
     auto writer = std::make_unique<rosbag2_cpp::Writer>();
 
-    auto image_subscription =
-        m_node->create_subscription<sensor_msgs::msg::Image>(
-            "/vla_image", 10, [&](sensor_msgs::msg::Image::SharedPtr msg) {
-              mutex.lock();
-              latest_image = msg;
-              mutex.unlock();
-            });
+    auto image_subscriptions = std::vector<rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr>();
+    for (std::size_t i = 0; i < image_topics.size(); i++) {
+      image_subscriptions.push_back(
+          m_node->create_subscription<sensor_msgs::msg::Image>(
+              image_topics[i], 10, [&, i](sensor_msgs::msg::Image::SharedPtr msg) {
+                mutex.lock();
+                latest_images[i] = msg;
+                mutex.unlock();
+              }));
+    }
 
     auto last_pose = m_arm->GetEffectorPose();
-    auto last_image = sensor_msgs::msg::Image::SharedPtr();
+    auto last_images = std::vector<sensor_msgs::msg::Image::SharedPtr>(image_topics.size());
 
     writer.reset();
     writer = std::make_unique<rosbag2_cpp::Writer>();
@@ -50,9 +55,11 @@ void RosbagRecorder::BeginRecording() {
     tm.name = "/vla_state";
     tm.type = "std_msgs/msg/Float32MultiArray";
     writer->create_topic(tm);
-    tm.name = "/vla_image";
-    tm.type = "sensor_msgs/msg/Image";
-    writer->create_topic(tm);
+    for (std::size_t i = 0; i < image_topics.size(); i++) {
+      tm.name = image_topics[i];
+      tm.type = "sensor_msgs/msg/Image";
+      writer->create_topic(tm);
+    }
 
     RCLCPP_INFO(m_node->get_logger(), "Recording to %s", m_name.c_str());
 
@@ -66,7 +73,7 @@ void RosbagRecorder::BeginRecording() {
       dR -= last_pose[3];
       dP -= last_pose[4];
       dY -= last_pose[5];
-      if (last_image) {
+      if (last_images[0]) {
         auto time = m_node->get_clock()->now();
         {
           std_msgs::msg::Float32MultiArray msg;
@@ -93,7 +100,12 @@ void RosbagRecorder::BeginRecording() {
         {
           mutex.lock();
           // image_publisher->publish(*last_image.get());
-          writer->write(*last_image.get(), "/vla_image", time);
+          for (std::size_t i = 0; i < image_topics.size(); i++) {
+            if (latest_images[i]) {
+              writer->write(*latest_images[i].get(), image_topics[i], time);
+              last_images[i] = latest_images[i];
+            }
+          }
           mutex.unlock();
         }
         RCLCPP_INFO(m_node->get_logger(), "Image saved");
@@ -102,7 +114,7 @@ void RosbagRecorder::BeginRecording() {
       }
 
       last_pose = pose;
-      last_image = latest_image;
+      last_images = latest_images;
       std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
   });

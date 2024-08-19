@@ -10,10 +10,62 @@ The simulation uses [O3DE](https://www.o3de.org/) game engine paired with [ROS 2
 
 The demonstration features a simulation of a robotic arm equipped with a gripper, which interacts with a multitude of objects that can be grasped, sorted, or manipulated based on instructions issued in the natural language. The RAI framework captures contextual information such as camera images and available command sets, subsequently translating these commands into ROS 2 messages to execute the arm's movements resolved by the Generative AI models.
 
+## Prerequisites
+
+1. Download and register o3de
+2. Download o3de-extras
+3. Register o3de-extras gems
+
 ## Project setup
 
-> **_NOTE:_** This section will be added in the final version of this document.
+1. Clone the repository.
 
-## Running the simulation
+    ```bash
+    git clone https://github.com/RobotecAI/rai-manipulation-demo
+    cd rai-manipulation-demo
+    ```
 
-> **_NOTE:_** This section will be added in the final version of this document.
+2. Build the O3DE project.
+
+    ```bash
+    cd Project
+    cmake -B build/linux -G "Ninja Multi-Config" -DLY_STRIP_DEBUG_SYMBOLS=TRUE -DLY_DISABLE_TEST_MODULES=ON
+    cmake --build build/linux --config profile --target RAIManipulationDemo.Assets RAIManipulationDemo.GameLauncher
+    ```
+
+3. Build the ROS2 packages.
+
+    ```bash
+    cd ros2_ws
+    colcon build
+    ```
+
+## Running the demo
+
+1. Run the editor and load the Robotic Manipulation level.
+2. Press play.
+3. Run the MoveIt nodes.
+
+    ```bash
+    cd Project/Examples
+    ros2 launch panda_moveit_config_demo.launch.py
+    ```
+
+4. In another terminal, run the OpenVLA inference node.
+    - Source the ROS 2 workspace.
+
+    ```bash
+    source ros2_ws/install/setup.bash
+    ```
+
+    - Run the OpenVLA inference node
+
+    ```bash
+    ros2 run run_vla vla
+    ```
+
+    - In yet another terminal, run the interface node
+
+    ```bash
+    ros2 run robotic_manipulation robotic_manipulation 1 100 vla
+    ```

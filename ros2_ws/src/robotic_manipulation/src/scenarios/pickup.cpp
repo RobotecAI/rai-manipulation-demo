@@ -10,6 +10,9 @@ std::string Pickup::GetName() const {
 
 std::string Pickup::GetPrompt() const { return "pickup the block"; }
 
+const double starting_height = 0.35;
+//const double starting_height = 0.25;
+
 void Pickup::Prepare(SceneController &scene, ArmController &arm) {
   srand(m_seed);
 
@@ -20,7 +23,7 @@ void Pickup::Prepare(SceneController &scene, ArmController &arm) {
   m_target = {x_, y_, a};
   scene.SpawnToy((ToyType)toy, x_, y_, 0.1, -a);
 
-  arm.MoveThroughWaypoints({arm.CalculatePose(0.3, 0.0, 0.25)});
+  arm.MoveThroughWaypoints({arm.CalculatePose(0.3, 0.0, starting_height)});
   arm.Open();
 
   std::this_thread::sleep_for(std::chrono::milliseconds(300));
@@ -49,8 +52,8 @@ void Pickup::Play(ArmController &arm) {
 
   // move to the final position
   arm.MoveThroughWaypoints({arm.CalculatePose(x, y, high_z, a),
-                            arm.CalculatePose(0.3, 0.0, 0.25)});
-  
+                            arm.CalculatePose(0.3, 0.0, starting_height)});
+
   std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
   // release the target

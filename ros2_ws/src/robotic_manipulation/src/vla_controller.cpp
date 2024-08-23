@@ -51,7 +51,7 @@ void VLAController::Begin(ArmController &arm) {
 
             current_rx += drx;
             current_ry += dry;
-            current_rz += drz;
+            current_rz -= drz;
 
             arm.MoveThroughWaypoints({arm.CalculatePose(
                 current_x, current_y, current_z, current_rz)});
@@ -63,5 +63,5 @@ void VLAController::Begin(ArmController &arm) {
             }
           });
 
-  std::this_thread::sleep_for(std::chrono::milliseconds(15000));
+  std::this_thread::sleep_for(std::chrono::milliseconds(30000));
 }

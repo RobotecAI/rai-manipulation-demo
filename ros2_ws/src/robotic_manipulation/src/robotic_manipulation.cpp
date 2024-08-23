@@ -4,6 +4,7 @@
 #include "robotic_manipulation/rosbag_recorder.h"
 #include "robotic_manipulation/scenarios/move_toy.h"
 #include "robotic_manipulation/scenarios/pickup.h"
+#include "robotic_manipulation/scenarios/put_in_box.h"
 #include "robotic_manipulation/scene_controller.h"
 #include "robotic_manipulation/vla_controller.h"
 #include <std_msgs/msg/float32_multi_array.hpp>
@@ -49,8 +50,13 @@ int main(int argc, char *argv[]) {
     scenarios.push_back(std::make_unique<MoveToyScenario>(true, i));
   }
   */
+  /*
   for (int i = first_scenario; i < last_scenario; i++) {
     scenarios.push_back(std::make_unique<Pickup>(i));
+  }
+  */
+  for (int i = first_scenario; i < last_scenario; i++) {
+    scenarios.push_back(std::make_unique<PutInBoxScenario>(false, i));
   }
 
   std::vector<double> startingPose;

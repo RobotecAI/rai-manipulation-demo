@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-enum ToyType { Cube = 0, Triangle = 1, Cyllinder = 2 };
+enum ToyType { Cube = 0, Triangle = 1, Cyllinder = 2, Box = 3 };
 
 class SceneController {
 public:

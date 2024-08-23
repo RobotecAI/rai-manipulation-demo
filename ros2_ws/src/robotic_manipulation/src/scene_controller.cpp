@@ -47,6 +47,9 @@ void SceneController::SpawnToy(ToyType type, double x, double y, double z,
   case Cyllinder:
     request->name = "toy_cyllinder";
     break;
+  case Box:
+    request->name = "toy_box";
+    break;
   }
 
   request->initial_pose.position.x = x + worldOffsetX;

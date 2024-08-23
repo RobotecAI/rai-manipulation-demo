@@ -26,7 +26,7 @@ void RosbagRecorder::BeginRecording() {
   m_recordingThread = std::thread([&]() {
     auto mutex = std::mutex();
     //auto latest_image = sensor_msgs::msg::Image::SharedPtr();
-    auto image_topics = std::vector<std::string>{"/vla_image", "/vla_image2", "/vla_image3", "/vla_image4"};
+    auto image_topics = std::vector<std::string>{"/vla_image5"};
     auto latest_images = std::vector<sensor_msgs::msg::Image::SharedPtr>(image_topics.size());
     auto writer = std::make_unique<rosbag2_cpp::Writer>();
 

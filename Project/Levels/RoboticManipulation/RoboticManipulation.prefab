@@ -496,6 +496,13 @@
                                     },
                                     "assetHint": "prefabs/cube.spawnable"
                                 },
+                                "toy_box": {
+                                    "assetId": {
+                                        "guid": "{2AB5818A-C3FB-566F-9FB1-36E95ADFB627}",
+                                        "subId": 3956998235
+                                    },
+                                    "assetHint": "prefabs/toy_box.spawnable"
+                                },
                                 "toy_cube": {
                                     "assetId": {
                                         "guid": "{9A41F30D-BCC0-5110-8BA1-79D5F531C033}",

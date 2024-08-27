@@ -22,6 +22,6 @@ private:
   int m_seed;
   std::vector<std::vector<double>> m_targets;
 
-  double m_current_x = 0.40;
-  double m_current_y = -0.339;
+  double m_box_x = 0.40;
+  double m_box_y = -0.339;
 };

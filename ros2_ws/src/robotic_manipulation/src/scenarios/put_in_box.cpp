@@ -14,22 +14,83 @@ std::string PutInBoxScenario::GetPrompt() const { return "put block in box"; }
 void PutInBoxScenario::Prepare(SceneController &scene, ArmController &arm) {
   srand(m_seed);
 
-  scene.SpawnToy(ToyType::Box, m_current_x, m_current_y, 0.1, 0.0);
+  scene.SpawnToy(ToyType::Box, m_box_x, m_box_y, 0.1, 0.0);
 
-  double x_min = 0.3;
-  double x_max = 0.5;
-  double y_min = 0.15;
-  double y_max = 0.4;
+  using Point = geometry_msgs::msg::Point;
+  auto cube_positions = std::vector<Point>();
 
-  double x_ = static_cast<double>(rand()) / RAND_MAX * (x_max - x_min) + x_min;
-  double y_ = static_cast<double>(rand()) / RAND_MAX * (y_max - y_min) + y_min;
+  const double x_min = 0.3;
+  const double x_max = 0.51;
+  const double y_min = 0.1;
+  const double y_max = 0.41;
 
-  double a = static_cast<double>(rand()) / RAND_MAX * M_PI / 2.0 - M_PI / 4.0;
-  int toy = 0;
-  m_targets.push_back({x_, y_, a});
-  scene.SpawnToy((ToyType)toy, x_, y_, 0.1, -a);
+  for (double x = x_min; x <= x_max; x += 0.05) {
+    for (double y = y_min; y <= y_max; y += 0.05) {
+      Point p;
+      p.x = x;
+      p.y = y;
+      p.z = 0.1;
+      for (double a = -M_PI / 4.0; a < M_PI / 4.0; a += M_PI / 8.0) {
+        p.z = a;
+        cube_positions.push_back(p);
+      }
+    }
+  }
 
-  arm.MoveThroughWaypoints({arm.CalculatePose(0.3, 0.0, 0.35)});
+  if (m_seed / 8 >= (int) cube_positions.size()) {
+    return;
+  }
+
+  auto cube_position = cube_positions[m_seed / 8];
+
+  auto start_positions = std::vector<Point>();
+
+  {
+    Point p;
+    p.x = 0.3;
+    p.y = 0.0;
+    p.z = 0.35;
+    start_positions.push_back(p);
+
+    p.x = 0.5;
+    p.y = 0.0;
+    start_positions.push_back(p);
+
+    p.x = 0.5;
+    p.y = 0.5;
+    start_positions.push_back(p);
+
+    p.x = 0.3;
+    p.y = 0.5;
+    start_positions.push_back(p);
+  }
+
+  for (int i = 0; i < 4; i++) {
+    Point p;
+    p.x = 0; p.y = 0; p.z = 0.2;
+    if (i == 0) {
+      p.x = cube_position.x + 0.1;
+      p.y = cube_position.y;
+    } else if (i == 1) {
+      p.x = cube_position.x;
+      p.y = cube_position.y + 0.1;
+    } else if (i == 2) {
+      p.x = cube_position.x - 0.1;
+      p.y = cube_position.y;
+    } else if (i == 3) {
+      p.x = cube_position.x;
+      p.y = cube_position.y - 0.1;
+    }
+    start_positions.push_back(p);
+  }
+
+  auto start_position = start_positions[m_seed % 8];
+
+  scene.SpawnToy(ToyType::Cube, cube_position.x, cube_position.y, 0.1, cube_position.z);
+
+  m_targets.push_back({cube_position.x, cube_position.y, -cube_position.z});
+
+  arm.MoveThroughWaypoints({arm.CalculatePose(start_position.x, start_position.y, start_position.z)});
   arm.Open();
 
   std::this_thread::sleep_for(std::chrono::milliseconds(300));
@@ -49,9 +110,12 @@ void PutInBoxScenario::Play(ArmController &arm) {
 
     // move to the target
     waypoints.push_back(arm.CalculatePose(x, y, high_z));
+    waypoints.push_back(arm.CalculatePose(x, y, high_z, a));
     waypoints.push_back(arm.CalculatePose(x, y, low_z, a));
     arm.MoveThroughWaypoints(waypoints);
     waypoints.clear();
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
 
     // pick up the target
     arm.Close();
@@ -59,19 +123,13 @@ void PutInBoxScenario::Play(ArmController &arm) {
     // move to the final position
     arm.MoveThroughWaypoints(
         {arm.CalculatePose(x, y, 0.35, 0.0),
-         arm.CalculatePose(m_current_x, m_current_y, 0.35, 0.0),
-         arm.CalculatePose(m_current_x, m_current_y, 0.2, 0.0)});
+         arm.CalculatePose(m_box_x, m_box_y, 0.35, 0.0),
+         arm.CalculatePose(m_box_x, m_box_y, 0.2, 0.0)});
 
     // release the target
     arm.Open();
 
-    waypoints.push_back(arm.CalculatePose(m_current_x, m_current_y, 0.35));
-
-    if (m_flip) {
-      m_current_y -= 0.1;
-    } else {
-      m_current_y += 0.1;
-    }
+    waypoints.push_back(arm.CalculatePose(m_box_x, m_box_y, 0.35));
   }
 
   arm.MoveThroughWaypoints(waypoints);

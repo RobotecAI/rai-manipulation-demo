@@ -59,15 +59,15 @@ int main(int argc, char *argv[]) {
     scenarios.push_back(std::make_unique<PutInBoxScenario>(false, i));
   }
 
-  std::vector<double> startingPose;
-  for (auto &scenario : scenarios) {
-    scenario->Prepare(sceneController, *armController);
+  armController->MoveThroughWaypoints({armController->CalculatePose(0.3, 0.0, 0.35)});
 
-    if (startingPose.empty()) {
-      startingPose = armController->CaptureJointValues();
-    } else {
-      armController->SetJointValues(startingPose);
-    }
+  std::vector<double> startingPose;
+  startingPose = armController->CaptureJointValues();
+
+  for (auto &scenario : scenarios) {
+    armController->SetJointValues(startingPose);
+
+    scenario->Prepare(sceneController, *armController);
 
     switch (mode) {
     case VLA: {

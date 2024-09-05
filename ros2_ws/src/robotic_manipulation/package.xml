@@ -12,6 +12,7 @@
   <depend>moveit_ros_planning_interface</depend>
   <depend>rclcpp</depend>
   <depend>gazebo_msgs</depend>
+  <depend>vision_msgs</depend>
   <depend>rosbag2_cpp</depend>
 
   <test_depend>ament_lint_auto</test_depend>

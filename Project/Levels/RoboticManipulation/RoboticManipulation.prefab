@@ -2056,11 +2056,6 @@
                     "value": "assets/urdfimporter/1440394708_panda/link5.dae.azmodel"
                 },
                 {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[747349925616]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Namespace Configuration/Namespace",
-                    "value": "panda_link2"
-                },
-                {
                     "op": "remove",
                     "path": "/Entities/Entity_[751644892912]/Components/EditorEntitySortComponent/Child Entity Order/3"
                 },
@@ -2248,71 +2243,6 @@
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/VerticalFieldOfViewDeg",
-                    "value": 65.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Width",
-                    "value": 224
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Height",
-                    "value": 224
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Frequency (HZ)",
-                    "value": 1.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Color Image/Topic",
-                    "value": "vla_image"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Depth Image/Topic",
-                    "value": "vla_depth"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Parent Entity",
-                    "value": "Entity_[794594565872]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 0.9860278367996216
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 0.038947343826293945
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.6846956014633179
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/0",
-                    "value": 179.19937133789065
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/1",
-                    "value": -44.30057144165039
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/2",
-                    "value": -90.97058868408205
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[773119729392]/Components/AZ::Render::EditorMeshComponent/Controller/Configuration/ModelAsset/assetHint",
                     "value": "assets/urdfimporter/1440394708_panda/link0.dae.azmodel"
                 },
@@ -2373,33 +2303,692 @@
                 },
                 {
                     "op": "replace",
+                    "path": "/Entities/Entity_[811774435056]/Components/AZ::Render::EditorMeshComponent/Controller/Configuration/ModelAsset/assetHint",
+                    "value": "assets/urdfimporter/1440394708_panda/hand.dae.azmodel"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[816069402352]/Components/AZ::Render::EditorMeshComponent/Controller/Configuration/ModelAsset/assetHint",
+                    "value": "assets/urdfimporter/1440394708_panda/finger.dae.azmodel"
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[378807372790]",
+                    "value": {
+                        "Id": "Entity_[378807372790]",
+                        "Name": "RGBCamera5",
+                        "Components": {
+                            "EditorDisabledCompositionComponent": {
+                                "$type": "EditorDisabledCompositionComponent",
+                                "Id": 11368539952788803075,
+                                "DisabledComponents": []
+                            },
+                            "EditorEntityIconComponent": {
+                                "$type": "EditorEntityIconComponent",
+                                "Id": 2368948314924224969,
+                                "EntityIconAssetId": {
+                                    "guid": "{00000000-0000-0000-0000-000000000000}",
+                                    "subId": 0
+                                }
+                            },
+                            "EditorEntitySortComponent": {
+                                "$type": "EditorEntitySortComponent",
+                                "Id": 3290350680962151526,
+                                "Child Entity Order": []
+                            },
+                            "EditorInspectorComponent": {
+                                "$type": "EditorInspectorComponent",
+                                "Id": 16063185208004482628,
+                                "ComponentOrderEntryArray": []
+                            },
+                            "EditorLockComponent": {
+                                "$type": "EditorLockComponent",
+                                "Id": 4584791250341984660,
+                                "Locked": false
+                            },
+                            "EditorOnlyEntityComponent": {
+                                "$type": "EditorOnlyEntityComponent",
+                                "Id": 14809124310113409905,
+                                "IsEditorOnly": false
+                            },
+                            "EditorPendingCompositionComponent": {
+                                "$type": "EditorPendingCompositionComponent",
+                                "Id": 2922146691727414770,
+                                "PendingComponents": []
+                            },
+                            "EditorVisibilityComponent": {
+                                "$type": "EditorVisibilityComponent",
+                                "Id": 2154823285424618679,
+                                "VisibilityFlag": true
+                            },
+                            "ROS2CameraSensorEditorComponent": {
+                                "$type": "ROS2CameraSensorEditorComponent",
+                                "Id": 17190891644987862308,
+                                "CameraSensorConfig": {
+                                    "VerticalFieldOfViewDeg": 65.0,
+                                    "Width": 224,
+                                    "Height": 224,
+                                    "Depth": true,
+                                    "Color": true,
+                                    "ClipNear": 0.009999999776482582,
+                                    "ClipFar": 10.0
+                                },
+                                "SensorConfig": {
+                                    "Visualize": true,
+                                    "Publishing Enabled": true,
+                                    "Frequency (HZ)": 60.0,
+                                    "Publishers": {
+                                        "Color Camera Info": {
+                                            "Type": "sensor_msgs::msg::CameraInfo",
+                                            "Topic": "color_camera_info5",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Color Image": {
+                                            "Type": "sensor_msgs::msg::Image",
+                                            "Topic": "color_image5",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Depth Camera Info": {
+                                            "Type": "sensor_msgs::msg::CameraInfo",
+                                            "Topic": "depth_camera_info5",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Depth Image": {
+                                            "Type": "sensor_msgs::msg::Image",
+                                            "Topic": "depth_image5",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "ROS2FrameEditorComponent": {
+                                "$type": "ROS2FrameEditorComponent",
+                                "Id": 5877605180793419526,
+                                "ROS2FrameConfiguration": {
+                                    "Namespace Configuration": {
+                                        "Namespace Strategy": 0,
+                                        "Namespace": ""
+                                    },
+                                    "Frame Name": "RGBDCamera5",
+                                    "Joint Name": "",
+                                    "Publish Transform": true
+                                }
+                            },
+                            "TransformComponent": {
+                                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                                "Id": 12407429067236634573,
+                                "Parent Entity": "Entity_[794594565872]",
+                                "Transform Data": {
+                                    "Translate": [
+                                        1.055052638053894,
+                                        -0.34973669052124023,
+                                        0.6124973297119141
+                                    ],
+                                    "Rotate": [
+                                        -153.44696044921875,
+                                        -49.918678283691406,
+                                        -56.69982147216797
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Locked": false,
+                                    "UniformScale": 1.0
+                                },
+                                "Parent Activation Transform Mode": 0,
+                                "IsStatic": false,
+                                "InterpolatePosition": 0,
+                                "InterpolateRotation": 0
+                            }
+                        },
+                        "IsRuntimeActive": true
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[3368414922115]",
+                    "value": {
+                        "Id": "Entity_[3368414922115]",
+                        "Name": "RGBCamera6",
+                        "Components": {
+                            "EditorDisabledCompositionComponent": {
+                                "$type": "EditorDisabledCompositionComponent",
+                                "Id": 10351578113765860736,
+                                "DisabledComponents": []
+                            },
+                            "EditorEntityIconComponent": {
+                                "$type": "EditorEntityIconComponent",
+                                "Id": 17443845285169535787,
+                                "EntityIconAssetId": {
+                                    "guid": "{00000000-0000-0000-0000-000000000000}",
+                                    "subId": 0
+                                }
+                            },
+                            "EditorEntitySortComponent": {
+                                "$type": "EditorEntitySortComponent",
+                                "Id": 8828560802911130830,
+                                "Child Entity Order": []
+                            },
+                            "EditorInspectorComponent": {
+                                "$type": "EditorInspectorComponent",
+                                "Id": 11076229602068422863,
+                                "ComponentOrderEntryArray": []
+                            },
+                            "EditorLockComponent": {
+                                "$type": "EditorLockComponent",
+                                "Id": 6743517616831687074,
+                                "Locked": false
+                            },
+                            "EditorOnlyEntityComponent": {
+                                "$type": "EditorOnlyEntityComponent",
+                                "Id": 4887047798338124869,
+                                "IsEditorOnly": false
+                            },
+                            "EditorPendingCompositionComponent": {
+                                "$type": "EditorPendingCompositionComponent",
+                                "Id": 5890412158718497646,
+                                "PendingComponents": []
+                            },
+                            "EditorVisibilityComponent": {
+                                "$type": "EditorVisibilityComponent",
+                                "Id": 17952628434368824405,
+                                "VisibilityFlag": true
+                            },
+                            "ROS2CameraSensorEditorComponent": {
+                                "$type": "ROS2CameraSensorEditorComponent",
+                                "Id": 16834096178040187784,
+                                "CameraSensorConfig": {
+                                    "VerticalFieldOfViewDeg": 65.0,
+                                    "Width": 224,
+                                    "Height": 224,
+                                    "Depth": true,
+                                    "Color": true,
+                                    "ClipNear": 0.009999999776482582,
+                                    "ClipFar": 10.0
+                                },
+                                "SensorConfig": {
+                                    "Visualize": true,
+                                    "Publishing Enabled": true,
+                                    "Frequency (HZ)": 1.0,
+                                    "Publishers": {
+                                        "Color Camera Info": {
+                                            "Type": "sensor_msgs::msg::CameraInfo",
+                                            "Topic": "color_camera_info6",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Color Image": {
+                                            "Type": "sensor_msgs::msg::Image",
+                                            "Topic": "color_image6",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Depth Camera Info": {
+                                            "Type": "sensor_msgs::msg::CameraInfo",
+                                            "Topic": "depth_camera_info6",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Depth Image": {
+                                            "Type": "sensor_msgs::msg::Image",
+                                            "Topic": "depth_image6",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "ROS2FrameEditorComponent": {
+                                "$type": "ROS2FrameEditorComponent",
+                                "Id": 8645113898365481069,
+                                "ROS2FrameConfiguration": {
+                                    "Namespace Configuration": {
+                                        "Namespace Strategy": 0,
+                                        "Namespace": ""
+                                    },
+                                    "Frame Name": "RGBDCamera6",
+                                    "Joint Name": "",
+                                    "Publish Transform": true
+                                }
+                            },
+                            "TransformComponent": {
+                                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                                "Id": 12779747526854430012,
+                                "Parent Entity": "Entity_[794594565872]",
+                                "Transform Data": {
+                                    "Translate": [
+                                        0.8551567792892456,
+                                        -0.0010578632354736328,
+                                        0.945685625076294
+                                    ],
+                                    "Rotate": [
+                                        -179.79563903808594,
+                                        -31.77348518371582,
+                                        -89.82539367675781
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Locked": false,
+                                    "UniformScale": 1.0
+                                },
+                                "Parent Activation Transform Mode": 0,
+                                "IsStatic": false,
+                                "InterpolatePosition": 0,
+                                "InterpolateRotation": 0
+                            }
+                        },
+                        "IsRuntimeActive": true
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[4256889234838]",
+                    "value": {
+                        "Id": "Entity_[4256889234838]",
+                        "Name": "RGBCamera4",
+                        "Components": {
+                            "EditorDisabledCompositionComponent": {
+                                "$type": "EditorDisabledCompositionComponent",
+                                "Id": 6782594524619219151,
+                                "DisabledComponents": []
+                            },
+                            "EditorEntityIconComponent": {
+                                "$type": "EditorEntityIconComponent",
+                                "Id": 17609290448997983887,
+                                "EntityIconAssetId": {
+                                    "guid": "{00000000-0000-0000-0000-000000000000}",
+                                    "subId": 0
+                                }
+                            },
+                            "EditorEntitySortComponent": {
+                                "$type": "EditorEntitySortComponent",
+                                "Id": 6668565857448782823,
+                                "Child Entity Order": []
+                            },
+                            "EditorInspectorComponent": {
+                                "$type": "EditorInspectorComponent",
+                                "Id": 14839063324920701554,
+                                "ComponentOrderEntryArray": []
+                            },
+                            "EditorLockComponent": {
+                                "$type": "EditorLockComponent",
+                                "Id": 6126030875896832096,
+                                "Locked": false
+                            },
+                            "EditorOnlyEntityComponent": {
+                                "$type": "EditorOnlyEntityComponent",
+                                "Id": 2220545046829468374,
+                                "IsEditorOnly": false
+                            },
+                            "EditorPendingCompositionComponent": {
+                                "$type": "EditorPendingCompositionComponent",
+                                "Id": 8090658246437134212,
+                                "PendingComponents": []
+                            },
+                            "EditorVisibilityComponent": {
+                                "$type": "EditorVisibilityComponent",
+                                "Id": 2797741234535301498,
+                                "VisibilityFlag": true
+                            },
+                            "ROS2CameraSensorEditorComponent": {
+                                "$type": "ROS2CameraSensorEditorComponent",
+                                "Id": 10059236068092787895,
+                                "CameraSensorConfig": {
+                                    "VerticalFieldOfViewDeg": 65.0,
+                                    "Width": 224,
+                                    "Height": 224,
+                                    "Depth": true,
+                                    "Color": true,
+                                    "ClipNear": 0.009999999776482582,
+                                    "ClipFar": 10.0
+                                },
+                                "SensorConfig": {
+                                    "Visualize": true,
+                                    "Publishing Enabled": true,
+                                    "Frequency (HZ)": 1.0,
+                                    "Publishers": {
+                                        "Color Camera Info": {
+                                            "Type": "sensor_msgs::msg::CameraInfo",
+                                            "Topic": "color_camera_info4",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Color Image": {
+                                            "Type": "sensor_msgs::msg::Image",
+                                            "Topic": "color_image4",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Depth Camera Info": {
+                                            "Type": "sensor_msgs::msg::CameraInfo",
+                                            "Topic": "depth_camera_info4",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Depth Image": {
+                                            "Type": "sensor_msgs::msg::Image",
+                                            "Topic": "depth_image4",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "ROS2FrameEditorComponent": {
+                                "$type": "ROS2FrameEditorComponent",
+                                "Id": 12085824305349975305,
+                                "ROS2FrameConfiguration": {
+                                    "Namespace Configuration": {
+                                        "Namespace Strategy": 0,
+                                        "Namespace": ""
+                                    },
+                                    "Frame Name": "RGBDCamera4",
+                                    "Joint Name": "",
+                                    "Publish Transform": true
+                                }
+                            },
+                            "TransformComponent": {
+                                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                                "Id": 8599625512991355868,
+                                "Parent Entity": "Entity_[794594565872]",
+                                "Transform Data": {
+                                    "Translate": [
+                                        1.040671706199646,
+                                        9.5367431640625e-7,
+                                        0.4314948320388794
+                                    ],
+                                    "Rotate": [
+                                        179.99993896484375,
+                                        -75.21863555908203,
+                                        -89.99916076660156
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Locked": false,
+                                    "UniformScale": 1.0
+                                },
+                                "Parent Activation Transform Mode": 0,
+                                "IsStatic": false,
+                                "InterpolatePosition": 0,
+                                "InterpolateRotation": 0
+                            }
+                        },
+                        "IsRuntimeActive": true
+                    }
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/VerticalFieldOfViewDeg",
+                    "value": 65.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Width",
+                    "value": 224
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Height",
+                    "value": 224
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Frequency (HZ)",
+                    "value": 1.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Color Image/Topic",
+                    "value": "color_image"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Depth Image/Topic",
+                    "value": "depth_image"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Frame Name",
+                    "value": "RGBDCamera"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Parent Entity",
+                    "value": "Entity_[794594565872]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 0.9860278367996216
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 0.038947343826293945
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.6846956014633179
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/0",
+                    "value": 179.19937133789065
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/1",
+                    "value": -44.30057144165039
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/2",
+                    "value": -90.97058868408205
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[4248299300246]",
+                    "value": {
+                        "Id": "Entity_[4248299300246]",
+                        "Name": "RGBCamera2",
+                        "Components": {
+                            "EditorDisabledCompositionComponent": {
+                                "$type": "EditorDisabledCompositionComponent",
+                                "Id": 9333631367993846606,
+                                "DisabledComponents": []
+                            },
+                            "EditorEntityIconComponent": {
+                                "$type": "EditorEntityIconComponent",
+                                "Id": 16222217701757551222,
+                                "EntityIconAssetId": {
+                                    "guid": "{00000000-0000-0000-0000-000000000000}",
+                                    "subId": 0
+                                }
+                            },
+                            "EditorEntitySortComponent": {
+                                "$type": "EditorEntitySortComponent",
+                                "Id": 13816326324386357509,
+                                "Child Entity Order": []
+                            },
+                            "EditorInspectorComponent": {
+                                "$type": "EditorInspectorComponent",
+                                "Id": 7304205364503425228,
+                                "ComponentOrderEntryArray": []
+                            },
+                            "EditorLockComponent": {
+                                "$type": "EditorLockComponent",
+                                "Id": 11536840810048852143,
+                                "Locked": false
+                            },
+                            "EditorOnlyEntityComponent": {
+                                "$type": "EditorOnlyEntityComponent",
+                                "Id": 3020880178423432565,
+                                "IsEditorOnly": false
+                            },
+                            "EditorPendingCompositionComponent": {
+                                "$type": "EditorPendingCompositionComponent",
+                                "Id": 4100278290130401140,
+                                "PendingComponents": []
+                            },
+                            "EditorVisibilityComponent": {
+                                "$type": "EditorVisibilityComponent",
+                                "Id": 1694394873096901924,
+                                "VisibilityFlag": true
+                            },
+                            "ROS2CameraSensorEditorComponent": {
+                                "$type": "ROS2CameraSensorEditorComponent",
+                                "Id": 1962458092591640161,
+                                "CameraSensorConfig": {
+                                    "VerticalFieldOfViewDeg": 65.0,
+                                    "Width": 224,
+                                    "Height": 224,
+                                    "Depth": true,
+                                    "Color": true,
+                                    "ClipNear": 0.009999999776482582,
+                                    "ClipFar": 10.0
+                                },
+                                "SensorConfig": {
+                                    "Visualize": true,
+                                    "Publishing Enabled": true,
+                                    "Frequency (HZ)": 1.0,
+                                    "Publishers": {
+                                        "Color Camera Info": {
+                                            "Type": "sensor_msgs::msg::CameraInfo",
+                                            "Topic": "color_camera_info2",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Color Image": {
+                                            "Type": "sensor_msgs::msg::Image",
+                                            "Topic": "color_image2",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Depth Camera Info": {
+                                            "Type": "sensor_msgs::msg::CameraInfo",
+                                            "Topic": "depth_camera_info2",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        },
+                                        "Depth Image": {
+                                            "Type": "sensor_msgs::msg::Image",
+                                            "Topic": "depth_image2",
+                                            "QoS": {
+                                                "Reliability": 1,
+                                                "Durability": 2,
+                                                "Depth": 5
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "ROS2FrameEditorComponent": {
+                                "$type": "ROS2FrameEditorComponent",
+                                "Id": 10169768590671005467,
+                                "ROS2FrameConfiguration": {
+                                    "Namespace Configuration": {
+                                        "Namespace Strategy": 0,
+                                        "Namespace": ""
+                                    },
+                                    "Frame Name": "RGBDCamera2",
+                                    "Joint Name": "",
+                                    "Publish Transform": true
+                                }
+                            },
+                            "TransformComponent": {
+                                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                                "Id": 17212429496436912642,
+                                "Parent Entity": "Entity_[794594565872]",
+                                "Transform Data": {
+                                    "Translate": [
+                                        0.8738306760787964,
+                                        0.6189749240875244,
+                                        0.4175509214401245
+                                    ],
+                                    "Rotate": [
+                                        125.30948638916016,
+                                        -48.75762176513672,
+                                        -151.82810974121094
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Locked": false,
+                                    "UniformScale": 1.0
+                                },
+                                "Parent Activation Transform Mode": 0,
+                                "IsStatic": false,
+                                "InterpolatePosition": 0,
+                                "InterpolateRotation": 0
+                            }
+                        },
+                        "IsRuntimeActive": true
+                    }
+                },
+                {
+                    "op": "replace",
                     "path": "/Entities/Entity_[807479467760]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Is Limited",
                     "value": false
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[807479467760]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/guid",
-                    "value": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[807479467760]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/subId",
-                    "value": 1
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[807479467760]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetHint",
-                    "value": "physx/rubber.physicsmaterial"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[807479467760]/Components/EditorMeshColliderComponent/ColliderConfiguration/ContactOffset",
-                    "value": 0.05999999865889549
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[807479467760]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Namespace Configuration/Namespace",
-                    "value": "panda_leftfinger"
                 },
                 {
                     "op": "add",
@@ -2540,13 +3129,33 @@
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[811774435056]/Components/AZ::Render::EditorMeshComponent/Controller/Configuration/ModelAsset/assetHint",
-                    "value": "assets/urdfimporter/1440394708_panda/hand.dae.azmodel"
+                    "path": "/Entities/Entity_[807479467760]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/guid",
+                    "value": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}"
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[816069402352]/Components/AZ::Render::EditorMeshComponent/Controller/Configuration/ModelAsset/assetHint",
-                    "value": "assets/urdfimporter/1440394708_panda/finger.dae.azmodel"
+                    "path": "/Entities/Entity_[807479467760]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/subId",
+                    "value": 1
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[807479467760]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetHint",
+                    "value": "physx/rubber.physicsmaterial"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[807479467760]/Components/EditorMeshColliderComponent/ColliderConfiguration/ContactOffset",
+                    "value": 0.05999999865889549
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[807479467760]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Namespace Configuration/Namespace",
+                    "value": "panda_leftfinger"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[747349925616]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Namespace Configuration/Namespace",
+                    "value": "panda_link2"
                 },
                 {
                     "op": "add",
@@ -2626,7 +3235,7 @@
                                         },
                                         "Color Image": {
                                             "Type": "sensor_msgs::msg::Image",
-                                            "Topic": "vla_image3",
+                                            "Topic": "color_image3",
                                             "QoS": {
                                                 "Reliability": 1,
                                                 "Durability": 2,
@@ -2644,7 +3253,7 @@
                                         },
                                         "Depth Image": {
                                             "Type": "sensor_msgs::msg::Image",
-                                            "Topic": "vla_depth3",
+                                            "Topic": "depth_image3",
                                             "QoS": {
                                                 "Reliability": 1,
                                                 "Durability": 2,
@@ -2662,7 +3271,7 @@
                                         "Namespace Strategy": 0,
                                         "Namespace": ""
                                     },
-                                    "Frame Name": "RGBCamera",
+                                    "Frame Name": "RGBDCamera3",
                                     "Joint Name": "",
                                     "Publish Transform": true
                                 }
@@ -2700,608 +3309,9 @@
                     }
                 },
                 {
-                    "op": "add",
-                    "path": "/Entities/Entity_[4248299300246]",
-                    "value": {
-                        "Id": "Entity_[4248299300246]",
-                        "Name": "RGBCamera2",
-                        "Components": {
-                            "EditorDisabledCompositionComponent": {
-                                "$type": "EditorDisabledCompositionComponent",
-                                "Id": 9333631367993846606,
-                                "DisabledComponents": []
-                            },
-                            "EditorEntityIconComponent": {
-                                "$type": "EditorEntityIconComponent",
-                                "Id": 16222217701757551222,
-                                "EntityIconAssetId": {
-                                    "guid": "{00000000-0000-0000-0000-000000000000}",
-                                    "subId": 0
-                                }
-                            },
-                            "EditorEntitySortComponent": {
-                                "$type": "EditorEntitySortComponent",
-                                "Id": 13816326324386357509,
-                                "Child Entity Order": []
-                            },
-                            "EditorInspectorComponent": {
-                                "$type": "EditorInspectorComponent",
-                                "Id": 7304205364503425228,
-                                "ComponentOrderEntryArray": []
-                            },
-                            "EditorLockComponent": {
-                                "$type": "EditorLockComponent",
-                                "Id": 11536840810048852143,
-                                "Locked": false
-                            },
-                            "EditorOnlyEntityComponent": {
-                                "$type": "EditorOnlyEntityComponent",
-                                "Id": 3020880178423432565,
-                                "IsEditorOnly": false
-                            },
-                            "EditorPendingCompositionComponent": {
-                                "$type": "EditorPendingCompositionComponent",
-                                "Id": 4100278290130401140,
-                                "PendingComponents": []
-                            },
-                            "EditorVisibilityComponent": {
-                                "$type": "EditorVisibilityComponent",
-                                "Id": 1694394873096901924,
-                                "VisibilityFlag": true
-                            },
-                            "ROS2CameraSensorEditorComponent": {
-                                "$type": "ROS2CameraSensorEditorComponent",
-                                "Id": 1962458092591640161,
-                                "CameraSensorConfig": {
-                                    "VerticalFieldOfViewDeg": 65.0,
-                                    "Width": 224,
-                                    "Height": 224,
-                                    "Depth": true,
-                                    "Color": true,
-                                    "ClipNear": 0.009999999776482582,
-                                    "ClipFar": 10.0
-                                },
-                                "SensorConfig": {
-                                    "Visualize": true,
-                                    "Publishing Enabled": true,
-                                    "Frequency (HZ)": 1.0,
-                                    "Publishers": {
-                                        "Color Camera Info": {
-                                            "Type": "sensor_msgs::msg::CameraInfo",
-                                            "Topic": "color_camera_info2",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Color Image": {
-                                            "Type": "sensor_msgs::msg::Image",
-                                            "Topic": "vla_image2",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Depth Camera Info": {
-                                            "Type": "sensor_msgs::msg::CameraInfo",
-                                            "Topic": "depth_camera_info2",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Depth Image": {
-                                            "Type": "sensor_msgs::msg::Image",
-                                            "Topic": "vla_depth2",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "ROS2FrameEditorComponent": {
-                                "$type": "ROS2FrameEditorComponent",
-                                "Id": 10169768590671005467,
-                                "ROS2FrameConfiguration": {
-                                    "Namespace Configuration": {
-                                        "Namespace Strategy": 0,
-                                        "Namespace": ""
-                                    },
-                                    "Frame Name": "RGBCamera",
-                                    "Joint Name": "",
-                                    "Publish Transform": true
-                                }
-                            },
-                            "TransformComponent": {
-                                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                                "Id": 17212429496436912642,
-                                "Parent Entity": "Entity_[794594565872]",
-                                "Transform Data": {
-                                    "Translate": [
-                                        0.8738306760787964,
-                                        0.6189749240875244,
-                                        0.4175509214401245
-                                    ],
-                                    "Rotate": [
-                                        125.30948638916016,
-                                        -48.75762176513672,
-                                        -151.82810974121094
-                                    ],
-                                    "Scale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "Locked": false,
-                                    "UniformScale": 1.0
-                                },
-                                "Parent Activation Transform Mode": 0,
-                                "IsStatic": false,
-                                "InterpolatePosition": 0,
-                                "InterpolateRotation": 0
-                            }
-                        },
-                        "IsRuntimeActive": true
-                    }
-                },
-                {
-                    "op": "add",
-                    "path": "/Entities/Entity_[4256889234838]",
-                    "value": {
-                        "Id": "Entity_[4256889234838]",
-                        "Name": "RGBCamera4",
-                        "Components": {
-                            "EditorDisabledCompositionComponent": {
-                                "$type": "EditorDisabledCompositionComponent",
-                                "Id": 6782594524619219151,
-                                "DisabledComponents": []
-                            },
-                            "EditorEntityIconComponent": {
-                                "$type": "EditorEntityIconComponent",
-                                "Id": 17609290448997983887,
-                                "EntityIconAssetId": {
-                                    "guid": "{00000000-0000-0000-0000-000000000000}",
-                                    "subId": 0
-                                }
-                            },
-                            "EditorEntitySortComponent": {
-                                "$type": "EditorEntitySortComponent",
-                                "Id": 6668565857448782823,
-                                "Child Entity Order": []
-                            },
-                            "EditorInspectorComponent": {
-                                "$type": "EditorInspectorComponent",
-                                "Id": 14839063324920701554,
-                                "ComponentOrderEntryArray": []
-                            },
-                            "EditorLockComponent": {
-                                "$type": "EditorLockComponent",
-                                "Id": 6126030875896832096,
-                                "Locked": false
-                            },
-                            "EditorOnlyEntityComponent": {
-                                "$type": "EditorOnlyEntityComponent",
-                                "Id": 2220545046829468374,
-                                "IsEditorOnly": false
-                            },
-                            "EditorPendingCompositionComponent": {
-                                "$type": "EditorPendingCompositionComponent",
-                                "Id": 8090658246437134212,
-                                "PendingComponents": []
-                            },
-                            "EditorVisibilityComponent": {
-                                "$type": "EditorVisibilityComponent",
-                                "Id": 2797741234535301498,
-                                "VisibilityFlag": true
-                            },
-                            "ROS2CameraSensorEditorComponent": {
-                                "$type": "ROS2CameraSensorEditorComponent",
-                                "Id": 10059236068092787895,
-                                "CameraSensorConfig": {
-                                    "VerticalFieldOfViewDeg": 65.0,
-                                    "Width": 224,
-                                    "Height": 224,
-                                    "Depth": true,
-                                    "Color": true,
-                                    "ClipNear": 0.009999999776482582,
-                                    "ClipFar": 10.0
-                                },
-                                "SensorConfig": {
-                                    "Visualize": true,
-                                    "Publishing Enabled": true,
-                                    "Frequency (HZ)": 1.0,
-                                    "Publishers": {
-                                        "Color Camera Info": {
-                                            "Type": "sensor_msgs::msg::CameraInfo",
-                                            "Topic": "color_camera_info4",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Color Image": {
-                                            "Type": "sensor_msgs::msg::Image",
-                                            "Topic": "vla_image4",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Depth Camera Info": {
-                                            "Type": "sensor_msgs::msg::CameraInfo",
-                                            "Topic": "depth_camera_info4",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Depth Image": {
-                                            "Type": "sensor_msgs::msg::Image",
-                                            "Topic": "vla_depth4",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "ROS2FrameEditorComponent": {
-                                "$type": "ROS2FrameEditorComponent",
-                                "Id": 12085824305349975305,
-                                "ROS2FrameConfiguration": {
-                                    "Namespace Configuration": {
-                                        "Namespace Strategy": 0,
-                                        "Namespace": ""
-                                    },
-                                    "Frame Name": "RGBCamera",
-                                    "Joint Name": "",
-                                    "Publish Transform": true
-                                }
-                            },
-                            "TransformComponent": {
-                                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                                "Id": 8599625512991355868,
-                                "Parent Entity": "Entity_[794594565872]",
-                                "Transform Data": {
-                                    "Translate": [
-                                        1.040671706199646,
-                                        9.5367431640625e-7,
-                                        0.4314948320388794
-                                    ],
-                                    "Rotate": [
-                                        179.99993896484375,
-                                        -75.21863555908203,
-                                        -89.99916076660156
-                                    ],
-                                    "Scale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "Locked": false,
-                                    "UniformScale": 1.0
-                                },
-                                "Parent Activation Transform Mode": 0,
-                                "IsStatic": false,
-                                "InterpolatePosition": 0,
-                                "InterpolateRotation": 0
-                            }
-                        },
-                        "IsRuntimeActive": true
-                    }
-                },
-                {
-                    "op": "add",
-                    "path": "/Entities/Entity_[3368414922115]",
-                    "value": {
-                        "Id": "Entity_[3368414922115]",
-                        "Name": "RGBCamera6",
-                        "Components": {
-                            "EditorDisabledCompositionComponent": {
-                                "$type": "EditorDisabledCompositionComponent",
-                                "Id": 10351578113765860736,
-                                "DisabledComponents": []
-                            },
-                            "EditorEntityIconComponent": {
-                                "$type": "EditorEntityIconComponent",
-                                "Id": 17443845285169535787,
-                                "EntityIconAssetId": {
-                                    "guid": "{00000000-0000-0000-0000-000000000000}",
-                                    "subId": 0
-                                }
-                            },
-                            "EditorEntitySortComponent": {
-                                "$type": "EditorEntitySortComponent",
-                                "Id": 8828560802911130830,
-                                "Child Entity Order": []
-                            },
-                            "EditorInspectorComponent": {
-                                "$type": "EditorInspectorComponent",
-                                "Id": 11076229602068422863,
-                                "ComponentOrderEntryArray": []
-                            },
-                            "EditorLockComponent": {
-                                "$type": "EditorLockComponent",
-                                "Id": 6743517616831687074,
-                                "Locked": false
-                            },
-                            "EditorOnlyEntityComponent": {
-                                "$type": "EditorOnlyEntityComponent",
-                                "Id": 4887047798338124869,
-                                "IsEditorOnly": false
-                            },
-                            "EditorPendingCompositionComponent": {
-                                "$type": "EditorPendingCompositionComponent",
-                                "Id": 5890412158718497646,
-                                "PendingComponents": []
-                            },
-                            "EditorVisibilityComponent": {
-                                "$type": "EditorVisibilityComponent",
-                                "Id": 17952628434368824405,
-                                "VisibilityFlag": true
-                            },
-                            "ROS2CameraSensorEditorComponent": {
-                                "$type": "ROS2CameraSensorEditorComponent",
-                                "Id": 16834096178040187784,
-                                "CameraSensorConfig": {
-                                    "VerticalFieldOfViewDeg": 65.0,
-                                    "Width": 224,
-                                    "Height": 224,
-                                    "Depth": true,
-                                    "Color": true,
-                                    "ClipNear": 0.009999999776482582,
-                                    "ClipFar": 10.0
-                                },
-                                "SensorConfig": {
-                                    "Visualize": true,
-                                    "Publishing Enabled": true,
-                                    "Frequency (HZ)": 1.0,
-                                    "Publishers": {
-                                        "Color Camera Info": {
-                                            "Type": "sensor_msgs::msg::CameraInfo",
-                                            "Topic": "color_camera_info",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Color Image": {
-                                            "Type": "sensor_msgs::msg::Image",
-                                            "Topic": "vla_image6",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Depth Camera Info": {
-                                            "Type": "sensor_msgs::msg::CameraInfo",
-                                            "Topic": "depth_camera_info",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Depth Image": {
-                                            "Type": "sensor_msgs::msg::Image",
-                                            "Topic": "vla_depth6",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "ROS2FrameEditorComponent": {
-                                "$type": "ROS2FrameEditorComponent",
-                                "Id": 8645113898365481069,
-                                "ROS2FrameConfiguration": {
-                                    "Namespace Configuration": {
-                                        "Namespace Strategy": 0,
-                                        "Namespace": ""
-                                    },
-                                    "Frame Name": "RGBCamera",
-                                    "Joint Name": "",
-                                    "Publish Transform": true
-                                }
-                            },
-                            "TransformComponent": {
-                                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                                "Id": 12779747526854430012,
-                                "Parent Entity": "Entity_[794594565872]",
-                                "Transform Data": {
-                                    "Translate": [
-                                        0.8551567792892456,
-                                        -0.0010578632354736328,
-                                        0.945685625076294
-                                    ],
-                                    "Rotate": [
-                                        -179.79563903808594,
-                                        -31.77348518371582,
-                                        -89.82539367675781
-                                    ],
-                                    "Scale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "Locked": false,
-                                    "UniformScale": 1.0
-                                },
-                                "Parent Activation Transform Mode": 0,
-                                "IsStatic": false,
-                                "InterpolatePosition": 0,
-                                "InterpolateRotation": 0
-                            }
-                        },
-                        "IsRuntimeActive": true
-                    }
-                },
-                {
-                    "op": "add",
-                    "path": "/Entities/Entity_[378807372790]",
-                    "value": {
-                        "Id": "Entity_[378807372790]",
-                        "Name": "RGBCamera5",
-                        "Components": {
-                            "EditorDisabledCompositionComponent": {
-                                "$type": "EditorDisabledCompositionComponent",
-                                "Id": 11368539952788803075,
-                                "DisabledComponents": []
-                            },
-                            "EditorEntityIconComponent": {
-                                "$type": "EditorEntityIconComponent",
-                                "Id": 2368948314924224969,
-                                "EntityIconAssetId": {
-                                    "guid": "{00000000-0000-0000-0000-000000000000}",
-                                    "subId": 0
-                                }
-                            },
-                            "EditorEntitySortComponent": {
-                                "$type": "EditorEntitySortComponent",
-                                "Id": 3290350680962151526,
-                                "Child Entity Order": []
-                            },
-                            "EditorInspectorComponent": {
-                                "$type": "EditorInspectorComponent",
-                                "Id": 16063185208004482628,
-                                "ComponentOrderEntryArray": []
-                            },
-                            "EditorLockComponent": {
-                                "$type": "EditorLockComponent",
-                                "Id": 4584791250341984660,
-                                "Locked": false
-                            },
-                            "EditorOnlyEntityComponent": {
-                                "$type": "EditorOnlyEntityComponent",
-                                "Id": 14809124310113409905,
-                                "IsEditorOnly": false
-                            },
-                            "EditorPendingCompositionComponent": {
-                                "$type": "EditorPendingCompositionComponent",
-                                "Id": 2922146691727414770,
-                                "PendingComponents": []
-                            },
-                            "EditorVisibilityComponent": {
-                                "$type": "EditorVisibilityComponent",
-                                "Id": 2154823285424618679,
-                                "VisibilityFlag": true
-                            },
-                            "ROS2CameraSensorEditorComponent": {
-                                "$type": "ROS2CameraSensorEditorComponent",
-                                "Id": 17190891644987862308,
-                                "CameraSensorConfig": {
-                                    "VerticalFieldOfViewDeg": 65.0,
-                                    "Width": 224,
-                                    "Height": 224,
-                                    "Depth": true,
-                                    "Color": true,
-                                    "ClipNear": 0.009999999776482582,
-                                    "ClipFar": 10.0
-                                },
-                                "SensorConfig": {
-                                    "Visualize": true,
-                                    "Publishing Enabled": true,
-                                    "Frequency (HZ)": 60.0,
-                                    "Publishers": {
-                                        "Color Camera Info": {
-                                            "Type": "sensor_msgs::msg::CameraInfo",
-                                            "Topic": "color_camera_info",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Color Image": {
-                                            "Type": "sensor_msgs::msg::Image",
-                                            "Topic": "vla_image5",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Depth Camera Info": {
-                                            "Type": "sensor_msgs::msg::CameraInfo",
-                                            "Topic": "depth_camera_info",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        },
-                                        "Depth Image": {
-                                            "Type": "sensor_msgs::msg::Image",
-                                            "Topic": "vla_depth5",
-                                            "QoS": {
-                                                "Reliability": 1,
-                                                "Durability": 2,
-                                                "Depth": 5
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "ROS2FrameEditorComponent": {
-                                "$type": "ROS2FrameEditorComponent",
-                                "Id": 5877605180793419526,
-                                "ROS2FrameConfiguration": {
-                                    "Namespace Configuration": {
-                                        "Namespace Strategy": 0,
-                                        "Namespace": ""
-                                    },
-                                    "Frame Name": "RGBCamera",
-                                    "Joint Name": "",
-                                    "Publish Transform": true
-                                }
-                            },
-                            "TransformComponent": {
-                                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                                "Id": 12407429067236634573,
-                                "Parent Entity": "Entity_[794594565872]",
-                                "Transform Data": {
-                                    "Translate": [
-                                        1.055052638053894,
-                                        -0.34973669052124023,
-                                        0.6124973297119141
-                                    ],
-                                    "Rotate": [
-                                        -153.44696044921875,
-                                        -49.918678283691406,
-                                        -56.69982147216797
-                                    ],
-                                    "Scale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "Locked": false,
-                                    "UniformScale": 1.0
-                                },
-                                "Parent Activation Transform Mode": 0,
-                                "IsStatic": false,
-                                "InterpolatePosition": 0,
-                                "InterpolateRotation": 0
-                            }
-                        },
-                        "IsRuntimeActive": true
-                    }
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Frame Name",
+                    "value": "RGBDCamera3"
                 }
             ]
         }

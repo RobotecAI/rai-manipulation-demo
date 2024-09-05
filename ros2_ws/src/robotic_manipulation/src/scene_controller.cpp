@@ -21,6 +21,12 @@ SceneController::SceneController() {
   if (!m_deleteEntityClient->wait_for_service(std::chrono::seconds(1))) {
     RCLCPP_ERROR(logger, "Service /delete_entity not available");
   }
+
+  m_detectionPublisher = m_node->create_publisher<vision_msgs::msg::Detection3DArray>(
+      "/detections", rclcpp::QoS(10));
+  
+  m_detectionPublishTimer = m_node->create_wall_timer(
+      std::chrono::milliseconds(500), std::bind(&SceneController::PublishDetections, this));
 }
 
 SceneController::~SceneController() {
@@ -69,6 +75,13 @@ void SceneController::SpawnToy(ToyType type, double x, double y, double z,
   RCLCPP_INFO(m_node->get_logger(), "Spawned entity: %s",
               status_message.c_str());
   m_spawnedEntities.push_back(status_message);
+
+  auto relativePose = request->initial_pose;
+  relativePose.position.x -= worldOffsetX;
+  relativePose.position.y -= worldOffsetY;
+  relativePose.position.z -= worldOffsetZ;
+  m_spawnedPoses[status_message] = relativePose;
+  m_objectClasses[status_message] = request->name;
 }
 
 void SceneController::ClearToys() {
@@ -79,4 +92,28 @@ void SceneController::ClearToys() {
     result.wait();
   }
   m_spawnedEntities.clear();
+}
+
+void SceneController::PublishDetections() {
+  auto detections = vision_msgs::msg::Detection3DArray();
+  for (auto const &entity : m_spawnedEntities) {
+    auto detection = vision_msgs::msg::Detection3D();
+    detection.header.frame_id = "world";
+    detection.header.stamp = m_node->now();
+    
+    auto object = vision_msgs::msg::ObjectHypothesisWithPose();
+    object.hypothesis.class_id = "cube";
+    object.hypothesis.score = 1.0;
+    object.pose.pose = m_spawnedPoses[entity];
+
+    detection.results.push_back(object);
+    detection.id = entity;
+    detection.bbox.size.x = 0.08;
+    detection.bbox.size.y = 0.08;
+    detection.bbox.size.z = 0.08;
+    detection.bbox.center = m_spawnedPoses[entity];
+    detections.detections.push_back(detection);
+  }
+  if (!detections.detections.empty())
+    m_detectionPublisher->publish(detections);
 }

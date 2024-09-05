@@ -155,9 +155,10 @@
                     "Id": 17561012789858645084,
                     "ROS2FrameConfiguration": {
                         "Namespace Configuration": {
-                            "Namespace Strategy": 1
+                            "Namespace Strategy": 2,
+                            "Namespace": "Block"
                         },
-                        "Frame Name": "block"
+                        "Frame Name": ""
                     }
                 },
                 "TransformComponent": {

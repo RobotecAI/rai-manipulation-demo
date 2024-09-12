@@ -25,12 +25,15 @@ void RosbagRecorder::BeginRecording() {
   m_recording = true;
   m_recordingThread = std::thread([&]() {
     auto mutex = std::mutex();
-    //auto latest_image = sensor_msgs::msg::Image::SharedPtr();
-    auto image_topics = std::vector<std::string>{"/vla_image5"};
+    
+    // Add the new image topic "/vla_depth5" to the list of topics
+    auto image_topics = std::vector<std::string>{"/vla_image5", "/vla_depth5"};
     auto latest_images = std::vector<sensor_msgs::msg::Image::SharedPtr>(image_topics.size());
     auto writer = std::make_unique<rosbag2_cpp::Writer>();
 
     auto image_subscriptions = std::vector<rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr>();
+    
+    // Create subscriptions for both image topics
     for (std::size_t i = 0; i < image_topics.size(); i++) {
       image_subscriptions.push_back(
           m_node->create_subscription<sensor_msgs::msg::Image>(
@@ -55,6 +58,8 @@ void RosbagRecorder::BeginRecording() {
     tm.name = "/vla_state";
     tm.type = "std_msgs/msg/Float32MultiArray";
     writer->create_topic(tm);
+
+    // Create topics for both /vla_image5 and /vla_depth5
     for (std::size_t i = 0; i < image_topics.size(); i++) {
       tm.name = image_topics[i];
       tm.type = "sensor_msgs/msg/Image";
@@ -73,7 +78,7 @@ void RosbagRecorder::BeginRecording() {
       dR -= last_pose[3];
       dP -= last_pose[4];
       dY -= last_pose[5];
-      if (last_images[0]) {
+      if (last_images[0]) {  // assuming at least one image topic is always subscribed
         auto time = m_node->get_clock()->now();
         {
           std_msgs::msg::Float32MultiArray msg;
@@ -84,9 +89,6 @@ void RosbagRecorder::BeginRecording() {
                       (float)dP,
                       (float)dY,
                       (float)m_arm->GetGripper()};
-          // RCLCPP_INFO(m_node->get_logger(),
-          //             "dXYZ: (%f, %f, %f), dRPY: (%f, %f, %f), gripper: %f",
-          //             dx, dy, dz, dR, dP, dY, (float)m_arm->GetGripper());
           writer->write(msg, "/vla_action", time);
 
           auto state = std_msgs::msg::Float32MultiArray();
@@ -99,7 +101,6 @@ void RosbagRecorder::BeginRecording() {
 
         {
           mutex.lock();
-          // image_publisher->publish(*last_image.get());
           for (std::size_t i = 0; i < image_topics.size(); i++) {
             if (latest_images[i]) {
               writer->write(*latest_images[i].get(), image_topics[i], time);
@@ -108,9 +109,9 @@ void RosbagRecorder::BeginRecording() {
           }
           mutex.unlock();
         }
-        RCLCPP_INFO(m_node->get_logger(), "Image saved");
+        RCLCPP_INFO(m_node->get_logger(), "Image and depth data saved");
       } else {
-        RCLCPP_INFO(m_node->get_logger(), "No image");
+        RCLCPP_INFO(m_node->get_logger(), "No image or depth data");
       }
 
       last_pose = pose;

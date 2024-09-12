@@ -7,7 +7,9 @@
 #include "robotic_manipulation/scenarios/put_in_box.h"
 #include "robotic_manipulation/scene_controller.h"
 #include "robotic_manipulation/vla_controller.h"
+#include "robotic_manipulation/state_controller.h"
 #include <std_msgs/msg/float32_multi_array.hpp>
+
 
 int main(int argc, char *argv[]) {
   // Initialize ROS and create the Node
@@ -31,6 +33,7 @@ int main(int argc, char *argv[]) {
     VLA,
     RECORD,
     PLAY,
+    STATE
   };
   RunMode mode;
   if (argc > 3) {
@@ -40,6 +43,8 @@ int main(int argc, char *argv[]) {
       mode = RECORD;
     } else if (std::string(argv[3]) == "play") {
       mode = PLAY;
+    } else if (std::string(argv[3]) == "state") {
+      mode = STATE;
     }
   } else {
     mode = PLAY;
@@ -83,7 +88,12 @@ int main(int argc, char *argv[]) {
     case PLAY:
       scenario->Play(*armController);
       break;
+    case STATE: {
+      StateController state;
+      state.Begin(*armController);
+    } break;
     }
+
 
     scenario->CleanUp(sceneController, *armController);
   }

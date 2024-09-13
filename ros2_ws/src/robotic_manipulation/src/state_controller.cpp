@@ -58,6 +58,9 @@ void StateController::Begin(ArmController &arm) {
             // current_rz = drz;
 
             arm.MoveThroughWaypoints({arm.CalculatePose(
+                current_x, current_y, current_z + 0.1, current_rz)});
+            
+            arm.MoveThroughWaypoints({arm.CalculatePose(
                 current_x, current_y, current_z, current_rz)});
 
             if (msg->data[4] == 1.0) {

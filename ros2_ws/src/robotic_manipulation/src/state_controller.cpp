@@ -44,21 +44,21 @@ void StateController::Begin(ArmController &arm) {
             double dx = msg->data[0];
             double dy = msg->data[1];
             double dz = msg->data[2];
-            double drx = msg->data[3];
+            // double drx = msg->data[3];
             // double dry = msg->data[4];
-            // double drz = msg->data[5];
+            double drz = msg->data[3];
             double gripper_state = msg->data[4];
 
             current_x = dx;
             current_y = dy;
             current_z = dz;
             current_gripper_state = gripper_state;;
-            current_rx = drx;
+            // current_rx = drx;
             // current_ry = dry;
-            // current_rz = drz;
+            current_rz = drz;
 
             arm.MoveThroughWaypoints({arm.CalculatePose(
-                current_x, current_y, current_z + 0.1, current_rz)});
+                current_x, current_y, current_z + 0.05, current_rz)});
             
             arm.MoveThroughWaypoints({arm.CalculatePose(
                 current_x, current_y, current_z, current_rz)});

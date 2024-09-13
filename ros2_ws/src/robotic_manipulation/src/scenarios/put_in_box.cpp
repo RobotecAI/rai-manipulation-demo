@@ -86,8 +86,9 @@ void PutInBoxScenario::Prepare(SceneController &scene, ArmController &arm) {
 
   auto start_position = start_positions[m_seed % 8];
 
-  scene.SpawnToy(ToyType::Cube, cube_position.x, cube_position.y, 0.1, cube_position.z);
-  scene.SpawnToy(ToyType::Cube, cube_position.x, cube_position.y + 0.3, 0.1, cube_position.z);
+  scene.SpawnToy(ToyType::Cube, cube_position.x, cube_position.y, 0.1, 0.1);
+  scene.SpawnToy(ToyType::Cube, cube_position.x, cube_position.y + 0.3, 0.1, 0.0);
+  scene.SpawnToy(ToyType::Cube, cube_position.x, cube_position.y - 0.2, 0.1, 1.0);
 
   m_targets.push_back({cube_position.x, cube_position.y, -cube_position.z});
 

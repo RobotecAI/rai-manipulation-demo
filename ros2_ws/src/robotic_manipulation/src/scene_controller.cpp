@@ -56,6 +56,66 @@ void SceneController::SpawnToy(ToyType type, double x, double y, double z,
   case Box:
     request->name = "toy_box";
     break;
+  case Apple:
+    request->name = "apple";
+    break;
+  case Avocado:
+    request->name = "avocado";
+    break;
+  case Bottle:
+    request->name = "bottle";
+    break;
+  case Bread:
+    request->name = "bread";
+    break;
+  case Broccoli:
+    request->name = "broccoli";
+    break;
+  case Can:
+    request->name = "can";
+    break;
+  case Carrot:
+    request->name = "carrot";
+    break;
+  case Cheese:
+    request->name = "cheese";
+    break;
+  case Corn:
+    request->name = "corn";
+    break;
+  case Crossaint:
+    request->name = "crossaint";
+    break;
+  case Cupcake:
+    request->name = "cupcake";
+    break;
+  case Donut:
+    request->name = "donut";
+    break;
+  case Foodcan:
+    request->name = "foodcan";
+    break;
+  case Jam:
+    request->name = "jam";
+    break;
+  case Lemon:
+    request->name = "lemon";
+    break;
+  case Orange:
+    request->name = "orange";
+    break;
+  case Pear:
+    request->name = "pear";
+    break;
+  case Sponge:
+    request->name = "sponge";
+    break;
+  case Tomato:
+    request->name = "tomato";
+    break;
+  case Yogurt:
+    request->name = "yogurt";
+    break;
   }
 
   request->initial_pose.position.x = x + worldOffsetX;

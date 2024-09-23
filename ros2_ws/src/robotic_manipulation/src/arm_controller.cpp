@@ -10,6 +10,9 @@ ArmController::ArmController() {
       m_node, "panda_arm");
   m_hand = std::make_shared<moveit::planning_interface::MoveGroupInterface>(
       m_node, "hand");
+
+  m_pandaArm->setMaxVelocityScalingFactor(1.0);
+  m_pandaArm->setMaxAccelerationScalingFactor(1.0);
 }
 
 ArmController::~ArmController() {
@@ -56,7 +59,7 @@ void ArmController::MoveThroughWaypoints(
 void ArmController::Open() {
   gripper.store(true);
   m_hand->setNamedTarget("open");
-  if (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
+  while (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to open hand");
   }
 }
@@ -64,7 +67,7 @@ void ArmController::Open() {
 void ArmController::Close() {
   gripper.store(false);
   m_hand->setNamedTarget("close");
-  if (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
+  while (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to close hand");
   }
 }

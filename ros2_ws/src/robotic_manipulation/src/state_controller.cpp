@@ -32,44 +32,33 @@ void StateController::Begin(ArmController &arm) {
   RCLCPP_INFO(logger, "Current gripper state: %d", current_gripper_state);
 
   auto state_subscription =
-      m_node->create_subscription<std_msgs::msg::Float32MultiArray>(
-          "/object_state", 10,
-          [&](std_msgs::msg::Float32MultiArray::SharedPtr msg) {
+      m_node->create_subscription<geometry_msgs::msg::Pose>(
+          "/goal_state", 10, [&](geometry_msgs::msg::Pose::SharedPtr msg) {
             std::string state = "";
-            for (auto i : msg->data) {
+            for (auto i : {msg->position.x, msg->position.y, msg->position.z,
+                           msg->orientation.x, msg->orientation.y,
+                           msg->orientation.z, msg->orientation.w}) {
               state += std::to_string(i) + " ";
             }
             RCLCPP_INFO(logger, "Requested state: %s", state.c_str());
 
-            double dx = msg->data[0];
-            double dy = msg->data[1];
-            double dz = msg->data[2];
-            // double drx = msg->data[3];
-            // double dry = msg->data[4];
-            double drz = msg->data[3];
-            double gripper_state = msg->data[4];
-
-            current_x = dx;
-            current_y = dy;
-            current_z = dz;
-            current_gripper_state = gripper_state;;
-            // current_rx = drx;
-            // current_ry = dry;
-            current_rz = drz;
-
-            arm.MoveThroughWaypoints({arm.CalculatePose(
-                current_x, current_y, current_z + 0.05, current_rz)});
-            
-            arm.MoveThroughWaypoints({arm.CalculatePose(
-                current_x, current_y, current_z, current_rz)});
-
-            if (msg->data[4] == 1.0) {
-              arm.Open();
-            } else {
-              arm.Close();
+            arm.Open();
+            {
+              auto pose = *msg;
+              pose.position.z += 0.1;
+              arm.MoveThroughWaypoints({pose});
             }
+            arm.MoveThroughWaypoints({*msg});
+            arm.Close();
+            msg->position.z += 0.3;
+            arm.MoveThroughWaypoints({*msg});
 
-            arm.MoveThroughWaypoints({arm.CalculatePose(0.3, 0.0, 0.35)});
+            const double box_x = 0.40;
+            const double box_y = -0.339;
+            arm.MoveThroughWaypoints({arm.CalculatePose(box_x, box_y, 0.35)});
+            arm.Open();
+            arm.MoveThroughWaypoints(
+                {arm.CalculatePose(0.3, 0.0, 0.35)});
           });
 
   std::this_thread::sleep_for(std::chrono::milliseconds(300000));

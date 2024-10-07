@@ -1,12 +1,13 @@
 #include "robotic_manipulation/state_controller.h"
 
 #include <std_msgs/msg/float32_multi_array.hpp>
+#include "rai_interfaces/srv/manipulator_move_to.hpp"
 
-StateController::StateController() {
-  m_node = rclcpp::Node::make_shared("state_controller");
+
+StateController::StateController() 
+  : m_node(rclcpp::Node::make_shared("state_controller"))
+{
   m_node->set_parameter(rclcpp::Parameter("use_sim_time", true));
-  m_executor.add_node(m_node);
-  m_spinner = std::thread([this]() { m_executor.spin(); });
 }
 
 StateController::~StateController() {
@@ -28,39 +29,37 @@ void StateController::Begin(ArmController &arm) {
 
   RCLCPP_INFO(logger, "Current pose: %f %f %f %f %f %f", current_x, current_y,
               current_z, current_rx, current_ry, current_rz);
-
   RCLCPP_INFO(logger, "Current gripper state: %d", current_gripper_state);
 
-  auto state_subscription =
-      m_node->create_subscription<geometry_msgs::msg::PoseStamped>(
-          "/goal_state", 10, [&](geometry_msgs::msg::PoseStamped::SharedPtr msg) {
-            std::string state = "";
-            for (auto i : {msg->pose.position.x, msg->pose.position.y, msg->pose.position.z,
-                           msg->pose.orientation.x, msg->pose.orientation.y,
-                           msg->pose.orientation.z, msg->pose.orientation.w}) {
-              state += std::to_string(i) + " ";
-            }
-            RCLCPP_INFO(logger, "Requested state: %s", state.c_str());
+  auto service = m_node->create_service<rai_interfaces::srv::ManipulatorMoveTo>(
+    "/manipulator_move_to",
+    [&](const std::shared_ptr<rai_interfaces::srv::ManipulatorMoveTo::Request> request,
+        std::shared_ptr<rai_interfaces::srv::ManipulatorMoveTo::Response> response) {
+      RCLCPP_INFO(logger, "Received move request");
 
-            arm.SetReferenceFrame(msg->header.frame_id);
-            //arm.Open();
-            {
-              auto pose = msg->pose;
-              pose.position.z += 0.1;
-              //arm.MoveThroughWaypoints({pose});
-            }
-            arm.MoveThroughWaypoints({msg->pose});
-            //arm.Close();
-            //msg->pose.position.z += 0.3;
-            //arm.MoveThroughWaypoints({msg->pose});
+      arm.SetReferenceFrame(request->target_pose.header.frame_id);
 
-            const double box_x = 0.40;
-            const double box_y = -0.339;
-            //arm.MoveThroughWaypoints({arm.CalculatePose(box_x, box_y, 0.35)});
-            //arm.Open();
-            //arm.MoveThroughWaypoints(
-                //{arm.CalculatePose(0.3, 0.0, 0.35)});
-          });
+      bool success = arm.MoveThroughWaypoints({request->target_pose.pose});
 
-  std::this_thread::sleep_for(std::chrono::milliseconds(300000));
+      if (request->gripper_state) {
+        arm.Open();
+      } else {
+        arm.Close();
+      }
+
+      if (success) {
+        RCLCPP_INFO(logger, "Move successful");
+      } else {
+        RCLCPP_ERROR(logger, "Move failed");
+      }
+
+      response->success = success;
+    }
+  );
+
+  RCLCPP_INFO(logger, "Service /manipulator_move_to is ready");
+
+  // Add node to executor and spin in the main thread
+  m_executor.add_node(m_node);
+  m_executor.spin();
 }

@@ -12,6 +12,7 @@ find_package(rclcpp REQUIRED)
 find_package(gazebo_msgs REQUIRED)
 find_package(vision_msgs REQUIRED)
 find_package(rosbag2_cpp REQUIRED)
+find_package(rai_interfaces REQUIRED)  # Add this line
 
 add_executable(robotic_manipulation src/robotic_manipulation.cpp src/scene_controller.cpp src/arm_controller.cpp src/vla_controller.cpp src/state_controller.cpp src/scenarios/pickup.cpp src/scenarios/move_toy.cpp src/scenarios/put_in_box.cpp src/scenario.cpp src/rosbag_recorder.cpp)
 target_include_directories(robotic_manipulation PUBLIC
@@ -25,6 +26,7 @@ ament_target_dependencies(
   "gazebo_msgs"
   "vision_msgs"
   "rosbag2_cpp"
+  "rai_interfaces"  # Add this line
 )
 
 install(TARGETS robotic_manipulation

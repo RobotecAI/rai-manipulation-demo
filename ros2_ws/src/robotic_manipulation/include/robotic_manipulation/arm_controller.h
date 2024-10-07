@@ -10,8 +10,7 @@ public:
   geometry_msgs::msg::Pose CalculatePose(double x, double y, double z,
                                          double r = 0.0);
 
-  void
-  MoveThroughWaypoints(std::vector<geometry_msgs::msg::Pose> const &waypoints);
+  bool MoveThroughWaypoints(const std::vector<geometry_msgs::msg::Pose>& waypoints);
 
   void Open();
   void Close();

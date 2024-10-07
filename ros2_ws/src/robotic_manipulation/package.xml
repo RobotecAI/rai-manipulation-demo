@@ -14,11 +14,12 @@
   <depend>gazebo_msgs</depend>
   <depend>vision_msgs</depend>
   <depend>rosbag2_cpp</depend>
-
+  <depend>rai_interfaces</depend>
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
+    <depend>rai_interfaces</depend>
   </export>
 </package>

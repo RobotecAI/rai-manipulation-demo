@@ -39,21 +39,23 @@ geometry_msgs::msg::Pose ArmController::CalculatePose(double x, double y,
   return pose;
 }
 
-void ArmController::MoveThroughWaypoints(
-    std::vector<geometry_msgs::msg::Pose> const &waypoints) {
+bool ArmController::MoveThroughWaypoints(const std::vector<geometry_msgs::msg::Pose>& waypoints) {
   auto logger = m_node->get_logger();
   moveit_msgs::msg::RobotTrajectory trajectory;
   if (m_pandaArm->computeCartesianPath(waypoints, 0.01, 0.0, trajectory) ==
       -1) {
     RCLCPP_ERROR(logger,
                  "MoveThroughWaypoints: Failed to compute Cartesian path");
-    return;
+    return false;
   }
 
   while (m_pandaArm->execute(trajectory) !=
          moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(logger, "MoveThroughWaypoints: Failed to execute trajectory");
+    return false;
   }
+  
+  return true;
 }
 
 void ArmController::Open() {

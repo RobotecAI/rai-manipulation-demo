@@ -22,6 +22,8 @@ public:
   std::vector<double> CaptureJointValues();
   void SetJointValues(std::vector<double> const &jointValues);
 
+  void SetReferenceFrame(std::string const &frame);
+
 private:
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_pandaArm;
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_hand;

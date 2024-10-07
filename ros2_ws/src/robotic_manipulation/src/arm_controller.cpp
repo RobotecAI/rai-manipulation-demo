@@ -95,3 +95,7 @@ void ArmController::SetJointValues(std::vector<double> const &jointValues) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to set joint values");
   }
 }
+
+void ArmController::SetReferenceFrame(std::string const &frame) {
+  m_pandaArm->setPoseReferenceFrame(frame);
+}

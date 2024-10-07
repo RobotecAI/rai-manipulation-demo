@@ -573,6 +573,13 @@
                                     },
                                     "assetHint": "prefabs/cupcake.spawnable"
                                 },
+                                "debug_cube": {
+                                    "assetId": {
+                                        "guid": "{23091D1E-346D-5877-84CC-BBAAE25C1F6D}",
+                                        "subId": 4205072443
+                                    },
+                                    "assetHint": "prefabs/debug_cube.spawnable"
+                                },
                                 "donut": {
                                     "assetId": {
                                         "guid": "{DA0B407A-647C-564C-BA91-A9417670B0E3}",
@@ -995,7 +1002,7 @@
                                     "guid": "{7E95DBDB-AD16-52F1-9CFE-D3A0762BC9DA}",
                                     "subId": 275653734
                                 },
-                                "assetHint": "assets/room/desk.azmodel"
+                                "assetHint": "assets/room/desk.fbx.azmodel"
                             }
                         }
                     }
@@ -1192,7 +1199,7 @@
                                     "guid": "{7E95DBDB-AD16-52F1-9CFE-D3A0762BC9DA}",
                                     "subId": 275653734
                                 },
-                                "assetHint": "assets/room/desk.azmodel"
+                                "assetHint": "assets/room/desk.fbx.azmodel"
                             }
                         }
                     }
@@ -1442,7 +1449,7 @@
                                     "guid": "{47465EAB-09ED-508B-ACAF-E3F5AFCE8EE9}",
                                     "subId": 278876571
                                 },
-                                "assetHint": "assets/room/room.azmodel"
+                                "assetHint": "assets/room/room.fbx.azmodel"
                             }
                         }
                     }
@@ -1880,7 +1887,7 @@
                                     "guid": "{7E95DBDB-AD16-52F1-9CFE-D3A0762BC9DA}",
                                     "subId": 275653734
                                 },
-                                "assetHint": "assets/room/desk.azmodel"
+                                "assetHint": "assets/room/desk.fbx.azmodel"
                             }
                         }
                     }
@@ -3280,6 +3287,11 @@
                     "op": "replace",
                     "path": "/Entities/Entity_[824659336944]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Frame Name",
                     "value": "RGBDCamera3"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[820364369648]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Publish Transform",
+                    "value": true
                 },
                 {
                     "op": "replace",

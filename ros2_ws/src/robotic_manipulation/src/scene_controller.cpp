@@ -116,6 +116,9 @@ void SceneController::SpawnToy(ToyType type, double x, double y, double z,
   case Yogurt:
     request->name = "yogurt";
     break;
+  case DebugCube:
+    request->name = "debug_cube";
+    break;
   }
 
   request->initial_pose.position.x = x + worldOffsetX;

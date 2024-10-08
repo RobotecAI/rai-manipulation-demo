@@ -1,0 +1,686 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "green_cube",
+        "Components": {
+            "EditorDisabledCompositionComponent": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 4725350462358409977
+            },
+            "EditorEntityIconComponent": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 16357970552973221923
+            },
+            "EditorEntitySortComponent": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 4212139279563189521,
+                "Child Entity Order": [
+                    "Entity_[568321710666]"
+                ]
+            },
+            "EditorInspectorComponent": {
+                "$type": "EditorInspectorComponent",
+                "Id": 4491850364996477732
+            },
+            "EditorLockComponent": {
+                "$type": "EditorLockComponent",
+                "Id": 8377781688575144338
+            },
+            "EditorOnlyEntityComponent": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 432483116849505282
+            },
+            "EditorPendingCompositionComponent": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 8561283225554116680
+            },
+            "EditorPrefabComponent": {
+                "$type": "EditorPrefabComponent",
+                "Id": 14590754127168999617
+            },
+            "EditorVisibilityComponent": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 13205221349858968490
+            },
+            "TransformComponent": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 7104963505383013721,
+                "Parent Entity": ""
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[568321710666]": {
+            "Id": "Entity_[568321710666]",
+            "Name": "Block",
+            "Components": {
+                "EditorColliderComponent": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 11542677749643201060,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 1,
+                        "Box": {
+                            "Configuration": [
+                                0.05000000074505806,
+                                0.05000000074505806,
+                                0.05000000074505806
+                            ]
+                        }
+                    }
+                },
+                "EditorDisabledCompositionComponent": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 4217592328555842537
+                },
+                "EditorEntityIconComponent": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 15956745850772369911
+                },
+                "EditorEntitySortComponent": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 17039547128023277398,
+                    "Child Entity Order": [
+                        "Entity_[572616677962]"
+                    ]
+                },
+                "EditorInspectorComponent": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 10559440634629379756,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 6187265555496201725
+                        },
+                        {
+                            "ComponentId": 13561659260120629871,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 17561012789858645084,
+                            "SortIndex": 2
+                        },
+                        {
+                            "ComponentId": 11542677749643201060,
+                            "SortIndex": 3
+                        }
+                    ]
+                },
+                "EditorLockComponent": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6429324956522629436
+                },
+                "EditorOnlyEntityComponent": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 15586053819289024353
+                },
+                "EditorPendingCompositionComponent": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 7492405914452727169
+                },
+                "EditorRigidBodyComponent": {
+                    "$type": "EditorRigidBodyComponent",
+                    "Id": 13561659260120629871,
+                    "Configuration": {
+                        "entityId": "",
+                        "Sleep threshold": 0.0,
+                        "Compute Mass": false,
+                        "Mass": 0.125,
+                        "Inertia tensor": [
+                            0.00005208333823247813,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.00005208333823247813,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.00005208333823247813
+                        ]
+                    }
+                },
+                "EditorVisibilityComponent": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 4403913835617255944
+                },
+                "ROS2FrameEditorComponent": {
+                    "$type": "ROS2FrameEditorComponent",
+                    "Id": 17561012789858645084,
+                    "ROS2FrameConfiguration": {
+                        "Namespace Configuration": {
+                            "Namespace Strategy": 2,
+                            "Namespace": "Block"
+                        },
+                        "Frame Name": ""
+                    }
+                },
+                "TransformComponent": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 6187265555496201725,
+                    "Parent Entity": "ContainerEntity"
+                }
+            }
+        },
+        "Entity_[572616677962]": {
+            "Id": "Entity_[572616677962]",
+            "Name": "Visual",
+            "Components": {
+                "EditorDisabledCompositionComponent": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 16326157547606650356
+                },
+                "EditorEntityIconComponent": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1800796543822236841
+                },
+                "EditorEntitySortComponent": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12030562391194337043
+                },
+                "EditorInspectorComponent": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 12898291243213862327
+                },
+                "EditorLockComponent": {
+                    "$type": "EditorLockComponent",
+                    "Id": 8162689374823094891
+                },
+                "EditorOnlyEntityComponent": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 10966330071600363305
+                },
+                "EditorPendingCompositionComponent": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 8346146273233869829
+                },
+                "EditorVisibilityComponent": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 3234634004032164431
+                },
+                "EditorWhiteBoxComponent": {
+                    "$type": "EditorWhiteBoxComponent",
+                    "Id": 7782982949227642333,
+                    "Material": {
+                        "Tint": [
+                            0.08847180753946304,
+                            0.5306172370910645,
+                            0.0
+                        ],
+                        "UseTexture": false
+                    },
+                    "RenderData": {
+                        "Faces": [
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        -0.5,
+                                        -0.5,
+                                        0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        0.5,
+                                        -0.5,
+                                        0.5
+                                    ],
+                                    "UV": [
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        0.5,
+                                        0.5,
+                                        0.5
+                                    ]
+                                },
+                                "Normal": [
+                                    0.0,
+                                    -0.0,
+                                    1.0
+                                ]
+                            },
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        -0.5,
+                                        -0.5,
+                                        0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        0.5,
+                                        0.5,
+                                        0.5
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        -0.5,
+                                        0.5,
+                                        0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        0.0
+                                    ]
+                                },
+                                "Normal": [
+                                    0.0,
+                                    0.0,
+                                    1.0
+                                ]
+                            },
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        -0.5,
+                                        0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        0.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        0.5,
+                                        0.5,
+                                        -0.5
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        0.5,
+                                        -0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "Normal": [
+                                    -0.0,
+                                    -0.0,
+                                    -1.0
+                                ]
+                            },
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        -0.5,
+                                        0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        0.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        0.5,
+                                        -0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        -0.5,
+                                        -0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        1.0
+                                    ]
+                                },
+                                "Normal": [
+                                    0.0,
+                                    0.0,
+                                    -1.0
+                                ]
+                            },
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        -0.5,
+                                        -0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        0.5,
+                                        -0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        0.5,
+                                        -0.5,
+                                        0.5
+                                    ]
+                                },
+                                "Normal": [
+                                    0.0,
+                                    -1.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        -0.5,
+                                        -0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        0.5,
+                                        -0.5,
+                                        0.5
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        -0.5,
+                                        -0.5,
+                                        0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        0.0
+                                    ]
+                                },
+                                "Normal": [
+                                    -0.0,
+                                    -1.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        0.5,
+                                        -0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        0.5,
+                                        0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        0.0
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        0.5,
+                                        0.5,
+                                        0.5
+                                    ]
+                                },
+                                "Normal": [
+                                    1.0,
+                                    0.0,
+                                    -0.0
+                                ]
+                            },
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        0.5,
+                                        -0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        0.5,
+                                        0.5,
+                                        0.5
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        0.5,
+                                        -0.5,
+                                        0.5
+                                    ],
+                                    "UV": [
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "Normal": [
+                                    1.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        0.5,
+                                        0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        -0.5,
+                                        0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        -0.5,
+                                        0.5,
+                                        0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        0.0
+                                    ]
+                                },
+                                "Normal": [
+                                    0.0,
+                                    1.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        0.5,
+                                        0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        -0.5,
+                                        0.5,
+                                        0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        0.0
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        0.5,
+                                        0.5,
+                                        0.5
+                                    ]
+                                },
+                                "Normal": [
+                                    -0.0,
+                                    1.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        -0.5,
+                                        0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        0.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        -0.5,
+                                        -0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        -0.5,
+                                        -0.5,
+                                        0.5
+                                    ],
+                                    "UV": [
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "Normal": [
+                                    -1.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "Vertex1": {
+                                    "Position": [
+                                        -0.5,
+                                        0.5,
+                                        -0.5
+                                    ],
+                                    "UV": [
+                                        1.0,
+                                        0.0
+                                    ]
+                                },
+                                "Vertex2": {
+                                    "Position": [
+                                        -0.5,
+                                        -0.5,
+                                        0.5
+                                    ],
+                                    "UV": [
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "Vertex3": {
+                                    "Position": [
+                                        -0.5,
+                                        0.5,
+                                        0.5
+                                    ]
+                                },
+                                "Normal": [
+                                    -1.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            }
+                        ],
+                        "Material": {
+                            "Tint": [
+                                0.08847180753946304,
+                                0.5306172370910645,
+                                0.0
+                            ],
+                            "UseTexture": false
+                        }
+                    }
+                },
+                "TransformComponent": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 16843170302531117928,
+                    "Parent Entity": "Entity_[568321710666]",
+                    "Transform Data": {
+                        "UniformScale": 0.05000000074505806
+                    }
+                }
+            }
+        }
+    }
+}

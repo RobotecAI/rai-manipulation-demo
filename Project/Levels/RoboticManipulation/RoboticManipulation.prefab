@@ -503,6 +503,13 @@
                                     },
                                     "assetHint": "prefabs/avocado.spawnable"
                                 },
+                                "blue_cube": {
+                                    "assetId": {
+                                        "guid": "{ABC61B93-E050-5329-A236-10E2F61DD52E}",
+                                        "subId": 2673158184
+                                    },
+                                    "assetHint": "prefabs/blue_cube.spawnable"
+                                },
                                 "bottle": {
                                     "assetId": {
                                         "guid": "{E515331A-0ADC-5231-AEC9-B87DCBCCA795}",
@@ -593,6 +600,13 @@
                                         "subId": 475448653
                                     },
                                     "assetHint": "prefabs/foodcan.spawnable"
+                                },
+                                "green_cube": {
+                                    "assetId": {
+                                        "guid": "{BFD1C1E8-64BB-5E2D-B406-A4B03C0E02FF}",
+                                        "subId": 406036830
+                                    },
+                                    "assetHint": "prefabs/green_cube.spawnable"
                                 },
                                 "jam": {
                                     "assetId": {
@@ -2526,7 +2540,7 @@
                 {
                     "op": "replace",
                     "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/0",
-                    "value": 179.19937133789063
+                    "value": 179.19937133789065
                 },
                 {
                     "op": "replace",
@@ -2536,7 +2550,7 @@
                 {
                     "op": "replace",
                     "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/2",
-                    "value": -90.97058868408203
+                    "value": -90.97058868408205
                 },
                 {
                     "op": "add",

@@ -116,6 +116,12 @@ void SceneController::SpawnToy(ToyType type, double x, double y, double z,
   case Yogurt:
     request->name = "yogurt";
     break;
+  case BlueCube:
+    request->name = "blue_cube";
+    break;
+  case GreenCube:
+    request->name = "green_cube";
+    break;
   case DebugCube:
     request->name = "debug_cube";
     break;

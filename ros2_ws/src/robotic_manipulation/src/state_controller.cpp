@@ -37,23 +37,39 @@ void StateController::Begin(ArmController &arm) {
         std::shared_ptr<rai_interfaces::srv::ManipulatorMoveTo::Response> response) {
       RCLCPP_INFO(logger, "Received move request");
 
+      response->success = false;
+
       arm.SetReferenceFrame(request->target_pose.header.frame_id);
 
-      bool success = arm.MoveThroughWaypoints({request->target_pose.pose});
-
-      if (request->gripper_state) {
+      if (request->initial_gripper_state) {
         arm.Open();
       } else {
         arm.Close();
       }
 
-      if (success) {
-        RCLCPP_INFO(logger, "Move successful");
-      } else {
-        RCLCPP_ERROR(logger, "Move failed");
+      {
+        auto current_pose = arm.GetEffectorPose();
+        auto above_current = current_pose;
+        above_current[2] = 0.35;
+        auto above_target = request->target_pose.pose;
+        above_target.position.z = 0.35;
+        if (!arm.MoveThroughWaypoints(
+                {arm.CalculatePose(above_current[0], above_current[1],
+                                   above_current[2]),
+                 above_target, request->target_pose.pose}))
+          return;
+
+        if (request->final_gripper_state) {
+          arm.Open();
+        } else {
+          arm.Close();
+        }
       }
 
-      response->success = success;
+      if (!arm.MoveThroughWaypoints({request->target_pose.pose}))
+        return;
+
+      response->success = true;
     }
   );
 

@@ -1,57 +1,57 @@
 {
     "ContainerEntity": {
         "Id": "ContainerEntity",
-        "Name": "green_cube",
+        "Name": "red_cube",
         "Components": {
             "EditorDisabledCompositionComponent": {
                 "$type": "EditorDisabledCompositionComponent",
-                "Id": 13493977395768000683
+                "Id": 12603980985215951251
             },
             "EditorEntityIconComponent": {
                 "$type": "EditorEntityIconComponent",
-                "Id": 9288509639060693631
+                "Id": 16068247589611263953
             },
             "EditorEntitySortComponent": {
                 "$type": "EditorEntitySortComponent",
-                "Id": 18028101843629240491,
+                "Id": 7219717639988908793,
                 "Child Entity Order": [
-                    "Entity_[5420232307294]"
+                    "Entity_[485314884190]"
                 ]
             },
             "EditorInspectorComponent": {
                 "$type": "EditorInspectorComponent",
-                "Id": 12036583947153015435
+                "Id": 3063710473549902484
             },
             "EditorLockComponent": {
                 "$type": "EditorLockComponent",
-                "Id": 13595895537681861410
+                "Id": 14420830170103720030
             },
             "EditorOnlyEntityComponent": {
                 "$type": "EditorOnlyEntityComponent",
-                "Id": 14853913226573594358
+                "Id": 9213128105834252984
             },
             "EditorPendingCompositionComponent": {
                 "$type": "EditorPendingCompositionComponent",
-                "Id": 10407127355306329600
+                "Id": 15869975916422451849
             },
             "EditorPrefabComponent": {
                 "$type": "EditorPrefabComponent",
-                "Id": 10702175152438037216
+                "Id": 8473295634569575171
             },
             "EditorVisibilityComponent": {
                 "$type": "EditorVisibilityComponent",
-                "Id": 11410907855492607204
+                "Id": 15159406413268160172
             },
             "TransformComponent": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                "Id": 16024719600669309178,
+                "Id": 9851931452318080577,
                 "Parent Entity": ""
             }
         }
     },
     "Entities": {
-        "Entity_[5420232307294]": {
-            "Id": "Entity_[5420232307294]",
+        "Entity_[485314884190]": {
+            "Id": "Entity_[485314884190]",
             "Name": "Block",
             "Components": {
                 "EditorColliderComponent": {
@@ -94,7 +94,7 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 17039547128023277398,
                     "Child Entity Order": [
-                        "Entity_[5424527274590]"
+                        "Entity_[489609851486]"
                     ]
                 },
                 "EditorInspectorComponent": {
@@ -138,17 +138,12 @@
                         "Sleep threshold": 0.0,
                         "Compute Mass": false,
                         "Mass": 0.5,
-                        "Centre of mass offset": [
-                            0.0,
-                            0.0,
-                            0.02500000037252903
-                        ],
                         "Inertia tensor": [
-                            0.00020833333837799728,
+                            0.0002083333529299125,
                             0.0,
                             0.0,
                             0.0,
-                            0.00020833333837799728,
+                            0.0002083333529299125,
                             0.0,
                             0.0,
                             0.0,
@@ -178,8 +173,8 @@
                 }
             }
         },
-        "Entity_[5424527274590]": {
-            "Id": "Entity_[5424527274590]",
+        "Entity_[489609851486]": {
+            "Id": "Entity_[489609851486]",
             "Name": "Visual",
             "Components": {
                 "AZ::Render::EditorMeshComponent": {
@@ -230,9 +225,8 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{82346ED7-D369-5EF0-A7E0-70C1082EE073}"
-                                            },
-                                            "assetHint": "materials/presets/macbeth/14_green.azmaterial"
+                                                "guid": "{9C47066E-BD8F-5C1B-B935-933296BBE312}"
+                                            }
                                         }
                                     }
                                 }
@@ -255,7 +249,7 @@
                 "TransformComponent": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 16843170302531117928,
-                    "Parent Entity": "Entity_[5420232307294]",
+                    "Parent Entity": "Entity_[485314884190]",
                     "Transform Data": {
                         "UniformScale": 0.05000000074505806
                     }

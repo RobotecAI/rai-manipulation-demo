@@ -23,7 +23,11 @@
                     "Instance_[712990187248]/ContainerEntity",
                     "Entity_[4189935783732]",
                     "Entity_[20588120919860]",
-                    "Entity_[3876413040103]"
+                    "Instance_[476724949598]/ContainerEntity",
+                    "Entity_[3876413040103]",
+                    "Instance_[5411642372702]/ContainerEntity",
+                    "Instance_[12287885013598]/ContainerEntity",
+                    "Instance_[12300769915486]/ContainerEntity"
                 ]
             },
             "Component_[15230859088967841193]": {
@@ -69,7 +73,7 @@
                     "Controller": {
                         "Configuration": {
                             "LightType": 2,
-                            "Intensity": 130.0,
+                            "Intensity": 120.0,
                             "AttenuationRadiusMode": 0,
                             "AttenuationRadius": 36.055511474609375,
                             "Shadow Bias": 0.0,
@@ -484,10 +488,11 @@
                 },
                 "ROS2SpawnerEditorComponent": {
                     "$type": "ROS2SpawnerEditorComponent",
-                    "Id": 8607493523519127275,
+                    "Id": 1519464746489900848,
                     "Controller": {
                         "Configuration": {
                             "Editor entity id": "Entity_[20588120919860]",
+                            "Support WGS": false,
                             "Spawnables": {
                                 "apple": {
                                     "assetId": {
@@ -685,13 +690,6 @@
                                     },
                                     "assetHint": "prefabs/yogurt.spawnable"
                                 }
-                            },
-                            "Default spawn pose": {
-                                "Translation": [
-                                    1.899999976158142,
-                                    3.0,
-                                    1.0
-                                ]
                             }
                         }
                     }
@@ -702,9 +700,9 @@
                     "Parent Entity": "Entity_[1146574390643]",
                     "Transform Data": {
                         "Translate": [
-                            1.9781110286712646,
-                            3.0148024559020996,
-                            1.0925527811050415
+                            1.5927098989486694,
+                            2.6582443714141846,
+                            0.7025851011276245
                         ]
                     }
                 }
@@ -2173,6 +2171,136 @@
         }
     },
     "Instances": {
+        "Instance_[12287885013598]": {
+            "Source": "Prefabs/black_cube.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 2.074065923690796
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 2.6530332565307617
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.7525851130485535
+                }
+            ]
+        },
+        "Instance_[12300769915486]": {
+            "Source": "Prefabs/blue_cube.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1152437262922]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
+                    "value": 0.02500000037252903
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1152437262922]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
+                    "value": 0.00020833333837799728
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1152437262922]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
+                    "value": 0.00020833333837799728
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 2.171161651611328
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 2.576634168624878
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.7525851130485535
+                }
+            ]
+        },
+        "Instance_[476724949598]": {
+            "Source": "Prefabs/red_cube.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[485314884190]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
+                    "value": 0.02500000037252903
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[485314884190]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
+                    "value": 0.00020833333837799728
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[485314884190]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
+                    "value": 0.00020833333837799728
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 1.8435720205307007
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 3.0860071182250977
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.7525851130485535
+                }
+            ]
+        },
+        "Instance_[5411642372702]": {
+            "Source": "Prefabs/green_cube.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 1.8328379392623901
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 2.1413795948028564
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.7525851130485535
+                }
+            ]
+        },
         "Instance_[712990187248]": {
             "Source": "Prefabs/PandaRobot.prefab",
             "Patches": [
@@ -2404,6 +2532,76 @@
                 },
                 {
                     "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/VerticalFieldOfViewDeg",
+                    "value": 65.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Width",
+                    "value": 720
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Height",
+                    "value": 576
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Frequency (HZ)",
+                    "value": 1.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Color Image/Topic",
+                    "value": "color_image"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Depth Image/Topic",
+                    "value": "depth_image"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Frame Name",
+                    "value": "RGBDCamera"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Parent Entity",
+                    "value": "Entity_[794594565872]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 0.9860278367996216
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 0.038947343826293945
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.6846956014633179
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/0",
+                    "value": 179.19937133789065
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/1",
+                    "value": -44.30057144165039
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/2",
+                    "value": -90.97058868408205
+                },
+                {
+                    "op": "replace",
                     "path": "/Entities/Entity_[773119729392]/Components/AZ::Render::EditorMeshComponent/Controller/Configuration/ModelAsset/assetHint",
                     "value": "assets/urdfimporter/1440394708_panda/link0.dae.azmodel"
                 },
@@ -2474,83 +2672,13 @@
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[824659336944]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Frame Name",
-                    "value": "RGBDCamera3"
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[820364369648]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Publish Transform",
                     "value": true
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/VerticalFieldOfViewDeg",
-                    "value": 65.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Width",
-                    "value": 720
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Height",
-                    "value": 576
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Frequency (HZ)",
-                    "value": 1.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Color Image/Topic",
-                    "value": "color_image"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Depth Image/Topic",
-                    "value": "depth_image"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Frame Name",
-                    "value": "RGBDCamera"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Parent Entity",
-                    "value": "Entity_[794594565872]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 0.9860278367996216
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 0.038947343826293945
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.6846956014633179
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/0",
-                    "value": 179.19937133789065
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/1",
-                    "value": -44.30057144165039
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/2",
-                    "value": -90.97058868408205
+                    "path": "/Entities/Entity_[824659336944]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Frame Name",
+                    "value": "RGBDCamera3"
                 },
                 {
                     "op": "add",

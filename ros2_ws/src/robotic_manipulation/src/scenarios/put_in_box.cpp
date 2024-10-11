@@ -14,7 +14,7 @@ std::string PutInBoxScenario::GetPrompt() const { return "put block in box"; }
 void PutInBoxScenario::Prepare(SceneController &scene, ArmController &arm) {
   srand(m_seed);
 
-  scene.SpawnToy(ToyType::Box, m_box_x, m_box_y, 0.1, 0.0);
+  // scene.SpawnToy(ToyType::Box, m_box_x, m_box_y, 0.1, 0.0);
 
   using Point = geometry_msgs::msg::Point;
   auto cube_positions = std::vector<Point>();
@@ -86,8 +86,12 @@ void PutInBoxScenario::Prepare(SceneController &scene, ArmController &arm) {
 
   auto start_position = start_positions[m_seed % 8];
 
-  scene.SpawnToy(ToyType::BlueCube, cube_position.x, cube_position.y, 0.1,
-                 cube_position.z);
+  scene.SpawnToy(ToyType::Corn, 0.32, -0.4, 0.1, 3.1415926);
+  scene.SpawnToy(ToyType::Tomato, 0.33, -0.2, 0.1, 0);
+  scene.SpawnToy(ToyType::Apple, 0.4, 0.2, 0.1, 0.0);
+  scene.SpawnToy(ToyType::Carrot, 0.45, 0.5, 0.1, 0.0);
+  //scene.SpawnToy(ToyType::Tomato, 0.3, 0.2, 0.3, 0);
+  // scene.SpawnToy(ToyType::Corn, cube_position.x, cube_position.y+0.3, 0.1, 0);
 
   m_targets.push_back({cube_position.x, cube_position.y, -cube_position.z});
 

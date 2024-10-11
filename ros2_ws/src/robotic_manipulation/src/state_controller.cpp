@@ -17,6 +17,14 @@ StateController::~StateController() {
   }
 }
 
+double max(double a, double b) {
+  return a > b ? a : b;
+}
+
+double min(double a, double b) {
+  return a < b ? a : b;
+}
+
 void StateController::Begin(ArmController &arm) {
   auto logger = m_node->get_logger();
 
@@ -40,6 +48,23 @@ void StateController::Begin(ArmController &arm) {
       response->success = false;
 
       arm.SetReferenceFrame(request->target_pose.header.frame_id);
+      RCLCPP_INFO(logger, "Set reference frame to: %s", request->target_pose.header.frame_id.c_str());
+
+      // Print current pose
+      auto current_pose = arm.GetEffectorPose();
+      auto [current_x, current_y, current_z, current_rx, current_ry, current_rz] =
+          std::make_tuple(current_pose[0], current_pose[1], current_pose[2],
+                          current_pose[3], current_pose[4], current_pose[5]);
+
+      RCLCPP_INFO(logger, "Current pose: %f %f %f %f %f %f", current_x, current_y,
+                  current_z, current_rx, current_ry, current_rz);
+      RCLCPP_INFO(logger, "Target pose: %f %f %f %f %f %f", 
+                  request->target_pose.pose.position.x, 
+                  request->target_pose.pose.position.y, 
+                  request->target_pose.pose.position.z,
+                  request->target_pose.pose.orientation.x,
+                  request->target_pose.pose.orientation.y,
+                  request->target_pose.pose.orientation.z);
 
       if (request->initial_gripper_state) {
         arm.Open();
@@ -50,9 +75,10 @@ void StateController::Begin(ArmController &arm) {
       {
         auto current_pose = arm.GetEffectorPose();
         auto above_current = current_pose;
-        above_current[2] = 0.35;
+        above_current[2] = min(0.4, max(above_current[2] + 0.1, 0.3));
         auto above_target = request->target_pose.pose;
-        above_target.position.z = 0.35;
+
+        above_target.position.z = min(0.4, max(above_target.position.z + 0.1, 0.3));
         if (!arm.MoveThroughWaypoints(
                 {arm.CalculatePose(above_current[0], above_current[1],
                                    above_current[2]),

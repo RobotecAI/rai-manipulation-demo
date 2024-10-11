@@ -60,7 +60,8 @@ bool ArmController::MoveThroughWaypoints(const std::vector<geometry_msgs::msg::P
 
 void ArmController::Open() {
   gripper.store(true);
-  m_hand->setNamedTarget("open");
+ // m_hand->setNamedTarget("open");
+   m_hand->setJointValueTarget("panda_finger_joint1", 0.038);
   while (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to open hand");
   }
@@ -68,7 +69,8 @@ void ArmController::Open() {
 
 void ArmController::Close() {
   gripper.store(false);
-  m_hand->setNamedTarget("close");
+  m_hand->setJointValueTarget("panda_finger_joint1", 0.002);
+  // m_hand->setNamedTarget("close");
   while (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to close hand");
   }

@@ -11,8 +11,8 @@
         "RenderSettings": {
             "MultisampleState": {
                 "samples": 2
-            
             }
-        }
+        },
+        "DefaultAAMethod": "TAA"
     }
 }

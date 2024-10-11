@@ -99,7 +99,7 @@
                     "FloatMappings": [
                         {
                             "Name": "m_currentFrameContribution",
-                            "Value": 0.1
+                            "Value": 0.3
                         },
                         {
                             "Name": "m_clampGamma",
@@ -111,7 +111,7 @@
                         }
                     ]
                 },
-                "NumJitterPositions": 1
+                "NumJitterPositions": 2
             }
         }
     }

@@ -1127,7 +1127,7 @@
             ]
         },
         "Instance_[28506111443834]": {
-            "Source": "carrot.prefab",
+            "Source": "Prefabs/carrot.prefab",
             "Patches": [
                 {
                     "op": "replace",
@@ -1148,11 +1148,41 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
                     "value": 0.725767195224762
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
+                    "value": 1.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
+                    "value": 1.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
+                    "value": 1.0
                 }
             ]
         },
         "Instance_[31862996159500]": {
-            "Source": "tomato.prefab",
+            "Source": "Prefabs/tomato.prefab",
             "Patches": [
                 {
                     "op": "replace",
@@ -1178,11 +1208,41 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/UniformScale",
                     "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
+                    "value": 1.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
+                    "value": 1.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
+                    "value": 1.0
                 }
             ]
         },
         "Instance_[4776417133434]": {
-            "Source": "corn.prefab",
+            "Source": "Prefabs/corn.prefab",
             "Patches": [
                 {
                     "op": "replace",
@@ -1223,6 +1283,36 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/UniformScale",
                     "value": 1.7000000476837158
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
+                    "value": 1.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
+                    "value": 1.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
+                    "value": 1.0
                 }
             ]
         },
@@ -1237,7 +1327,7 @@
             ]
         },
         "Instance_[665169744802]": {
-            "Source": "apple.prefab",
+            "Source": "Prefabs/apple.prefab",
             "Patches": [
                 {
                     "op": "replace",
@@ -1258,6 +1348,36 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
                     "value": 0.7312459945678711
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
+                    "value": 1.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
+                    "value": 1.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
+                    "value": 1.0
                 }
             ]
         },

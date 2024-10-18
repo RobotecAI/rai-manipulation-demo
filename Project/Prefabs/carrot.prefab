@@ -99,7 +99,7 @@
                     "Id": 6380193433768003089,
                     "Parent Entity": "ContainerEntity",
                     "Transform Data": {
-                        "UniformScale": 0.12999999523162842
+                        "UniformScale": 0.15000000596046448
                     }
                 }
             }
@@ -162,10 +162,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{5A2BD101-D92D-572E-954B-C9D5AC0FD1AC}",
-                                    "subId": 281719049
+                                    "guid": "{3F9C860E-8DC9-5CD7-9814-4179DEBFB159}",
+                                    "subId": 281903519
                                 },
-                                "assetHint": "objects/carrot_0/visual/model_normalized_0.obj.azmodel"
+                                "assetHint": "assets/edibleitems/carrot_0/visual/model_normalized_1.obj.azmodel"
                             }
                         }
                     }
@@ -220,10 +220,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{73AB2F97-30B1-557E-BD76-CEDA42A97752}",
-                                    "subId": 281903519
+                                    "guid": "{80BFB2E2-FBAE-5A7A-82AE-4CBC73A14565}",
+                                    "subId": 281719049
                                 },
-                                "assetHint": "objects/carrot_0/visual/model_normalized_1.obj.azmodel"
+                                "assetHint": "assets/edibleitems/carrot_0/visual/model_normalized_0.obj.azmodel"
                             }
                         }
                     }
@@ -271,34 +271,6 @@
             "Id": "Entity_[47308034925857]",
             "Name": "collider",
             "Components": {
-                "EditorColliderComponent": {
-                    "$type": "EditorColliderComponent",
-                    "Id": 8573511583957547910,
-                    "ColliderConfiguration": {
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "Entire object"
-                                }
-                            ]
-                        }
-                    },
-                    "ShapeConfiguration": {
-                        "ShapeType": 1,
-                        "Box": {
-                            "Scale": [
-                                0.12999999523162842,
-                                0.12999999523162842,
-                                0.12999999523162842
-                            ],
-                            "Configuration": [
-                                1.0,
-                                0.4000000059604645,
-                                0.4000000059604645
-                            ]
-                        }
-                    }
-                },
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 11014338320554233635
@@ -322,6 +294,52 @@
                     "$type": "EditorLockComponent",
                     "Id": 5880455332712566381
                 },
+                "EditorMeshColliderComponent_2": {
+                    "$type": "EditorMeshColliderComponent",
+                    "Id": 14006750661757841932,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "material_0",
+                                    "MaterialAsset": {
+                                        "assetId": {
+                                            "guid": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}",
+                                            "subId": 1
+                                        },
+                                        "assetHint": "physx/rubber.physicsmaterial"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{3F9C860E-8DC9-5CD7-9814-4179DEBFB159}",
+                                    "subId": 346093279
+                                },
+                                "assetHint": "assets/edibleitems/carrot_0/visual/model_normalized_1.obj.pxmesh"
+                            },
+                            "Configuration": {
+                                "Scale": [
+                                    0.15000000596046448,
+                                    0.15000000596046448,
+                                    0.15000000596046448
+                                ],
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{3F9C860E-8DC9-5CD7-9814-4179DEBFB159}",
+                                        "subId": 346093279
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/edibleitems/carrot_0/visual/model_normalized_1.obj.pxmesh"
+                                }
+                            }
+                        }
+                    }
+                },
                 "EditorOnlyEntityComponent": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 13470213332710046847
@@ -335,17 +353,25 @@
                     "Id": 14790875665153150865,
                     "Configuration": {
                         "entityId": "",
-                        "Mass": 0.11664001643657684,
+                        "Linear damping": 20.0,
+                        "Angular damping": 200.0,
+                        "Compute Mass": false,
+                        "Mass": 0.15000000596046448,
+                        "Centre of mass offset": [
+                            0.0055551910772919655,
+                            -0.001232620095834136,
+                            -0.0013736517867073417
+                        ],
                         "Inertia tensor": [
-                            0.00002519424924685154,
+                            0.000026265293854521587,
                             0.0,
                             0.0,
                             0.0,
-                            0.00009132914419751614,
+                            0.00022326062025967985,
                             0.0,
                             0.0,
                             0.0,
-                            0.00009132914419751614
+                            0.00022384269686881453
                         ]
                     }
                 },

@@ -54,29 +54,6 @@
             "Id": "Entity_[27267717522721]",
             "Name": "collider",
             "Components": {
-                "EditorColliderComponent": {
-                    "$type": "EditorColliderComponent",
-                    "Id": 18065870994813963486,
-                    "ColliderConfiguration": {
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "Entire object"
-                                }
-                            ]
-                        }
-                    },
-                    "ShapeConfiguration": {
-                        "ShapeType": 1,
-                        "Box": {
-                            "Scale": [
-                                0.05000000074505806,
-                                0.05000000074505806,
-                                0.05000000074505806
-                            ]
-                        }
-                    }
-                },
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 1513696580596708157
@@ -100,6 +77,52 @@
                     "$type": "EditorLockComponent",
                     "Id": 10399194932652354697
                 },
+                "EditorMeshColliderComponent": {
+                    "$type": "EditorMeshColliderComponent",
+                    "Id": 6188881620171607661,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "material_0",
+                                    "MaterialAsset": {
+                                        "assetId": {
+                                            "guid": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}",
+                                            "subId": 1
+                                        },
+                                        "assetHint": "physx/rubber.physicsmaterial"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{7BAA971D-61F8-5485-B911-99DBE8E87526}",
+                                    "subId": 1700329216
+                                },
+                                "assetHint": "assets/edibleitems/apple_0/visual/model_normalized_0.obj.pxmesh"
+                            },
+                            "Configuration": {
+                                "Scale": [
+                                    0.05000000074505806,
+                                    0.05000000074505806,
+                                    0.05000000074505806
+                                ],
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{7BAA971D-61F8-5485-B911-99DBE8E87526}",
+                                        "subId": 1700329216
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/edibleitems/apple_0/visual/model_normalized_0.obj.pxmesh"
+                                }
+                            }
+                        }
+                    }
+                },
                 "EditorOnlyEntityComponent": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 14411200196207470341
@@ -113,17 +136,25 @@
                     "Id": 11883532161581818420,
                     "Configuration": {
                         "entityId": "",
+                        "Linear damping": 20.0,
+                        "Angular damping": 200.0,
+                        "Compute Mass": false,
                         "Mass": 0.125,
+                        "Centre of mass offset": [
+                            0.00016254135698545724,
+                            0.0003955668944399804,
+                            -0.001999609638005495
+                        ],
                         "Inertia tensor": [
-                            0.00005208334550843574,
+                            0.000029238794013508596,
                             0.0,
                             0.0,
                             0.0,
-                            0.00005208334550843574,
+                            0.000028549733542604372,
                             0.0,
                             0.0,
                             0.0,
-                            0.00005208334550843574
+                            0.000030382459954125807
                         ]
                     }
                 },
@@ -203,10 +234,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{087B05DD-C281-5B82-9314-2DE768830C71}",
+                                    "guid": "{7BAA971D-61F8-5485-B911-99DBE8E87526}",
                                     "subId": 281719049
                                 },
-                                "assetHint": "objects/apple_0/visual/model_normalized_0.obj.azmodel"
+                                "assetHint": "assets/edibleitems/apple_0/visual/model_normalized_0.obj.azmodel"
                             }
                         }
                     }

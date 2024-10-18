@@ -99,12 +99,7 @@
                     "Id": 7857151619435228126,
                     "Parent Entity": "ContainerEntity",
                     "Transform Data": {
-                        "Rotate": [
-                            90.0,
-                            -90.0,
-                            0.0
-                        ],
-                        "UniformScale": 0.09000000357627869
+                        "UniformScale": 0.05999999865889549
                     }
                 }
             }
@@ -120,10 +115,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{96C51299-68B3-5B9F-A046-B10C8ADD81F6}",
+                                    "guid": "{2C7908A8-8A8E-55F3-934E-0C1248AF2157}",
                                     "subId": 281719049
                                 },
-                                "assetHint": "objects/corn_0/visual/model_normalized_0.obj.azmodel"
+                                "assetHint": "assets/edibleitems/corn_0/visual/model_normalized_0.obj.azmodel"
                             }
                         }
                     }
@@ -163,7 +158,14 @@
                 "TransformComponent": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 4017949314832230565,
-                    "Parent Entity": "Entity_[46547825714465]"
+                    "Parent Entity": "Entity_[46547825714465]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.000003814697265625,
+                            4.76837158203125e-7,
+                            -0.0000019073486328125
+                        ]
+                    }
                 }
             }
         },
@@ -173,37 +175,7 @@
             "Components": {
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 1062294039713658124,
-                    "DisabledComponents": {
-                        "EditorColliderComponent": {
-                            "$type": "EditorColliderComponent",
-                            "Id": 6093674679856910979,
-                            "ColliderConfiguration": {
-                                "MaterialSlots": {
-                                    "Slots": [
-                                        {
-                                            "Name": "Entire object"
-                                        }
-                                    ]
-                                }
-                            },
-                            "ShapeConfiguration": {
-                                "ShapeType": 1,
-                                "Box": {
-                                    "Scale": [
-                                        0.09000000357627869,
-                                        0.09000000357627869,
-                                        0.09000000357627869
-                                    ],
-                                    "Configuration": [
-                                        0.4000000059604645,
-                                        0.4000000059604645,
-                                        1.0
-                                    ]
-                                }
-                            }
-                        }
-                    }
+                    "Id": 1062294039713658124
                 },
                 "EditorEntityIconComponent": {
                     "$type": "EditorEntityIconComponent",
@@ -226,7 +198,7 @@
                 },
                 "EditorMeshColliderComponent": {
                     "$type": "EditorMeshColliderComponent",
-                    "Id": 7060096027661640126,
+                    "Id": 10741364408562519281,
                     "ColliderConfiguration": {
                         "MaterialSlots": {
                             "Slots": [
@@ -234,10 +206,10 @@
                                     "Name": "material_0",
                                     "MaterialAsset": {
                                         "assetId": {
-                                            "guid": "{F0C181E4-68A6-5E2D-A693-5F8512A3F6B1}",
+                                            "guid": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}",
                                             "subId": 1
                                         },
-                                        "assetHint": "assets/materials/tomato.physicsmaterial"
+                                        "assetHint": "physx/rubber.physicsmaterial"
                                     }
                                 }
                             ]
@@ -247,26 +219,25 @@
                         "PhysicsAsset": {
                             "Asset": {
                                 "assetId": {
-                                    "guid": "{96C51299-68B3-5B9F-A046-B10C8ADD81F6}",
-                                    "subId": 3073690921
+                                    "guid": "{2C7908A8-8A8E-55F3-934E-0C1248AF2157}",
+                                    "subId": 1833420515
                                 },
-                                "assetHint": "objects/corn_0/visual/model_normalized_0.obj.pxmesh"
+                                "assetHint": "assets/edibleitems/corn_0/visual/model_normalized_0.obj.pxmesh"
                             },
                             "Configuration": {
                                 "Scale": [
-                                    0.09000000357627869,
-                                    0.09000000357627869,
-                                    0.09000000357627869
+                                    0.10199999809265137,
+                                    0.10199999809265137,
+                                    0.10199999809265137
                                 ],
                                 "PhysicsAsset": {
                                     "assetId": {
-                                        "guid": "{96C51299-68B3-5B9F-A046-B10C8ADD81F6}",
-                                        "subId": 3073690921
+                                        "guid": "{2C7908A8-8A8E-55F3-934E-0C1248AF2157}",
+                                        "subId": 1833420515
                                     },
                                     "loadBehavior": "QueueLoad",
-                                    "assetHint": "objects/corn_0/visual/model_normalized_0.obj.pxmesh"
-                                },
-                                "UseMaterialsFromAsset": false
+                                    "assetHint": "assets/edibleitems/corn_0/visual/model_normalized_0.obj.pxmesh"
+                                }
                             }
                         }
                     }
@@ -284,22 +255,25 @@
                     "Id": 4476142177010692222,
                     "Configuration": {
                         "entityId": "",
-                        "Mass": 0.06522223353385925,
+                        "Linear damping": 20.0,
+                        "Angular damping": 200.0,
+                        "Compute Mass": false,
+                        "Mass": 0.20000000298023224,
                         "Centre of mass offset": [
-                            -0.0003324110875837505,
-                            -0.0010882341302931309,
-                            -0.0010628977324813604
+                            -0.0003767325251828879,
+                            -0.0012333319755271077,
+                            -0.0012046174379065633
                         ],
                         "Inertia tensor": [
-                            0.00003405342795304023,
+                            0.0001341252209385857,
                             0.0,
                             0.0,
                             0.0,
-                            0.00003460256630205549,
+                            0.00013628810120280832,
                             0.0,
                             0.0,
                             0.0,
-                            0.000008776270078669768
+                            0.00003456683407421224
                         ]
                     }
                 },

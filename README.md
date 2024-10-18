@@ -33,12 +33,14 @@ The demonstration features a simulation of a robotic arm equipped with a gripper
     cmake --build build/linux --config profile --target RAIManipulationDemo.Assets RAIManipulationDemo.GameLauncher
     ```
 
-3. Build the ROS2 packages.
+3. Build the ROS2 package.
 
-    ```bash
-    cd ros2_ws
-    colcon build
-    ```
+    > ****NOTE****: The package requires to have [RAI](https://github.com/RobotecAI/rai) packages built and sourced.
+
+        ```bash
+        cd ros2_ws
+        colcon build
+        ```
 
 ## Running the demo
 
@@ -51,21 +53,13 @@ The demonstration features a simulation of a robotic arm equipped with a gripper
     ros2 launch panda_moveit_config_demo.launch.py
     ```
 
-4. In another terminal, run the OpenVLA inference node.
-    - Source the ROS 2 workspace.
-
+4. Run the robotic manipulation node.
     ```bash
     source ros2_ws/install/setup.bash
+    ros2 run robotic_manipulation robotic_manipulation
     ```
 
-    - Run the OpenVLA inference node
+The package exposes one service:
 
-    ```bash
-    ros2 run run_vla vla
-    ```
-
-    - In yet another terminal, run the interface node
-
-    ```bash
-    ros2 run robotic_manipulation robotic_manipulation 1 100 vla
-    ```
+- `/manipulator_move_to` ([rai_interfaces/srv/ManipulatorMoveTo](https://github.com/RobotecAI/rai/blob/development/src/rai_interfaces/srv/ManipulatorMoveTo.srv)) -
+Moves the manipulator to the specified pose, with two intermediate poses above the current position and the target pose, allowing safe manipulation of the objects on the scene. Allows specifying gripper states before and after the movement.

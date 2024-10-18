@@ -932,6 +932,36 @@
             "Patches": [
                 {
                     "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
+                    "value": 0.0055551910772919655
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
+                    "value": -0.001232620095834136
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
+                    "value": -0.0013736517867073417
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
+                    "value": 0.000026265293854521587
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
+                    "value": 0.00022326062025967985
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
+                    "value": 0.00022384269686881453
+                },
+                {
+                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[20588120919860]"
                 },
@@ -943,12 +973,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.2783992290496826
+                    "value": 2.309497117996216
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.717720091342926
+                    "value": 0.725767195224762
                 }
             ]
         },

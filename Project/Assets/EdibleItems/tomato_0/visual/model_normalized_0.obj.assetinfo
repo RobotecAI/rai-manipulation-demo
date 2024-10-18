@@ -7,7 +7,10 @@
             "NodeSelectionList": {
                 "selectedNodes": [
                     "model_normalized_0_obj",
-                    "model_normalized_0_obj.defaultobject"
+                    "model_normalized_0_obj.defaultobject",
+                    "model_normalized_0_obj.defaultobject.UV0",
+                    "model_normalized_0_obj.defaultobject.material_0",
+                    "model_normalized_0_obj.defaultobject.transform"
                 ]
             },
             "export method": 1,
@@ -23,10 +26,10 @@
                         "Name": "material_0",
                         "MaterialAsset": {
                             "assetId": {
-                                "guid": "{54B141C0-D648-5847-84E0-13F425739027}",
+                                "guid": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}",
                                 "subId": 1
                             },
-                            "assetHint": "assets/materials/edible.physicsmaterial"
+                            "assetHint": "physx/rubber.physicsmaterial"
                         }
                     }
                 ]
@@ -37,9 +40,11 @@
             "name": "model_normalized_0",
             "nodeSelectionList": {
                 "selectedNodes": [
-                    {},
                     "model_normalized_0_obj",
-                    "model_normalized_0_obj.defaultobject"
+                    "model_normalized_0_obj.defaultobject",
+                    "model_normalized_0_obj.defaultobject.UV0",
+                    "model_normalized_0_obj.defaultobject.material_0",
+                    "model_normalized_0_obj.defaultobject.transform"
                 ]
             },
             "rules": {

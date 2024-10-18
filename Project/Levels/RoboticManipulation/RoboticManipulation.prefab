@@ -888,7 +888,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.9361906051635742
+                    "value": 1.9361906051635744
                 },
                 {
                     "op": "replace",
@@ -913,7 +913,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.9903171062469482
+                    "value": 1.990317106246948
                 },
                 {
                     "op": "replace",
@@ -932,26 +932,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Mass",
-                    "value": 0.020000003278255463
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 0.0000013333337847143412
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 0.000004833334514842136
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
-                    "value": 0.000004833334514842136
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[20588120919860]"
                 },
@@ -968,68 +948,13 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7345869541168213
+                    "value": 0.717720091342926
                 }
             ]
         },
         "Instance_[31862996159500]": {
             "Source": "tomato.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[4954281529196]/Components/TransformComponent/Transform Data/UniformScale",
-                    "value": 0.03999999910593033
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorColliderComponent/ShapeConfiguration/Box/Scale/0",
-                    "value": 0.05199999734759331
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorColliderComponent/ShapeConfiguration/Box/Scale/1",
-                    "value": 0.05199999734759331
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorColliderComponent/ShapeConfiguration/Box/Scale/2",
-                    "value": 0.05199999734759331
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Linear damping",
-                    "value": 20.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Angular damping",
-                    "value": 210.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Compute Mass",
-                    "value": false
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Mass",
-                    "value": 0.10000000149011612
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 0.000045066663005854934
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 0.000045066663005854934
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
-                    "value": 0.000045066663005854934
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1048,7 +973,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7113155722618103
+                    "value": 0.7324118614196777
                 },
                 {
                     "op": "replace",
@@ -1062,46 +987,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorColliderComponent/ShapeConfiguration/Box/Scale/0",
-                    "value": 0.10199999809265137
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorColliderComponent/ShapeConfiguration/Box/Scale/1",
-                    "value": 0.10199999809265137
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorColliderComponent/ShapeConfiguration/Box/Scale/2",
-                    "value": 0.10199999809265137
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Mass",
-                    "value": 0.1697932928800583
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 0.00017076452786568552
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 0.00017076452786568552
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
-                    "value": 0.000047107456339290366
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/TransformComponent/Transform Data/Rotate/1",
-                    "value": 90.0
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[20588120919860]"
                 },
@@ -1113,27 +998,27 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.6636900901794434
+                    "value": 2.6697561740875244
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7974216341972351
+                    "value": 0.731939435005188
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Rotate/0",
-                    "value": 84.85468292236328
+                    "value": -174.7096405029297
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Rotate/1",
-                    "value": 7.404266357421875
+                    "value": 89.15192413330078
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Rotate/2",
-                    "value": 5.292623519897461
+                    "value": -90.00092315673828
                 },
                 {
                     "op": "replace",
@@ -1173,7 +1058,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7113155722618103
+                    "value": 0.7312459945678711
                 }
             ]
         },
@@ -2535,64 +2420,26 @@
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[7305513678979]/Components/EditorDisabledCompositionComponent/DisabledComponents",
-                    "value": {
-                        "EditorCameraComponent": {
-                            "$type": "{CA11DA46-29FF-4083-B5F6-E02C3A8C3A3D} EditorCameraComponent",
-                            "Id": 17794084959949726180,
-                            "Controller": {
-                                "Configuration": {
-                                    "Orthographic": false,
-                                    "Orthographic Half Width": 5.0,
-                                    "Field of View": 70.0,
-                                    "Near Clip Plane Distance": 0.009999999776482582,
-                                    "Far Clip Plane Distance": 1024.0,
-                                    "SpecifyDimensions": false,
-                                    "FrustumWidth": 256.0,
-                                    "FrustumHeight": 256.0,
-                                    "MakeActiveViewOnActivation": true,
-                                    "RenderToTexture": {
-                                        "assetId": {
-                                            "guid": "{00000000-0000-0000-0000-000000000000}",
-                                            "subId": 0
-                                        },
-                                        "loadBehavior": "QueueLoad",
-                                        "assetHint": ""
-                                    },
-                                    "PipelineTemplate": "CameraPipeline"
-                                }
-                            },
-                            "FrustumLengthPercent": 1.0,
-                            "FrustumDrawColor": [
-                                1.0,
-                                1.0,
-                                0.0,
-                                0.8999999761581421
-                            ]
-                        },
-                        "FlyCameraInputComponent": {
-                            "$type": "GenericComponentWrapper",
-                            "Id": 7813379949912029962,
-                            "m_template": {
-                                "$type": "FlyCameraInputComponent",
-                                "Id": 0,
-                                "Move Speed": 1.0,
-                                "Rotation Speed": 1.0,
-                                "Mouse Sensitivity": 0.004999999888241291,
-                                "Invert Rotation Input X": false,
-                                "Invert Rotation Input Y": false,
-                                "Is enabled": true
-                            }
-                        }
-                    }
+                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/0",
+                    "value": "Entity_[7296923744387]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/1",
+                    "value": "Entity_[7301218711683]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/2",
+                    "value": "Entity_[9526011771011]"
                 },
                 {
                     "op": "remove",
-                    "path": "/Entities/Entity_[7305513678979]/Components/EditorCameraComponent"
+                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/3"
                 },
                 {
                     "op": "remove",
-                    "path": "/Entities/Entity_[7305513678979]/Components/FlyCameraInputComponent"
+                    "path": "/Entities/Entity_[7305513678979]"
                 }
             ]
         }

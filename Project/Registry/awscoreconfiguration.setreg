@@ -1,4 +1,25 @@
-{
+{    
+    "O3DE": {
+        "Preferences": {
+            "SceneAPI": {
+                "UseSkeletonBoneContainer": false
+            }
+        },
+        "Autoexec": {
+            "ConsoleCommands": {
+                "ed_enableOutlinerOverrideManagement": true,
+                "ed_enableDPEInspector": true,
+                "ed_enableInspectorOverrideManagement": true
+            }
+        }
+        "InputSystem":
+        {
+            "Mouse":
+            {
+                "CaptureMouseCursor": false
+            }
+        }
+    },
     "Amazon":
     {
         "AWSCore":

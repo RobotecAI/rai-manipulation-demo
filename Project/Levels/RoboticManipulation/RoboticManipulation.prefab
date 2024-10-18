@@ -23,11 +23,16 @@
                     "Instance_[712990187248]/ContainerEntity",
                     "Entity_[4189935783732]",
                     "Entity_[20588120919860]",
-                    "Instance_[476724949598]/ContainerEntity",
+                    "Instance_[1996802390199]/ContainerEntity",
                     "Entity_[3876413040103]",
                     "Instance_[5411642372702]/ContainerEntity",
-                    "Instance_[12287885013598]/ContainerEntity",
-                    "Instance_[12300769915486]/ContainerEntity"
+                    "Instance_[12300769915486]/ContainerEntity",
+                    "Instance_[21190581394846]/ContainerEntity",
+                    "Instance_[21207761264030]/ContainerEntity",
+                    "Instance_[21224941133214]/ContainerEntity",
+                    "Instance_[17840506903966]/ContainerEntity",
+                    "Instance_[11031473624367]/ContainerEntity",
+                    "Instance_[15893376603439]/ContainerEntity"
                 ]
             },
             "Component_[15230859088967841193]": {
@@ -2171,8 +2176,8 @@
         }
     },
     "Instances": {
-        "Instance_[12287885013598]": {
-            "Source": "Prefabs/black_cube.prefab",
+        "Instance_[11031473624367]": {
+            "Source": "tomato.prefab",
             "Patches": [
                 {
                     "op": "replace",
@@ -2182,17 +2187,42 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 2.074065923690796
+                    "value": 1.7134073972702026
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.6530332565307617
+                    "value": 2.334366798400879
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7525851130485535
+                    "value": 0.7113156318664551
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Linear damping",
+                    "value": 10.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Angular damping",
+                    "value": 10.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
+                    "value": -0.0001428867399226874
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
+                    "value": 0.000031628645956516266
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
+                    "value": 0.001544575090520084
                 }
             ]
         },
@@ -2222,12 +2252,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 2.171161651611328
+                    "value": 2.18436050415039
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.576634168624878
+                    "value": 2.6627488136291504
                 },
                 {
                     "op": "replace",
@@ -2236,23 +2266,464 @@
                 }
             ]
         },
-        "Instance_[476724949598]": {
-            "Source": "Prefabs/red_cube.prefab",
+        "Instance_[15893376603439]": {
+            "Source": "corn.prefab",
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[485314884190]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
-                    "value": 0.02500000037252903
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[485314884190]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 0.00020833333837799728
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 1.6687986850738523
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[485314884190]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 0.00020833333837799728
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 2.17030668258667
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.7113155722618103
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Linear damping",
+                    "value": 10.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Angular damping",
+                    "value": 10.0
+                }
+            ]
+        },
+        "Instance_[17840506903966]": {
+            "Source": "Prefabs/tomato.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 2.02538800239563
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 3.1080100536346436
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.7740926742553711
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/UniformScale",
+                    "value": 1.399999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorDisabledCompositionComponent/DisabledComponents",
+                    "value": {
+                        "EditorColliderComponent": {
+                            "$type": "EditorColliderComponent",
+                            "Id": 1695540979777558050,
+                            "ColliderConfiguration": {
+                                "CollisionLayer": {
+                                    "Index": 0
+                                },
+                                "CollisionGroupId": {
+                                    "GroupId": "{00000000-0000-0000-0000-000000000000}"
+                                },
+                                "Visible": false,
+                                "Trigger": false,
+                                "Simulated": true,
+                                "DummySimulated": false,
+                                "InSceneQueries": true,
+                                "Exclusive": true,
+                                "Position": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ],
+                                "Rotation": [
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    1.0
+                                ],
+                                "MaterialSlots": {
+                                    "Slots": [
+                                        {
+                                            "Name": "Entire object",
+                                            "MaterialAsset": {
+                                                "assetId": {
+                                                    "guid": "{00000000-0000-0000-0000-000000000000}",
+                                                    "subId": 0
+                                                },
+                                                "loadBehavior": "QueueLoad",
+                                                "assetHint": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                "propertyVisibilityFlags": 255,
+                                "ColliderTag": "",
+                                "RestOffset": 0.0,
+                                "ContactOffset": 0.019999999552965164
+                            },
+                            "ShapeConfiguration": {
+                                "ShapeType": 1,
+                                "Sphere": {
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Radius": 0.5
+                                },
+                                "Box": {
+                                    "Scale": [
+                                        0.05000000074505806,
+                                        0.05000000074505806,
+                                        0.05000000074505806
+                                    ],
+                                    "Configuration": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ]
+                                },
+                                "Capsule": {
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Height": 1.0,
+                                    "Radius": 0.25
+                                },
+                                "Cylinder": {
+                                    "Configuration": {
+                                        "Scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "CookedData": "",
+                                        "Type": 0
+                                    },
+                                    "Subdivision": 16,
+                                    "Height": 1.0,
+                                    "Radius": 1.0
+                                },
+                                "PhysicsAsset": {
+                                    "Asset": {
+                                        "assetId": {
+                                            "guid": "{00000000-0000-0000-0000-000000000000}",
+                                            "subId": 0
+                                        },
+                                        "loadBehavior": "QueueLoad",
+                                        "assetHint": ""
+                                    },
+                                    "Configuration": {
+                                        "Scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "PhysicsAsset": {
+                                            "assetId": {
+                                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                                "subId": 0
+                                            },
+                                            "loadBehavior": "PreLoad",
+                                            "assetHint": ""
+                                        },
+                                        "AssetScale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "UseMaterialsFromAsset": true,
+                                        "SubdivisionLevel": 4
+                                    }
+                                },
+                                "HasNonUniformScale": false,
+                                "SubdivisionLevel": 4
+                            },
+                            "DebugDrawSettings": {
+                                "LocallyEnabled": true
+                            },
+                            "ComponentMode": {},
+                            "HasNonUniformScale": false
+                        }
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorMeshColliderComponent",
+                    "value": {
+                        "$type": "EditorMeshColliderComponent",
+                        "Id": 12639297336699587826,
+                        "ColliderConfiguration": {
+                            "CollisionLayer": {
+                                "Index": 0
+                            },
+                            "CollisionGroupId": {
+                                "GroupId": "{00000000-0000-0000-0000-000000000000}"
+                            },
+                            "Visible": false,
+                            "Trigger": false,
+                            "Simulated": true,
+                            "DummySimulated": false,
+                            "InSceneQueries": true,
+                            "Exclusive": true,
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                0.7071067690849304,
+                                0.7071067094802856,
+                                0.0
+                            ],
+                            "MaterialSlots": {
+                                "Slots": [
+                                    {
+                                        "Name": "material_0",
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{F0C181E4-68A6-5E2D-A693-5F8512A3F6B1}",
+                                                "subId": 1
+                                            },
+                                            "loadBehavior": "QueueLoad",
+                                            "assetHint": "assets/materials/tomato.physicsmaterial"
+                                        }
+                                    }
+                                ]
+                            },
+                            "propertyVisibilityFlags": 255,
+                            "ColliderTag": "",
+                            "RestOffset": 0.0,
+                            "ContactOffset": 0.019999999552965164
+                        },
+                        "ShapeConfiguration": {
+                            "PhysicsAsset": {
+                                "Asset": {
+                                    "assetId": {
+                                        "guid": "{7C6D0197-F967-5114-97B6-69E044128AAD}",
+                                        "subId": 905579102
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/mesh.fbx.pxmesh"
+                                },
+                                "Configuration": {
+                                    "Scale": [
+                                        0.07000000029802322,
+                                        0.07000000029802322,
+                                        0.07000000029802322
+                                    ],
+                                    "PhysicsAsset": {
+                                        "assetId": {
+                                            "guid": "{7C6D0197-F967-5114-97B6-69E044128AAD}",
+                                            "subId": 905579102
+                                        },
+                                        "loadBehavior": "QueueLoad",
+                                        "assetHint": "assets/mesh.fbx.pxmesh"
+                                    },
+                                    "AssetScale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "UseMaterialsFromAsset": false,
+                                    "SubdivisionLevel": 4
+                                }
+                            },
+                            "HasNonUniformScale": false,
+                            "SubdivisionLevel": 4
+                        },
+                        "DebugDrawSettings": {
+                            "LocallyEnabled": true
+                        },
+                        "ComponentMode": {},
+                        "HasNonUniformScale": false
+                    }
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Linear damping",
+                    "value": 10.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Angular damping",
+                    "value": 10.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Mass",
+                    "value": 0.1516985148191452
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
+                    "value": -0.00020004140969831496
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
+                    "value": 0.000044280197471380234
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
+                    "value": 0.0021624048240482807
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
+                    "value": 0.00006228568236110732
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
+                    "value": 0.00006750702596036717
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
+                    "value": 0.00007161831308621913
+                },
+                {
+                    "op": "remove",
+                    "path": "/Entities/Entity_[45233565721889]/Components/EditorColliderComponent"
+                }
+            ]
+        },
+        "Instance_[1996802390199]": {
+            "Source": "Prefabs/black_cube.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 1.8478355407714844
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 3.25162935256958
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.7434366345405579
+                }
+            ]
+        },
+        "Instance_[21190581394846]": {
+            "Source": "Prefabs/carrot.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorColliderComponent/ColliderConfiguration/Rotation/1",
+                    "value": 0.7071067690849304
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorColliderComponent/ColliderConfiguration/Rotation/3",
+                    "value": 0.7071067094802856
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/guid",
+                    "value": "{F0C181E4-68A6-5E2D-A693-5F8512A3F6B1}"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/subId",
+                    "value": 1
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetHint",
+                    "value": "assets/materials/tomato.physicsmaterial"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorColliderComponent/ShapeConfiguration/ShapeType",
+                    "value": 2
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorColliderComponent/ShapeConfiguration/Capsule/Scale/0",
+                    "value": 0.181999996304512
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorColliderComponent/ShapeConfiguration/Capsule/Scale/1",
+                    "value": 0.181999996304512
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorColliderComponent/ShapeConfiguration/Capsule/Scale/2",
+                    "value": 0.181999996304512
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorColliderComponent/ShapeConfiguration/Capsule/Height",
+                    "value": 0.9800000190734864
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorColliderComponent/ShapeConfiguration/Capsule/Radius",
+                    "value": 0.14000000059604645
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Linear damping",
+                    "value": 10.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Angular damping",
+                    "value": 10.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Mass",
+                    "value": 0.3291398882865906
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
+                    "value": 0.0001023451259243302
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
+                    "value": 0.0007771481177769601
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
+                    "value": 0.0007771481177769601
                 },
                 {
                     "op": "replace",
@@ -2262,17 +2733,154 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.8435720205307007
+                    "value": 2.061601161956787
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 3.0860071182250977
+                    "value": 2.8838424682617188
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7525851130485535
+                    "value": 0.80833500623703
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/UniformScale",
+                    "value": 1.399999976158142
+                }
+            ]
+        },
+        "Instance_[21207761264030]": {
+            "Source": "Prefabs/corn.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorMeshColliderComponent/ShapeConfiguration/PhysicsAsset/Configuration/Scale/0",
+                    "value": 0.12600000202655792
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorMeshColliderComponent/ShapeConfiguration/PhysicsAsset/Configuration/Scale/1",
+                    "value": 0.12600000202655792
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorMeshColliderComponent/ShapeConfiguration/PhysicsAsset/Configuration/Scale/2",
+                    "value": 0.12600000202655792
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Linear damping",
+                    "value": 10.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Angular damping",
+                    "value": 10.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Mass",
+                    "value": 0.17896981537342072
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
+                    "value": -0.0004653755167964846
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
+                    "value": -0.001523527898825705
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
+                    "value": -0.0014880569651722908
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
+                    "value": 0.00018314752378501
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
+                    "value": 0.0001861009222920984
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
+                    "value": 0.0000472008905489929
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 1.9224891662597656
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 2.151181697845459
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.7937284708023071
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Rotate/2",
+                    "value": 180.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/UniformScale",
+                    "value": 1.399999976158142
+                }
+            ]
+        },
+        "Instance_[21224941133214]": {
+            "Source": "Prefabs/cupcake.prefab",
+            "Patches": [
+                {
+                    "op": "remove",
+                    "path": "/Entities/Entity_[3708741013356]"
+                },
+                {
+                    "op": "remove",
+                    "path": "/Entities/Entity_[46801228784929]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 1.9122967720031736
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 2.587167978286743
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.7113156318664551
+                },
+                {
+                    "op": "remove",
+                    "path": "/Entities/Entity_[3700151078764]/Components/EditorEntitySortComponent/Child Entity Order/0"
                 }
             ]
         },
@@ -2287,12 +2895,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.8328379392623901
+                    "value": 2.0548062324523926
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.1413795948028564
+                    "value": 2.296726703643799
                 },
                 {
                     "op": "replace",
@@ -2343,10 +2951,6 @@
                     "op": "replace",
                     "path": "/Entities/Entity_[743054958320]/Components/AZ::Render::EditorMeshComponent/Controller/Configuration/ModelAsset/assetHint",
                     "value": "assets/urdfimporter/1440394708_panda/link5.dae.azmodel"
-                },
-                {
-                    "op": "remove",
-                    "path": "/Entities/Entity_[751644892912]/Components/EditorEntitySortComponent/Child Entity Order/3"
                 },
                 {
                     "op": "replace",
@@ -2532,76 +3136,6 @@
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/VerticalFieldOfViewDeg",
-                    "value": 65.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Width",
-                    "value": 720
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Height",
-                    "value": 576
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Frequency (HZ)",
-                    "value": 1.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Color Image/Topic",
-                    "value": "color_image"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Depth Image/Topic",
-                    "value": "depth_image"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Frame Name",
-                    "value": "RGBDCamera"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Parent Entity",
-                    "value": "Entity_[794594565872]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 0.9860278367996216
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 0.038947343826293945
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.6846956014633179
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/0",
-                    "value": 179.19937133789065
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/1",
-                    "value": -44.30057144165039
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/2",
-                    "value": -90.97058868408205
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[773119729392]/Components/AZ::Render::EditorMeshComponent/Controller/Configuration/ModelAsset/assetHint",
                     "value": "assets/urdfimporter/1440394708_panda/link0.dae.azmodel"
                 },
@@ -2669,11 +3203,6 @@
                     "op": "replace",
                     "path": "/Entities/Entity_[816069402352]/Components/AZ::Render::EditorMeshComponent/Controller/Configuration/ModelAsset/assetHint",
                     "value": "assets/urdfimporter/1440394708_panda/finger.dae.azmodel"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[820364369648]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Publish Transform",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -3134,6 +3663,90 @@
                     }
                 },
                 {
+                    "op": "remove",
+                    "path": "/Entities/Entity_[751644892912]/Components/EditorEntitySortComponent/Child Entity Order/3"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[751644892912]/Components/FingerGripperComponent/m_template/VelocityEpsilon",
+                    "value": 0.10000000149011612
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/VerticalFieldOfViewDeg",
+                    "value": 65.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Width",
+                    "value": 720
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/CameraSensorConfig/Height",
+                    "value": 576
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Frequency (HZ)",
+                    "value": 1.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Color Image/Topic",
+                    "value": "color_image"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2CameraSensorEditorComponent/SensorConfig/Publishers/Depth Image/Topic",
+                    "value": "depth_image"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Frame Name",
+                    "value": "RGBDCamera"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Parent Entity",
+                    "value": "Entity_[794594565872]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 0.9860278367996216
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 0.038947343826293945
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.6846956014633179
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/0",
+                    "value": 179.19937133789065
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/1",
+                    "value": -44.30057144165039
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[768824762096]/Components/TransformComponent/Transform Data/Rotate/2",
+                    "value": -90.97058868408205
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[820364369648]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Publish Transform",
+                    "value": true
+                },
+                {
                     "op": "add",
                     "path": "/Entities/Entity_[378807372790]",
                     "value": {
@@ -3188,8 +3801,8 @@
                                 "Id": 17190891644987862308,
                                 "CameraSensorConfig": {
                                     "VerticalFieldOfViewDeg": 65.0,
-                                    "Width": 720,
-                                    "Height": 576,
+                                    "Width": 1920,
+                                    "Height": 1080,
                                     "Depth": true,
                                     "Color": true,
                                     "ClipNear": 0.009999999776482582,
@@ -3198,7 +3811,7 @@
                                 "SensorConfig": {
                                     "Visualize": true,
                                     "Publishing Enabled": true,
-                                    "Frequency (HZ)": 60.0,
+                                    "Frequency (HZ)": 30.0,
                                     "Publishers": {
                                         "Color Camera Info": {
                                             "Type": "sensor_msgs::msg::CameraInfo",
@@ -3339,8 +3952,8 @@
                                 "Id": 16834096178040187784,
                                 "CameraSensorConfig": {
                                     "VerticalFieldOfViewDeg": 65.0,
-                                    "Width": 720,
-                                    "Height": 576,
+                                    "Width": 3840,
+                                    "Height": 2160,
                                     "Depth": true,
                                     "Color": true,
                                     "ClipNear": 0.009999999776482582,
@@ -3349,7 +3962,7 @@
                                 "SensorConfig": {
                                     "Visualize": true,
                                     "Publishing Enabled": true,
-                                    "Frequency (HZ)": 1.0,
+                                    "Frequency (HZ)": 30.0,
                                     "Publishers": {
                                         "Color Camera Info": {
                                             "Type": "sensor_msgs::msg::CameraInfo",

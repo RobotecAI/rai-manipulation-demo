@@ -24,25 +24,26 @@
     "gem_names": [
         "Atom",
         "CameraFramework",
+        "Compression",
         "DebugDraw",
-        "EditorPythonBindings",
+        "DiffuseProbeGrid",
         "EMotionFX",
+        "EditorPythonBindings",
         "ImGui",
+        "KitchenTestAssets",
         "LyShine",
         "PhysX5",
         "PhysX5Debug",
-        "PrimitiveAssets",
         "PrefabBuilder",
+        "PrimitiveAssets",
+        "ROS2>=3.1.0",
+        "RosRobotSample==2.0.1",
         "ScriptCanvasPhysics",
         "ScriptEvents",
         "StartingPointInput",
         "TextureAtlas",
-        "WhiteBox",
-        "DiffuseProbeGrid",
-        "Compression",
         "WarehouseAssets",
         "WarehouseAutomation>=1.1.0",
-        "ROS2>=3.1.0",
-        "KitchenTestAssets"
+        "WhiteBox"
     ]
 }

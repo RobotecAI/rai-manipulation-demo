@@ -45,7 +45,14 @@
             "TransformComponent": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 10697841814605937477,
-                "Parent Entity": ""
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        0.0,
+                        2.6582443714141846,
+                        0.0
+                    ]
+                }
             }
         }
     },
@@ -227,7 +234,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{725CECEF-F42E-5757-8F85-8D29BF098E33}"
-                                            }
+                                            },
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/materials/shell_gray.azmaterial"
                                         }
                                     }
                                 },
@@ -522,7 +530,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{C0C7A503-B1A0-5753-AFC2-5101F444A3D5}"
-                                            }
+                                            },
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/materials/shell_white.azmaterial"
                                         }
                                     }
                                 }
@@ -628,7 +637,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{C0C7A503-B1A0-5753-AFC2-5101F444A3D5}"
-                                            }
+                                            },
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/materials/shell_white.azmaterial"
                                         }
                                     }
                                 },
@@ -721,7 +731,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{725CECEF-F42E-5757-8F85-8D29BF098E33}"
-                                            }
+                                            },
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/materials/shell_gray.azmaterial"
                                         }
                                     }
                                 },
@@ -1407,7 +1418,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{C0C7A503-B1A0-5753-AFC2-5101F444A3D5}"
-                                            }
+                                            },
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/materials/shell_white.azmaterial"
                                         }
                                     }
                                 },
@@ -1606,9 +1618,9 @@
                             -0.0980038046836853
                         ],
                         "Rotate": [
-                            -0.0008023521513678133,
+                            179.19937133789063,
                             -15.406756401062012,
-                            89.99695587158203
+                            -90.97058868408203
                         ]
                     }
                 }
@@ -1680,7 +1692,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{725CECEF-F42E-5757-8F85-8D29BF098E33}"
-                                            }
+                                            },
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/materials/shell_gray.azmaterial"
                                         }
                                     }
                                 },
@@ -1890,7 +1903,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{725CECEF-F42E-5757-8F85-8D29BF098E33}"
-                                            }
+                                            },
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/materials/shell_gray.azmaterial"
                                         }
                                     }
                                 },
@@ -2265,7 +2279,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{725CECEF-F42E-5757-8F85-8D29BF098E33}"
-                                            }
+                                            },
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/materials/shell_gray.azmaterial"
                                         }
                                     }
                                 }
@@ -2398,7 +2413,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{C0C7A503-B1A0-5753-AFC2-5101F444A3D5}"
-                                            }
+                                            },
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/materials/shell_white.azmaterial"
                                         }
                                     }
                                 }
@@ -2772,7 +2788,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{C0C7A503-B1A0-5753-AFC2-5101F444A3D5}"
-                                            }
+                                            },
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/materials/shell_white.azmaterial"
                                         }
                                     }
                                 }
@@ -2852,7 +2869,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{C0C7A503-B1A0-5753-AFC2-5101F444A3D5}"
-                                            }
+                                            },
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/materials/shell_white.azmaterial"
                                         }
                                     }
                                 },

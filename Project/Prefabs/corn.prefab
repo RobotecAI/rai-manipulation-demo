@@ -171,37 +171,39 @@
             "Id": "Entity_[46547825714465]",
             "Name": "collider",
             "Components": {
-                "EditorColliderComponent": {
-                    "$type": "EditorColliderComponent",
-                    "Id": 6093674679856910979,
-                    "ColliderConfiguration": {
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "Entire object"
-                                }
-                            ]
-                        }
-                    },
-                    "ShapeConfiguration": {
-                        "ShapeType": 1,
-                        "Box": {
-                            "Scale": [
-                                0.09000000357627869,
-                                0.09000000357627869,
-                                0.09000000357627869
-                            ],
-                            "Configuration": [
-                                0.4000000059604645,
-                                0.4000000059604645,
-                                1.0
-                            ]
-                        }
-                    }
-                },
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 1062294039713658124
+                    "Id": 1062294039713658124,
+                    "DisabledComponents": {
+                        "EditorColliderComponent": {
+                            "$type": "EditorColliderComponent",
+                            "Id": 6093674679856910979,
+                            "ColliderConfiguration": {
+                                "MaterialSlots": {
+                                    "Slots": [
+                                        {
+                                            "Name": "Entire object"
+                                        }
+                                    ]
+                                }
+                            },
+                            "ShapeConfiguration": {
+                                "ShapeType": 1,
+                                "Box": {
+                                    "Scale": [
+                                        0.09000000357627869,
+                                        0.09000000357627869,
+                                        0.09000000357627869
+                                    ],
+                                    "Configuration": [
+                                        0.4000000059604645,
+                                        0.4000000059604645,
+                                        1.0
+                                    ]
+                                }
+                            }
+                        }
+                    }
                 },
                 "EditorEntityIconComponent": {
                     "$type": "EditorEntityIconComponent",
@@ -222,6 +224,53 @@
                     "$type": "EditorLockComponent",
                     "Id": 11458694795145905942
                 },
+                "EditorMeshColliderComponent": {
+                    "$type": "EditorMeshColliderComponent",
+                    "Id": 7060096027661640126,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "material_0",
+                                    "MaterialAsset": {
+                                        "assetId": {
+                                            "guid": "{F0C181E4-68A6-5E2D-A693-5F8512A3F6B1}",
+                                            "subId": 1
+                                        },
+                                        "assetHint": "assets/materials/tomato.physicsmaterial"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{96C51299-68B3-5B9F-A046-B10C8ADD81F6}",
+                                    "subId": 3073690921
+                                },
+                                "assetHint": "objects/corn_0/visual/model_normalized_0.obj.pxmesh"
+                            },
+                            "Configuration": {
+                                "Scale": [
+                                    0.09000000357627869,
+                                    0.09000000357627869,
+                                    0.09000000357627869
+                                ],
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{96C51299-68B3-5B9F-A046-B10C8ADD81F6}",
+                                        "subId": 3073690921
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "objects/corn_0/visual/model_normalized_0.obj.pxmesh"
+                                },
+                                "UseMaterialsFromAsset": false
+                            }
+                        }
+                    }
+                },
                 "EditorOnlyEntityComponent": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 4930623803127006600
@@ -235,17 +284,22 @@
                     "Id": 4476142177010692222,
                     "Configuration": {
                         "entityId": "",
-                        "Mass": 0.03456000238656998,
+                        "Mass": 0.06522223353385925,
+                        "Centre of mass offset": [
+                            -0.0003324110875837505,
+                            -0.0010882341302931309,
+                            -0.0010628977324813604
+                        ],
                         "Inertia tensor": [
-                            0.000012026882359350566,
+                            0.00003405342795304023,
                             0.0,
                             0.0,
                             0.0,
-                            0.000012026882359350566,
+                            0.00003460256630205549,
                             0.0,
                             0.0,
                             0.0,
-                            0.0000033177602745126933
+                            0.000008776270078669768
                         ]
                     }
                 },

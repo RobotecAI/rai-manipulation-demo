@@ -3,7 +3,6 @@
 #include <std_msgs/msg/float32_multi_array.hpp>
 #include "rai_interfaces/srv/manipulator_move_to.hpp"
 
-
 StateController::StateController() 
   : m_node(rclcpp::Node::make_shared("state_controller"))
 {
@@ -15,14 +14,6 @@ StateController::~StateController() {
   if (m_spinner.joinable()) {
     m_spinner.join();
   }
-}
-
-double max(double a, double b) {
-  return a > b ? a : b;
-}
-
-double min(double a, double b) {
-  return a < b ? a : b;
 }
 
 void StateController::Begin(ArmController &arm) {
@@ -73,6 +64,8 @@ void StateController::Begin(ArmController &arm) {
       }
 
       {
+        using std::min;
+        using std::max;
         auto current_pose = arm.GetEffectorPose();
         auto above_current = current_pose;
         above_current[2] = min(0.4, max(above_current[2] + 0.1, 0.3));

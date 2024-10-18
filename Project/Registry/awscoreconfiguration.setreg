@@ -12,13 +12,6 @@
                 "ed_enableInspectorOverrideManagement": true
             }
         }
-        "InputSystem":
-        {
-            "Mouse":
-            {
-                "CaptureMouseCursor": false
-            }
-        }
     },
     "Amazon":
     {

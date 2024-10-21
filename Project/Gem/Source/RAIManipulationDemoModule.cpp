@@ -4,16 +4,14 @@
 
 #include "RAIManipulationDemoSystemComponent.h"
 
-#include <RAIManipulationDemo/RAIManipulationDemoTypeIds.h>
-
 namespace RAIManipulationDemo
 {
     class RAIManipulationDemoModule
         : public AZ::Module
     {
     public:
-        AZ_RTTI(RAIManipulationDemoModule, RAIManipulationDemoModuleTypeId, AZ::Module);
-        AZ_CLASS_ALLOCATOR(RAIManipulationDemoModule, AZ::SystemAllocator);
+        AZ_RTTI(RAIManipulationDemoModule, "{C28F2350-CF82-4848-B392-A9B94B5B681B}", AZ::Module);
+        AZ_CLASS_ALLOCATOR(RAIManipulationDemoModule, AZ::SystemAllocator, 0);
 
         RAIManipulationDemoModule()
             : AZ::Module()
@@ -36,8 +34,4 @@ namespace RAIManipulationDemo
     };
 }// namespace RAIManipulationDemo
 
-#if defined(O3DE_GEM_NAME)
-AZ_DECLARE_MODULE_CLASS(AZ_JOIN(Gem_, O3DE_GEM_NAME), RAIManipulationDemo::RAIManipulationDemoModule)
-#else
 AZ_DECLARE_MODULE_CLASS(Gem_RAIManipulationDemo, RAIManipulationDemo::RAIManipulationDemoModule)
-#endif

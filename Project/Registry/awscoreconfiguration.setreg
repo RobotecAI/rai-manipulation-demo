@@ -1,0 +1,24 @@
+{    
+    "O3DE": {
+        "Preferences": {
+            "SceneAPI": {
+                "UseSkeletonBoneContainer": false
+            }
+        },
+        "Autoexec": {
+            "ConsoleCommands": {
+                "ed_enableOutlinerOverrideManagement": true,
+                "ed_enableDPEInspector": true,
+                "ed_enableInspectorOverrideManagement": true
+            }
+        }
+    },
+    "Amazon":
+    {
+        "AWSCore":
+        {
+            "ProfileName": "default",
+            "ResourceMappingConfigFileName": "default_aws_resource_mappings.json"
+        }
+    }
+}

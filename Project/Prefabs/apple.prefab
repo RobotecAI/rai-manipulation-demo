@@ -15,7 +15,7 @@
                 "$type": "EditorEntitySortComponent",
                 "Id": 10306973598365841266,
                 "Child Entity Order": [
-                    "Entity_[534760181612]"
+                    "Entity_[27267717522721]"
                 ]
             },
             "EditorInspectorComponent": {
@@ -162,60 +162,19 @@
                     "$type": "EditorVisibilityComponent",
                     "Id": 17099443271266381888
                 },
+                "ROS2FrameEditorComponent": {
+                    "$type": "ROS2FrameEditorComponent",
+                    "Id": 9671399038384703516,
+                    "ROS2FrameConfiguration": {
+                        "Namespace Configuration": {
+                            "Namespace Strategy": 2
+                        },
+                        "Frame Name": ""
+                    }
+                },
                 "TransformComponent": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 17921041119350952090,
-                    "Parent Entity": "Entity_[534760181612]"
-                }
-            }
-        },
-        "Entity_[534760181612]": {
-            "Id": "Entity_[534760181612]",
-            "Name": "apple",
-            "Components": {
-                "EditorDisabledCompositionComponent": {
-                    "$type": "EditorDisabledCompositionComponent",
-                    "Id": 18044469881547845778
-                },
-                "EditorEntityIconComponent": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 12292306854165822588
-                },
-                "EditorEntitySortComponent": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 8314993489357136941,
-                    "Child Entity Order": [
-                        "Entity_[27267717522721]"
-                    ]
-                },
-                "EditorInspectorComponent": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 17137814805974204638,
-                    "ComponentOrderEntryArray": [
-                        {
-                            "ComponentId": 8647185006201569915
-                        }
-                    ]
-                },
-                "EditorLockComponent": {
-                    "$type": "EditorLockComponent",
-                    "Id": 4475825274964774522
-                },
-                "EditorOnlyEntityComponent": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 2442758587829817613
-                },
-                "EditorPendingCompositionComponent": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 11225710462403311240
-                },
-                "EditorVisibilityComponent": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 16780360982239074981
-                },
-                "TransformComponent": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 8647185006201569915,
                     "Parent Entity": "ContainerEntity",
                     "Transform Data": {
                         "UniformScale": 0.05000000074505806

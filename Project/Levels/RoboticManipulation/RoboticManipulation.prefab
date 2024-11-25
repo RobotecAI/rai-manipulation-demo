@@ -74,17 +74,7 @@
                 },
                 "EditorEntitySortComponent": {
                     "$type": "EditorEntitySortComponent",
-                    "Id": 10415323403644773154,
-                    "Child Entity Order": [
-                        "Instance_[31862996159500]/ContainerEntity",
-                        "Instance_[4776417133434]/ContainerEntity",
-                        "Instance_[28506111443834]/ContainerEntity",
-                        "Instance_[665169744802]/ContainerEntity",
-                        "Instance_[21971102006665]/ContainerEntity",
-                        "Instance_[21988281875849]/ContainerEntity",
-                        "Instance_[28142970011017]/ContainerEntity",
-                        "Instance_[22142900698505]/ContainerEntity"
-                    ]
+                    "Id": 10415323403644773154
                 },
                 "EditorInspectorComponent": {
                     "$type": "EditorInspectorComponent",
@@ -105,6 +95,24 @@
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 17635043088532716457
+                },
+                "ROS2SpawnerEditorComponent": {
+                    "$type": "ROS2SpawnerEditorComponent",
+                    "Id": 17096929799984361852,
+                    "Controller": {
+                        "Configuration": {
+                            "Editor entity id": "Entity_[20588120919860]",
+                            "Spawnables": {
+                                "apple": {
+                                    "assetId": {
+                                        "guid": "{907BD09D-7E5D-5322-82BF-7BE3242A1EF6}",
+                                        "subId": 1196145064
+                                    },
+                                    "assetHint": "prefabs/apple.spawnable"
+                                }
+                            }
+                        }
+                    }
                 },
                 "TransformComponent": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
@@ -1026,296 +1034,6 @@
         }
     },
     "Instances": {
-        "Instance_[21971102006665]": {
-            "Source": "Prefabs/red_cube.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[20588120919860]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.792099952697754
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.1538021564483643
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7113156914710999
-                }
-            ]
-        },
-        "Instance_[21988281875849]": {
-            "Source": "Prefabs/green_cube.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[20588120919860]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 2.0950982570648193
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.513070821762085
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7113155126571655
-                }
-            ]
-        },
-        "Instance_[22142900698505]": {
-            "Source": "Prefabs/blue_cube.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[20588120919860]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.9361906051635744
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 3.1104562282562256
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7113156318664551
-                }
-            ]
-        },
-        "Instance_[28142970011017]": {
-            "Source": "Prefabs/black_cube.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[20588120919860]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.990317106246948
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.8433172702789307
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7113155126571655
-                }
-            ]
-        },
-        "Instance_[28506111443834]": {
-            "Source": "Prefabs/carrot.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[20588120919860]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.9181195497512815
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.309497117996216
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.725767195224762
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 1.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 1.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[47308034925857]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
-                    "value": 1.0
-                }
-            ]
-        },
-        "Instance_[31862996159500]": {
-            "Source": "Prefabs/tomato.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[20588120919860]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 2.007845401763916
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.221667766571045
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7324118614196777
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/UniformScale",
-                    "value": 1.2999999523162842
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 1.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 1.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[45233565721889]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
-                    "value": 1.0
-                }
-            ]
-        },
-        "Instance_[4776417133434]": {
-            "Source": "Prefabs/corn.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[20588120919860]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.9860502481460571
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.6697561740875244
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.731939435005188
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Rotate/0",
-                    "value": -174.7096405029297
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Rotate/1",
-                    "value": 89.15192413330078
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Rotate/2",
-                    "value": -90.00092315673828
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/UniformScale",
-                    "value": 1.7000000476837158
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 1.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 1.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
-                    "value": 1.0
-                }
-            ]
-        },
         "Instance_[6618318911619]": {
             "Source": "Assets/SceneAssets.prefab",
             "Patches": [
@@ -1323,61 +1041,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[1146574390643]"
-                }
-            ]
-        },
-        "Instance_[665169744802]": {
-            "Source": "Prefabs/apple.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[20588120919860]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 2.1052191257476807
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.648794174194336
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7312459945678711
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 1.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 1.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[27267717522721]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
-                    "value": 1.0
                 }
             ]
         },

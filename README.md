@@ -15,9 +15,10 @@ The demonstration features a simulation of a robotic arm equipped with a gripper
 ## Prerequisites
 - Install [ROS2](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html)
 - Install all ROS2 packages [required by O3DE](https://docs.o3de.org/docs/user-guide/interactivity/robotics/project-configuration/)
-- Install the MoveIt package:
+- Install the packages required by this project:
 ```bash
-sudo apt install "ros-jazzy-moveit*"
+rosdep install --from-paths ros2_ws/src --ignore-src -r -y
+sudo apt install ros-jazzy-moveit-configs-utils ros-jazzy-moveit-resources-panda-moveit-config
 ```
 - Install `git-lfs` for pulling binary files:
 ```bash

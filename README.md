@@ -18,7 +18,6 @@ The demonstration features a simulation of a robotic arm equipped with a gripper
 - Install the packages required by this project:
 ```bash
 rosdep install --from-paths ros2_ws/src --ignore-src -r -y
-sudo apt install ros-jazzy-moveit-configs-utils ros-jazzy-moveit-resources-panda-moveit-config
 ```
 - Install `git-lfs` for pulling binary files:
 ```bash

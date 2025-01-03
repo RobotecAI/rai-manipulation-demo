@@ -1,16 +1,16 @@
 import rclpy
 
-from rai_mani.manager import RaiBenchmarkManager
+from rai_mani.manager import ScenarioManager
 
-from rai_mani.scenarios.move_to_the_left import MoveToTheLeft
-from rai_mani.scenarios.place_on_top import PlaceOnTop
+from rai_mani.scenarios.move_to_the_left import MoveToTheLeftAuto
+from rai_mani.scenarios.place_on_top import PlaceOnTopAuto
 
 from rclpy.executors import MultiThreadedExecutor
 
 def main(args=None):
     rclpy.init(args=args)
 
-    manager = RaiBenchmarkManager([MoveToTheLeft, PlaceOnTop])
+    manager = ScenarioManager([MoveToTheLeftAuto, PlaceOnTopAuto])
 
     executor = MultiThreadedExecutor(2)
     executor.add_node(manager)

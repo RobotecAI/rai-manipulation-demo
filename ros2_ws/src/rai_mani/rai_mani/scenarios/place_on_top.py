@@ -60,7 +60,7 @@ class PlaceOnTop(ScenarioBase):
         
         progress = self.calculate_progress()
 
-        return progress, progress >= 0.8 and not self.manipulator_busy
+        return progress, progress >= 0.8
 
 class PlaceOnTopAuto(PlaceOnTop):
     def __init__(self, spawn_client: Client, delete_client: Client, node: Node):

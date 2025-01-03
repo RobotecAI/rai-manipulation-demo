@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'benchmark = rai_mani.benchmark:main'
+            'benchmark = rai_mani.benchmark:main',
+            'showcase = rai_mani.showcase:main'
         ],
     },
 )

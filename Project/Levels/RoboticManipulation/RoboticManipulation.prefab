@@ -109,6 +109,62 @@
                                         "subId": 1196145064
                                     },
                                     "assetHint": "prefabs/apple.spawnable"
+                                },
+                                "blue_cube": {
+                                    "assetId": {
+                                        "guid": "{ABC61B93-E050-5329-A236-10E2F61DD52E}",
+                                        "subId": 2673158184
+                                    },
+                                    "assetHint": "prefabs/blue_cube.spawnable"
+                                },
+                                "carrot": {
+                                    "assetId": {
+                                        "guid": "{3CAB1590-BD87-5D20-8449-55960FB963DD}",
+                                        "subId": 213700765
+                                    },
+                                    "assetHint": "prefabs/carrot.spawnable"
+                                },
+                                "corn": {
+                                    "assetId": {
+                                        "guid": "{210B3F78-B336-5F56-B8E8-ED839F4A63D9}",
+                                        "subId": 4099978870
+                                    },
+                                    "assetHint": "prefabs/corn.spawnable"
+                                },
+                                "green_cube": {
+                                    "assetId": {
+                                        "guid": "{BFD1C1E8-64BB-5E2D-B406-A4B03C0E02FF}",
+                                        "subId": 406036830
+                                    },
+                                    "assetHint": "prefabs/green_cube.spawnable"
+                                },
+                                "red_cube": {
+                                    "assetId": {
+                                        "guid": "{52687F52-5090-5832-B9B5-26821B074D3B}",
+                                        "subId": 1726443591
+                                    },
+                                    "assetHint": "prefabs/red_cube.spawnable"
+                                },
+                                "tomato": {
+                                    "assetId": {
+                                        "guid": "{0F88F7B6-2DEF-54D7-A211-BE4DC5290223}",
+                                        "subId": 3484548826
+                                    },
+                                    "assetHint": "prefabs/tomato.spawnable"
+                                },
+                                "toy_box": {
+                                    "assetId": {
+                                        "guid": "{2AB5818A-C3FB-566F-9FB1-36E95ADFB627}",
+                                        "subId": 3956998235
+                                    },
+                                    "assetHint": "prefabs/toy_box.spawnable"
+                                },
+                                "yellow_cube": {
+                                    "assetId": {
+                                        "guid": "{183805C8-E2D9-577E-A69A-E11F92395190}",
+                                        "subId": 3747011399
+                                    },
+                                    "assetHint": "prefabs/black_cube.spawnable"
                                 }
                             }
                         }
@@ -1093,168 +1149,6 @@
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[755939860208]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Is Limited",
-                    "value": false
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/guid",
-                    "value": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/subId",
-                    "value": 1
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetHint",
-                    "value": "physx/rubber.physicsmaterial"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/ContactOffset",
-                    "value": 0.05999999865889549
-                },
-                {
-                    "op": "add",
-                    "path": "/Entities/Entity_[755939860208]/Components/EditorColliderComponent",
-                    "value": {
-                        "$type": "EditorColliderComponent",
-                        "Id": 13507121597919349583,
-                        "ColliderConfiguration": {
-                            "CollisionLayer": {
-                                "Index": 0
-                            },
-                            "CollisionGroupId": {
-                                "GroupId": "{00000000-0000-0000-0000-000000000000}"
-                            },
-                            "Visible": false,
-                            "Trigger": false,
-                            "Simulated": true,
-                            "DummySimulated": false,
-                            "InSceneQueries": true,
-                            "Exclusive": true,
-                            "Position": [
-                                0.0,
-                                -0.004999999888241291,
-                                0.05000000074505806
-                            ],
-                            "Rotation": [
-                                0.0,
-                                0.0,
-                                0.0,
-                                1.0
-                            ],
-                            "MaterialSlots": {
-                                "Slots": [
-                                    {
-                                        "Name": "Entire object",
-                                        "MaterialAsset": {
-                                            "assetId": {
-                                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                                "subId": 0
-                                            },
-                                            "loadBehavior": "QueueLoad",
-                                            "assetHint": ""
-                                        }
-                                    }
-                                ]
-                            },
-                            "propertyVisibilityFlags": 255,
-                            "ColliderTag": "",
-                            "RestOffset": 0.0,
-                            "ContactOffset": 0.019999999552965164
-                        },
-                        "ShapeConfiguration": {
-                            "ShapeType": 1,
-                            "Sphere": {
-                                "Scale": [
-                                    1.0,
-                                    1.0,
-                                    1.0
-                                ],
-                                "Radius": 0.5
-                            },
-                            "Box": {
-                                "Scale": [
-                                    1.0,
-                                    1.0,
-                                    1.0
-                                ],
-                                "Configuration": [
-                                    0.07000000029802322,
-                                    0.009999999776482582,
-                                    0.009999999776482582
-                                ]
-                            },
-                            "Capsule": {
-                                "Scale": [
-                                    1.0,
-                                    1.0,
-                                    1.0
-                                ],
-                                "Height": 1.0,
-                                "Radius": 0.25
-                            },
-                            "Cylinder": {
-                                "Configuration": {
-                                    "Scale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "CookedData": "",
-                                    "Type": 0
-                                },
-                                "Subdivision": 16,
-                                "Height": 1.0,
-                                "Radius": 1.0
-                            },
-                            "PhysicsAsset": {
-                                "Asset": {
-                                    "assetId": {
-                                        "guid": "{00000000-0000-0000-0000-000000000000}",
-                                        "subId": 0
-                                    },
-                                    "loadBehavior": "QueueLoad",
-                                    "assetHint": ""
-                                },
-                                "Configuration": {
-                                    "Scale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "PhysicsAsset": {
-                                        "assetId": {
-                                            "guid": "{00000000-0000-0000-0000-000000000000}",
-                                            "subId": 0
-                                        },
-                                        "loadBehavior": "PreLoad",
-                                        "assetHint": ""
-                                    },
-                                    "AssetScale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "UseMaterialsFromAsset": true,
-                                    "SubdivisionLevel": 4
-                                }
-                            },
-                            "HasNonUniformScale": false,
-                            "SubdivisionLevel": 4
-                        },
-                        "DebugDrawSettings": {
-                            "LocallyEnabled": true
-                        },
-                        "ComponentMode": {},
-                        "HasNonUniformScale": false
-                    }
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[760234827504]/Components/EditorMeshColliderComponent/ShapeConfiguration/PhysicsAsset/Configuration/AssetScale/0",
                     "value": 3.0
                 },
@@ -1342,11 +1236,6 @@
                     "op": "replace",
                     "path": "/Entities/Entity_[816069402352]/Components/AZ::Render::EditorMeshComponent/Controller/Configuration/ModelAsset/assetHint",
                     "value": "assets/urdfimporter/1440394708_panda/finger.dae.azmodel"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[824659336944]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Frame Name",
-                    "value": "RGBDCamera3"
                 },
                 {
                     "op": "replace",
@@ -2220,8 +2109,205 @@
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[807479467760]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Is Limited",
-                    "value": false
+                    "path": "/Entities/Entity_[747349925616]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Namespace Configuration/Namespace",
+                    "value": "panda_link2"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/0/1",
+                    "value": 1.5709999799728394
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/1/1",
+                    "value": 1.5709999799728394
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/2/1",
+                    "value": -1.5709999799728394
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/3/1",
+                    "value": -2.450000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/4/1",
+                    "value": 1.5709999799728394
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/6/1",
+                    "value": -0.10000000149011612
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/7/1",
+                    "value": 0.019999999552965164
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/8/1",
+                    "value": 0.019999999552965164
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[755939860208]/Components/EditorColliderComponent",
+                    "value": {
+                        "$type": "EditorColliderComponent",
+                        "Id": 13507121597919349583,
+                        "ColliderConfiguration": {
+                            "CollisionLayer": {
+                                "Index": 0
+                            },
+                            "CollisionGroupId": {
+                                "GroupId": "{00000000-0000-0000-0000-000000000000}"
+                            },
+                            "Visible": false,
+                            "Trigger": false,
+                            "Simulated": true,
+                            "DummySimulated": false,
+                            "InSceneQueries": true,
+                            "Exclusive": true,
+                            "Position": [
+                                0.0,
+                                -0.004999999888241291,
+                                0.05000000074505806
+                            ],
+                            "Rotation": [
+                                0.0,
+                                0.0,
+                                0.0,
+                                1.0
+                            ],
+                            "MaterialSlots": {
+                                "Slots": [
+                                    {
+                                        "Name": "Entire object",
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                                "subId": 0
+                                            },
+                                            "loadBehavior": "QueueLoad",
+                                            "assetHint": ""
+                                        }
+                                    }
+                                ]
+                            },
+                            "propertyVisibilityFlags": 255,
+                            "ColliderTag": "",
+                            "RestOffset": 0.0,
+                            "ContactOffset": 0.019999999552965164
+                        },
+                        "ShapeConfiguration": {
+                            "ShapeType": 1,
+                            "Sphere": {
+                                "Scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ],
+                                "Radius": 0.5
+                            },
+                            "Box": {
+                                "Scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ],
+                                "Configuration": [
+                                    0.07000000029802322,
+                                    0.009999999776482582,
+                                    0.009999999776482582
+                                ]
+                            },
+                            "Capsule": {
+                                "Scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ],
+                                "Height": 1.0,
+                                "Radius": 0.25
+                            },
+                            "Cylinder": {
+                                "Configuration": {
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "CookedData": "",
+                                    "Type": 0
+                                },
+                                "Subdivision": 16,
+                                "Height": 1.0,
+                                "Radius": 1.0
+                            },
+                            "PhysicsAsset": {
+                                "Asset": {
+                                    "assetId": {
+                                        "guid": "{00000000-0000-0000-0000-000000000000}",
+                                        "subId": 0
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": ""
+                                },
+                                "Configuration": {
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "PhysicsAsset": {
+                                        "assetId": {
+                                            "guid": "{00000000-0000-0000-0000-000000000000}",
+                                            "subId": 0
+                                        },
+                                        "loadBehavior": "PreLoad",
+                                        "assetHint": ""
+                                    },
+                                    "AssetScale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "UseMaterialsFromAsset": true,
+                                    "SubdivisionLevel": 4
+                                }
+                            },
+                            "HasNonUniformScale": false,
+                            "SubdivisionLevel": 4
+                        },
+                        "DebugDrawSettings": {
+                            "LocallyEnabled": true
+                        },
+                        "ComponentMode": {},
+                        "HasNonUniformScale": false
+                    }
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/guid",
+                    "value": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/subId",
+                    "value": 1
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetHint",
+                    "value": "physx/rubber.physicsmaterial"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/ContactOffset",
+                    "value": 0.05999999865889549
                 },
                 {
                     "op": "add",
@@ -2384,11 +2470,6 @@
                     "op": "replace",
                     "path": "/Entities/Entity_[807479467760]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Namespace Configuration/Namespace",
                     "value": "panda_leftfinger"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[747349925616]/Components/ROS2FrameEditorComponent/ROS2FrameConfiguration/Namespace Configuration/Namespace",
-                    "value": "panda_link2"
                 }
             ]
         },

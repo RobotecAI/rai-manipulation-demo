@@ -22,6 +22,7 @@ from threading import Thread
 from rai_mani.scenarios.scenario_base import ScenarioBase
 
 import random
+import time
 
 class ScenarioManager(Node):
     """
@@ -156,6 +157,7 @@ class RaiBenchmarkManager(ScenarioManager):
         )
 
         def run_agent():
+            time.sleep(1)
             self.agent.invoke({"messages": [HumanMessage(content=self.scenario.get_prompt())]})["messages"][-1].pretty_print()
         
         self.agent_thread = Thread(target=run_agent)

@@ -10,12 +10,12 @@ from rai_interfaces.srv import ManipulatorMoveTo
 from rai_mani.scenarios.scenario_base import ScenarioBase
 
 class ReplaceTypes(ScenarioBase):
-    def __init__(self, spawn_client: Client, delete_client: Client, node: Node):
+    def __init__(self, spawn_client: Client, delete_client: Client, manipulator_client: Client, node: Node):
         self.vegetable_poses = []
         self.toy_poses = []
         self.current_index = 0
 
-        super().__init__(spawn_client, delete_client, node)
+        super().__init__(spawn_client, delete_client, manipulator_client, node)
 
     def get_prompt(self):
         return "Replace the objects in such a way that all the toys are in the places of vegetables and vice versa."
@@ -27,21 +27,13 @@ class ReplaceTypes(ScenarioBase):
         self.toy_poses = []
         self.current_index = 0
         prefabs = ['apple', 'yellow_cube', 'blue_cube', 'carrot']
-        for i in range(4):
-            pose = PoseStamped()
-            pose.header.frame_id = 'world'
-            pose.pose.position = Point(x=0.4, y=float(i)/8 - 0.25, z=0.1)
-            pose.pose.orientation = Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
-
-            pose_transformed = self.node.tf2_buffer.transform(pose, 'odom', timeout=rclpy.time.Duration(seconds=5.0))
-
-            prefab = prefabs[i % len(prefabs)]
-
-            self.spawn_entity(prefab, f'{prefab}{i}', pose_transformed.pose)
-            if self._get_type(prefab) == 'vegetable':
-                self.vegetable_poses.append(pose.pose)
-            elif self._get_type(prefab) == 'toy':
-                self.toy_poses.append(pose.pose)
+        self.spawn_entities_in_random_positions(prefabs, prefabs)
+        for entity in prefabs:
+            if self._get_type(entity) == 'vegetable':
+                self.vegetable_poses.append(self.pose_transformed(self.get_entity_pose(entity)))
+            elif self._get_type(entity) == 'toy':
+                self.toy_poses.append(self.pose_transformed(self.get_entity_pose(entity)))
+        return
     
     def _get_type(self, object_name: str):
         if object_name.startswith('apple') or object_name.startswith('carrot'):
@@ -84,10 +76,10 @@ class ReplaceTypes(ScenarioBase):
         return progress, progress >= 0.8
 
 class ReplaceTypesAuto(ReplaceTypes):
-    def __init__(self, spawn_client: Client, delete_client: Client, node: Node):
+    def __init__(self, spawn_client: Client, delete_client: Client, manipulator_client: Client, node: Node):
         self.manipulator_busy = False
 
-        super().__init__(spawn_client, delete_client, node)
+        super().__init__(spawn_client, delete_client, manipulator_client, node)
 
     def reset(self):
         super().reset()

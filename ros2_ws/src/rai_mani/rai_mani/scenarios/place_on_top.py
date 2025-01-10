@@ -10,11 +10,11 @@ from rai_interfaces.srv import ManipulatorMoveTo
 from rai_mani.scenarios.scenario_base import ScenarioBase
 
 class PlaceOnTop(ScenarioBase):
-    def __init__(self, spawn_client: Client, delete_client: Client, node: Node):
+    def __init__(self, spawn_client: Client, delete_client: Client, manipulator_client: Client, node: Node):
         self.top_object = None
         self.bot_object = None
 
-        super().__init__(spawn_client, delete_client, node)
+        super().__init__(spawn_client, delete_client, manipulator_client, node)
 
     def get_prompt(self):
         return "Place the yellow cube on top of the blue cube. Remember to increase the Z position of the 'drop' task by around 0.2 to avoid collision."
@@ -23,21 +23,9 @@ class PlaceOnTop(ScenarioBase):
         super().reset()
 
         prefabs = ['apple', 'yellow_cube', 'blue_cube', 'carrot']
-        for i in range(5):
-            pose = PoseStamped()
-            pose.header.frame_id = 'world'
-            pose.pose.position = Point(x=0.4, y=float(i)/8 - 0.25, z=0.1)
-            pose.pose.orientation = Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
-
-            pose_transformed = self.node.tf2_buffer.transform(pose, 'odom', timeout=rclpy.time.Duration(seconds=5.0))
-
-            prefab = prefabs[i % len(prefabs)]
-            if prefab == 'yellow_cube':
-                self.top_object = f'{prefab}{i}'
-            elif prefab == 'blue_cube':
-                self.bot_object = f'{prefab}{i}'
-
-            self.spawn_entity(prefab, f'{prefab}{i}', pose_transformed.pose)
+        self.spawn_entities_in_random_positions(prefabs, prefabs)
+        self.bot_object = 'blue_cube'
+        self.top_object = 'yellow_cube'
 
     def calculate_progress(self):
         if self.top_object == None or self.bot_object == None:
@@ -63,10 +51,10 @@ class PlaceOnTop(ScenarioBase):
         return progress, progress >= 0.8
 
 class PlaceOnTopAuto(PlaceOnTop):
-    def __init__(self, spawn_client: Client, delete_client: Client, node: Node):
+    def __init__(self, spawn_client: Client, delete_client: Client, manipulator_client: Client, node: Node):
         self.manipulator_busy = False
 
-        super().__init__(spawn_client, delete_client, node)
+        super().__init__(spawn_client, delete_client, manipulator_client, node)
 
     def reset(self):
         super().reset()

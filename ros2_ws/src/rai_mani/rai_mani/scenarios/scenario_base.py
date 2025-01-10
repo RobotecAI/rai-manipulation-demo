@@ -8,14 +8,16 @@ from geometry_msgs.msg import Pose, Quaternion, PoseStamped
 
 from rai_interfaces.srv import ManipulatorMoveTo
 
+import random
+
 class ScenarioBase:
     """
     Base class for a scenario. A scenario is a task that the agent has to perform.
     """
-    def __init__(self, spawn_client: Client, delete_client: Client, node: Node):
+    def __init__(self, spawn_client: Client, delete_client: Client, manipulator_client: Node, node: Node):
         self.spawn_client = spawn_client
         self.delete_client = delete_client
-        self.manipulator_client = node.create_client(ManipulatorMoveTo, '/manipulator_move_to')
+        self.manipulator_client = manipulator_client
         self.node = node
         self.entities: dict[str, str] = {}
 
@@ -56,6 +58,29 @@ class ScenarioBase:
         req.initial_pose = pose
 
         self.spawn_client.call_async(req).add_done_callback(lambda future: self.entity_spawned_callback(future, name))
+    
+    def spawn_entities_in_random_positions(self, prefab_names: list[str], names: list[str]) -> None:
+        """
+        Spawns entities randomly positione around the table.
+        
+        Args:
+            prefab_names: A list of prefab names to spawn.
+            names: A list of names for the entities, by which they can be later referenced.
+        """
+        grid = [
+            (x / 10.0 + 0.4, y / 10.0) for x in range(-1, 2) for y in range(-3, 4)
+        ]
+
+        positions = random.sample(grid, k=len(prefab_names))
+        for prefab_name, name, position in zip(prefab_names, names, positions):
+            pose = PoseStamped()
+            pose.header.frame_id = 'world'
+            pose.pose.position.x = position[0]
+            pose.pose.position.y = position[1]
+            pose.pose.position.z = 0.05
+            pose.pose.orientation = Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
+            pose_transformed = self.node.tf2_buffer.transform(pose, 'odom', timeout=rclpy.time.Duration(seconds=5.0))
+            self.spawn_entity(prefab_name, name, pose_transformed.pose)
 
     def delete_entity(self, name: str) -> None:
         req = DeleteEntity.Request()

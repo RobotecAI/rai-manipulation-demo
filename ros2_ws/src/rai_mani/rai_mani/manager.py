@@ -21,22 +21,27 @@ from threading import Thread
 
 from rai_mani.scenarios.scenario_base import ScenarioBase
 
+import random
+
 class ScenarioManager(Node):
     """
     A class responsible for playing the scenarios
     """
-    def __init__(self, scenario_types):
+    def __init__(self, scenario_types, seeds = []):
         """
         Initializes the ScenarioManager
         
         Args:
             scenario_types: A list of scenario classes to play
+            seeds: A list of seeds to use for each scenario
         """
         super().__init__('scenario_manager')
         self.scenario_types = scenario_types
+        self.seeds = seeds
 
         self.spawn_client = self.create_client(SpawnEntity, '/spawn_entity')
         self.delete_client = self.create_client(DeleteEntity, '/delete_entity')
+        self.manipulator_client = self.create_client(ManipulatorMoveTo, '/manipulator_move_to')
         self.tf2_buffer = Buffer()
         self.tf2_listener = TransformListener(self.tf2_buffer, self)
 
@@ -51,13 +56,17 @@ class ScenarioManager(Node):
         self.agent_thread: Thread = None
         self.manipulator_ready = False
         self.scores = []
-    
+
     def _init_scenario(self):
-        self.scenario = self.scenario_types[self.current_scenario](self.spawn_client, self.delete_client, self)
+        self.scenario = self.scenario_types[self.current_scenario](self.spawn_client, self.delete_client, self.manipulator_client, self)
         self.manipulator_ready = False
         request = ManipulatorMoveTo.Request()
         request.target_pose.pose.orientation = Quaternion(x=0.923880, y=-0.382683, z=0.0, w=0.0)
         request.target_pose.pose.position = Point(x=0.2, y=0.0, z=0.2)
+        if self.current_scenario < len(self.seeds):
+            random.seed(self.seeds[self.current_scenario])
+        else:
+            random.seed(42)
         def callback(future: Future):
             self.manipulator_ready = True
             self.scenario.reset()
@@ -66,9 +75,19 @@ class ScenarioManager(Node):
     def _terminate_scenario(self):
         self.get_logger().info(f'Scenario terminated with score {self.scores[-1]}')
         self.scenario = None
+        self.tf2_buffer = Buffer()
+        self.tf2_listener = TransformListener(self.tf2_buffer, self)
         if self.current_scenario == len(self.scenario_types) - 1:
             self.get_logger().info(f'All scenarios are completed, with scores: {self.scores}')
-            self.executor.shutdown()
+            request = ManipulatorMoveTo.Request()
+            request.target_pose.pose.orientation = Quaternion(x=0.923880, y=-0.382683, z=0.0, w=0.0)
+            request.target_pose.pose.position = Point(x=0.2, y=0.0, z=0.2)
+            def callback(future: Future):
+                self.manipulator_ready = True
+                self.executor.shutdown()
+            self.manipulator_client.call_async(request).add_done_callback(callback)
+            self.timer.cancel()
+            return
         self.current_scenario = (self.current_scenario + 1) % len(self.scenario_types)
         self.manipulator_ready = False
 
@@ -80,7 +99,6 @@ class ScenarioManager(Node):
             return
 
         progress, terminated = self.scenario.step()
-        self.get_logger().info(f'Task progress: {progress}')
         if terminated and not (self.agent_thread and self.agent_thread.is_alive()):
             self.scores.append(progress)
             self._terminate_scenario()
@@ -94,8 +112,8 @@ class RaiBenchmarkManager(ScenarioManager):
     """
     A class responsible for playing the scenarios and running the conversational agent for each scenario
     """
-    def __init__(self, scenario_types):
-        super().__init__(scenario_types)
+    def __init__(self, scenario_types, seeds = []):
+        super().__init__(scenario_types, seeds)
         self.agent = None
 
     def _init_scenario(self):

@@ -10,11 +10,11 @@ from rai_interfaces.srv import ManipulatorMoveTo
 from rai_mani.scenarios.scenario_base import ScenarioBase
 
 class MoveToTheLeft(ScenarioBase):
-    def __init__(self, spawn_client: Client, delete_client: Client, node: Node):
-        super().__init__(spawn_client, delete_client, node)
+    def __init__(self, spawn_client: Client, delete_client: Client, manipulator_client: Client, node: Node):
+        super().__init__(spawn_client, delete_client, manipulator_client, node)
     
     def get_prompt(self):
-        return "Please move all the apples to the left side of the table, about -0.30 in Y direction."
+        return "There are 5 apples on the right half of the table. Their Y position is positive. Move each of them to the left half of the table, such that they dont collide with each other. The Y position of the apples should be negative after the task is completed. First grab one apple using the 'grab' tool, and then drop it in the appropriate position using the 'drop' tool. Repeat this procedure for each apple."
 
     def reset(self):
         super().reset()
@@ -44,8 +44,8 @@ class MoveToTheLeft(ScenarioBase):
         return progress, progress >= 1.0
 
 class MoveToTheLeftAuto(MoveToTheLeft):
-    def __init__(self, spawn_client: Client, delete_client: Client, node: Node):
-        super().__init__(spawn_client, delete_client, node)
+    def __init__(self, spawn_client: Client, delete_client: Client, manipulator_client: Client, node: Node):
+        super().__init__(spawn_client, delete_client, manipulator_client, node)
         self.manipulator_busy = False
 
     def reset(self):

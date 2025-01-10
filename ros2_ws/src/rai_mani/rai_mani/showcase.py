@@ -11,7 +11,7 @@ from rclpy.executors import MultiThreadedExecutor
 def main(args=None):
     rclpy.init(args=args)
 
-    manager = ScenarioManager([ReplaceTypesAuto, MoveToTheLeftAuto, PlaceOnTopAuto])
+    manager = ScenarioManager([PlaceOnTopAuto, MoveToTheLeftAuto, ReplaceTypesAuto], list(range(3)))
 
     executor = MultiThreadedExecutor(2)
     executor.add_node(manager)

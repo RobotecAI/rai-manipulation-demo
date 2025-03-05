@@ -17,6 +17,7 @@ int main(int argc, char *argv[]) {
   startingPose = armController->CaptureJointValues();
 
   armController->SetJointValues(startingPose);
+  armController->Close();
 
   StateController state;
   state.Begin(*armController);

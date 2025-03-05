@@ -1,8 +1,13 @@
 #include "robotic_manipulation/arm_controller.h"
 
+#include <rosgraph_msgs/msg/clock.hpp>
+
 ArmController::ArmController() {
   m_node = rclcpp::Node::make_shared("arm_controller");
   m_node->set_parameter(rclcpp::Parameter("use_sim_time", true));
+
+  WaitForClockMessage();
+
   m_executor.add_node(m_node);
   m_spinner = std::thread([this]() { m_executor.spin(); });
 
@@ -41,21 +46,25 @@ geometry_msgs::msg::Pose ArmController::CalculatePose(double x, double y,
 
 bool ArmController::MoveThroughWaypoints(const std::vector<geometry_msgs::msg::Pose>& waypoints) {
   auto logger = m_node->get_logger();
-  moveit_msgs::msg::RobotTrajectory trajectory;
-  if (m_pandaArm->computeCartesianPath(waypoints, 0.01, 0.0, trajectory) ==
-      -1) {
-    RCLCPP_ERROR(logger,
-                 "MoveThroughWaypoints: Failed to compute Cartesian path");
-    return false;
+
+  const int NumTries = 10;
+  for (int i = 0; i < NumTries; i++) {
+    moveit_msgs::msg::RobotTrajectory trajectory;
+    if (m_pandaArm->computeCartesianPath(waypoints, 0.01, 0.0, trajectory) ==
+        -1) {
+      RCLCPP_ERROR(logger,
+                    "MoveThroughWaypoints: Failed to compute Cartesian path");
+      continue;
+    }
+
+    if (m_pandaArm->execute(trajectory) == moveit::core::MoveItErrorCode::SUCCESS) {
+      return true;
+    }
+    RCLCPP_ERROR(logger, "MoveThroughWaypoints: Failed to execute trajectory, trying again...");
   }
 
-  while (m_pandaArm->execute(trajectory) !=
-         moveit::core::MoveItErrorCode::SUCCESS) {
-    RCLCPP_ERROR(logger, "MoveThroughWaypoints: Failed to execute trajectory");
-    return false;
-  }
-  
-  return true;
+  RCLCPP_ERROR(logger, "MoveThroughWaypoints: Failed to execute trajectory after %d tries", NumTries);
+  return false;
 }
 
 void ArmController::Open() {
@@ -102,4 +111,18 @@ void ArmController::SetJointValues(std::vector<double> const &jointValues) {
 
 void ArmController::SetReferenceFrame(std::string const &frame) {
   m_pandaArm->setPoseReferenceFrame(frame);
+}
+
+void ArmController::WaitForClockMessage() {
+  bool clock_received = false;
+  auto qos = rclcpp::QoS(rclcpp::KeepLast(1));
+  qos.best_effort();
+  auto subscription = m_node->create_subscription<rosgraph_msgs::msg::Clock>(
+      "/clock", qos, [&] (rosgraph_msgs::msg::Clock::SharedPtr) {
+        clock_received = true;
+      });
+  while (!clock_received) {
+    rclcpp::spin_some(m_node);
+  }
+  subscription.reset();
 }

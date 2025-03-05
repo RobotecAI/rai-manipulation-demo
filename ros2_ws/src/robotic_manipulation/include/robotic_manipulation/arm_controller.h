@@ -23,6 +23,8 @@ public:
 
   void SetReferenceFrame(std::string const &frame);
 
+  void WaitForClockMessage();
+
 private:
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_pandaArm;
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_hand;

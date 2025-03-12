@@ -50,7 +50,7 @@ bool ArmController::MoveThroughWaypoints(const std::vector<geometry_msgs::msg::P
   const int NumTries = 10;
   for (int i = 0; i < NumTries; i++) {
     moveit_msgs::msg::RobotTrajectory trajectory;
-    if (m_pandaArm->computeCartesianPath(waypoints, 0.01, 0.0, trajectory) ==
+    if (m_pandaArm->computeCartesianPath(waypoints, 0.01, trajectory) ==
         -1) {
       RCLCPP_ERROR(logger,
                     "MoveThroughWaypoints: Failed to compute Cartesian path");
@@ -67,22 +67,38 @@ bool ArmController::MoveThroughWaypoints(const std::vector<geometry_msgs::msg::P
   return false;
 }
 
-void ArmController::Open() {
+bool ArmController::Open() {
   gripper.store(true);
- // m_hand->setNamedTarget("open");
-   m_hand->setJointValueTarget("panda_finger_joint1", 0.038);
-  while (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
-    RCLCPP_ERROR(m_node->get_logger(), "Failed to open hand");
+
+  const int NumTries = 10;
+  for (int i = 0; i < NumTries; i++) {
+    m_hand->setJointValueTarget("panda_finger_joint1", 0.038);
+    
+    if (m_hand->move() == moveit::core::MoveItErrorCode::SUCCESS)
+      return true;
+
+    RCLCPP_ERROR(m_node->get_logger(), "Failed to open hand, trying again...");
   }
+  
+  RCLCPP_ERROR(m_node->get_logger(), "Failed to open hand after %d tries", NumTries);
+  return false;
 }
 
-void ArmController::Close() {
+bool ArmController::Close() {
   gripper.store(false);
-  m_hand->setJointValueTarget("panda_finger_joint1", 0.002);
-  // m_hand->setNamedTarget("close");
-  while (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
-    RCLCPP_ERROR(m_node->get_logger(), "Failed to close hand");
+
+  const int NumTries = 10;
+  for (int i = 0; i < NumTries; i++) {
+    m_hand->setJointValueTarget("panda_finger_joint1", 0.002);
+
+    if (m_hand->move() == moveit::core::MoveItErrorCode::SUCCESS)
+      return true;
+
+    RCLCPP_ERROR(m_node->get_logger(), "Failed to close hand, trying again...");
   }
+
+  RCLCPP_ERROR(m_node->get_logger(), "Failed to close hand after %d tries", NumTries);
+  return false;
 }
 
 std::vector<double> ArmController::GetEffectorPose() {

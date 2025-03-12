@@ -1,6 +1,6 @@
 #pragma once
 
-#include <moveit/move_group_interface/move_group_interface.h>
+#include <moveit/move_group_interface/move_group_interface.hpp>
 
 class ArmController {
 public:
@@ -12,8 +12,8 @@ public:
 
   bool MoveThroughWaypoints(const std::vector<geometry_msgs::msg::Pose>& waypoints);
 
-  void Open();
-  void Close();
+  bool Open();
+  bool Close();
 
   std::vector<double> GetEffectorPose();
   bool GetGripper();

@@ -379,6 +379,16 @@
                     "$type": "EditorVisibilityComponent",
                     "Id": 11409618612434829098
                 },
+                "ROS2FrameEditorComponent": {
+                    "$type": "ROS2FrameEditorComponent",
+                    "Id": 10470715774139935384,
+                    "ROS2FrameConfiguration": {
+                        "Namespace Configuration": {
+                            "Namespace Strategy": 2
+                        },
+                        "Frame Name": ""
+                    }
+                },
                 "TransformComponent": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 18391610517830378569,

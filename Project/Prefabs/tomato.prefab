@@ -107,9 +107,9 @@
                             },
                             "Configuration": {
                                 "Scale": [
-                                    0.05199999734759331,
-                                    0.05199999734759331,
-                                    0.05199999734759331
+                                    0.03999999910593033,
+                                    0.03999999910593033,
+                                    0.03999999910593033
                                 ],
                                 "PhysicsAsset": {
                                     "assetId": {
@@ -141,26 +141,36 @@
                         "Compute Mass": false,
                         "Mass": 0.20000000298023224,
                         "Centre of mass offset": [
-                            -0.00014860315422993153,
-                            0.00003289386222604662,
-                            0.0016063579823821783
+                            -0.00011431012535467744,
+                            0.00002530297206249088,
+                            0.001235659932717681
                         ],
                         "Inertia tensor": [
-                            0.00004531557351583615,
+                            0.000026813961085281335,
                             0.0,
                             0.0,
                             0.0,
-                            0.0000491143437102437,
+                            0.000029061740860925056,
                             0.0,
                             0.0,
                             0.0,
-                            0.000052105468057561666
+                            0.00003083164119743742
                         ]
                     }
                 },
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 4910412103323004378
+                },
+                "ROS2FrameEditorComponent": {
+                    "$type": "ROS2FrameEditorComponent",
+                    "Id": 1369596616863894338,
+                    "ROS2FrameConfiguration": {
+                        "Namespace Configuration": {
+                            "Namespace Strategy": 2
+                        },
+                        "Frame Name": ""
+                    }
                 },
                 "TransformComponent": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",

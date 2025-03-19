@@ -50,7 +50,7 @@ bool ArmController::MoveThroughWaypoints(const std::vector<geometry_msgs::msg::P
   const int NumTries = 10;
   for (int i = 0; i < NumTries; i++) {
     moveit_msgs::msg::RobotTrajectory trajectory;
-    if (m_pandaArm->computeCartesianPath(waypoints, 0.01, trajectory) ==
+    if (m_pandaArm->computeCartesianPath(waypoints, 0.01, 0.0, trajectory) ==
         -1) {
       RCLCPP_ERROR(logger,
                     "MoveThroughWaypoints: Failed to compute Cartesian path");

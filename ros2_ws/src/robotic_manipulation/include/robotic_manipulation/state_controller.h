@@ -13,4 +13,5 @@ private:
   rclcpp::Node::SharedPtr m_node;
   rclcpp::executors::SingleThreadedExecutor m_executor;
   std::thread m_spinner;
+  std::vector<double> m_startingPose;
 };

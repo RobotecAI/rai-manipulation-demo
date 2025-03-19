@@ -1,6 +1,6 @@
 #pragma once
 
-#include <moveit/move_group_interface/move_group_interface.h>
+#include <moveit/move_group_interface/move_group_interface.hpp>
 
 class ArmController {
 public:
@@ -19,7 +19,7 @@ public:
   bool GetGripper();
 
   std::vector<double> CaptureJointValues();
-  void SetJointValues(std::vector<double> const &jointValues);
+  bool SetJointValues(std::vector<double> const &jointValues);
 
   void SetReferenceFrame(std::string const &frame);
 

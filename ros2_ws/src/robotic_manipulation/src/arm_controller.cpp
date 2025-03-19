@@ -50,7 +50,7 @@ bool ArmController::MoveThroughWaypoints(const std::vector<geometry_msgs::msg::P
   const int NumTries = 10;
   for (int i = 0; i < NumTries; i++) {
     moveit_msgs::msg::RobotTrajectory trajectory;
-    if (m_pandaArm->computeCartesianPath(waypoints, 0.01, 0.0, trajectory) ==
+    if (m_pandaArm->computeCartesianPath(waypoints, 0.01, trajectory) ==
         -1) {
       RCLCPP_ERROR(logger,
                     "MoveThroughWaypoints: Failed to compute Cartesian path");
@@ -102,11 +102,13 @@ std::vector<double> ArmController::CaptureJointValues() {
   return m_pandaArm->getCurrentJointValues();
 }
 
-void ArmController::SetJointValues(std::vector<double> const &jointValues) {
+bool ArmController::SetJointValues(std::vector<double> const &jointValues) {
   m_pandaArm->setJointValueTarget(jointValues);
   if (m_pandaArm->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to set joint values");
+    return false;
   }
+  return true;
 }
 
 void ArmController::SetReferenceFrame(std::string const &frame) {

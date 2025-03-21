@@ -62,7 +62,7 @@
     "Entities": {
         "Entity_[20588120919860]": {
             "Id": "Entity_[20588120919860]",
-            "Name": "TableObjects",
+            "Name": "Spawner",
             "Components": {
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
@@ -2485,25 +2485,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[1146574390643]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/0",
-                    "value": "Entity_[7296923744387]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/1",
-                    "value": "Entity_[7301218711683]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/2",
-                    "value": "Entity_[9526011771011]"
-                },
-                {
-                    "op": "remove",
-                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/3"
                 },
                 {
                     "op": "remove",

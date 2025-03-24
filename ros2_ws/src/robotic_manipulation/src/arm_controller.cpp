@@ -44,33 +44,39 @@ geometry_msgs::msg::Pose ArmController::CalculatePose(double x, double y,
   return pose;
 }
 
-bool ArmController::MoveThroughWaypoints(const std::vector<geometry_msgs::msg::Pose>& waypoints) {
+bool ArmController::MoveThroughWaypoints(
+    std::vector<geometry_msgs::msg::Pose> const &waypoints) {
   auto logger = m_node->get_logger();
 
-  const int NumTries = 10;
+  int const NumTries = 10;
   for (int i = 0; i < NumTries; i++) {
     moveit_msgs::msg::RobotTrajectory trajectory;
     if (m_pandaArm->computeCartesianPath(waypoints, 0.01, 0.0, trajectory) ==
         -1) {
       RCLCPP_ERROR(logger,
-                    "MoveThroughWaypoints: Failed to compute Cartesian path");
+                   "MoveThroughWaypoints: Failed to compute Cartesian path");
       continue;
     }
 
-    if (m_pandaArm->execute(trajectory) == moveit::core::MoveItErrorCode::SUCCESS) {
+    if (m_pandaArm->execute(trajectory) ==
+        moveit::core::MoveItErrorCode::SUCCESS) {
       return true;
     }
-    RCLCPP_ERROR(logger, "MoveThroughWaypoints: Failed to execute trajectory, trying again...");
+    RCLCPP_ERROR(logger, "MoveThroughWaypoints: Failed to execute "
+                         "trajectory, trying again...");
   }
 
-  RCLCPP_ERROR(logger, "MoveThroughWaypoints: Failed to execute trajectory after %d tries", NumTries);
+  RCLCPP_ERROR(
+      logger,
+      "MoveThroughWaypoints: Failed to execute trajectory after %d tries",
+      NumTries);
   return false;
 }
 
 void ArmController::Open() {
   gripper.store(true);
- // m_hand->setNamedTarget("open");
-   m_hand->setJointValueTarget("panda_finger_joint1", 0.038);
+  // m_hand->setNamedTarget("open");
+  m_hand->setJointValueTarget("panda_finger_joint1", 0.038);
   while (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to open hand");
   }
@@ -120,9 +126,8 @@ void ArmController::WaitForClockMessage() {
   auto qos = rclcpp::QoS(rclcpp::KeepLast(1));
   qos.best_effort();
   auto subscription = m_node->create_subscription<rosgraph_msgs::msg::Clock>(
-      "/clock", qos, [&] (rosgraph_msgs::msg::Clock::SharedPtr) {
-        clock_received = true;
-      });
+      "/clock", qos,
+      [&](rosgraph_msgs::msg::Clock::SharedPtr) { clock_received = true; });
   while (!clock_received) {
     rclcpp::spin_some(m_node);
   }

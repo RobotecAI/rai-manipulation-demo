@@ -1,9 +1,8 @@
 #include <memory>
+#include <std_msgs/msg/float32_multi_array.hpp>
 
 #include "robotic_manipulation/arm_controller.h"
 #include "robotic_manipulation/state_controller.h"
-
-#include <std_msgs/msg/float32_multi_array.hpp>
 
 int main(int argc, char *argv[]) {
   // Initialize ROS and create the Node
@@ -12,7 +11,8 @@ int main(int argc, char *argv[]) {
   auto armController = std::make_shared<ArmController>();
   armController->Initialize();
 
-  armController->MoveThroughWaypoints({armController->CalculatePose(0.3, 0.0, 0.35)});
+  armController->MoveThroughWaypoints(
+      {armController->CalculatePose(0.3, 0.0, 0.35)});
 
   std::vector<double> startingPose;
   startingPose = armController->CaptureJointValues();

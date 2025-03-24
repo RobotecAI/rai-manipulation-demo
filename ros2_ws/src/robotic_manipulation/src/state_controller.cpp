@@ -2,11 +2,11 @@
 
 #include <std_msgs/msg/float32_multi_array.hpp>
 #include <std_srvs/srv/trigger.hpp>
+
 #include "rai_interfaces/srv/manipulator_move_to.hpp"
 
-StateController::StateController() 
-  : m_node(rclcpp::Node::make_shared("state_controller"))
-{
+StateController::StateController()
+    : m_node(rclcpp::Node::make_shared("state_controller")) {
   m_node->set_parameter(rclcpp::Parameter("use_sim_time", true));
 }
 
@@ -34,77 +34,81 @@ void StateController::Begin(ArmController &arm) {
   RCLCPP_INFO(logger, "Current gripper state: %d", current_gripper_state);
 
   auto service = m_node->create_service<rai_interfaces::srv::ManipulatorMoveTo>(
-    "/manipulator_move_to",
-    [&](const std::shared_ptr<rai_interfaces::srv::ManipulatorMoveTo::Request> request,
-        std::shared_ptr<rai_interfaces::srv::ManipulatorMoveTo::Response> response) {
-      RCLCPP_INFO(logger, "Received move request");
+      "/manipulator_move_to",
+      [&](std::shared_ptr<rai_interfaces::srv::ManipulatorMoveTo::Request> const
+              request,
+          std::shared_ptr<rai_interfaces::srv::ManipulatorMoveTo::Response>
+              response) {
+        RCLCPP_INFO(logger, "Received move request");
 
-      response->success = false;
+        response->success = false;
 
-      arm.SetReferenceFrame(request->target_pose.header.frame_id);
-      RCLCPP_INFO(logger, "Set reference frame to: %s", request->target_pose.header.frame_id.c_str());
+        arm.SetReferenceFrame(request->target_pose.header.frame_id);
+        RCLCPP_INFO(logger, "Set reference frame to: %s",
+                    request->target_pose.header.frame_id.c_str());
 
-      // Print current pose
-      auto current_pose = arm.GetEffectorPose();
-      auto [current_x, current_y, current_z, current_rx, current_ry, current_rz] =
-          std::make_tuple(current_pose[0], current_pose[1], current_pose[2],
-                          current_pose[3], current_pose[4], current_pose[5]);
-
-      RCLCPP_INFO(logger, "Current pose: %f %f %f %f %f %f", current_x, current_y,
-                  current_z, current_rx, current_ry, current_rz);
-      RCLCPP_INFO(logger, "Target pose: %f %f %f %f %f %f", 
-                  request->target_pose.pose.position.x, 
-                  request->target_pose.pose.position.y, 
-                  request->target_pose.pose.position.z,
-                  request->target_pose.pose.orientation.x,
-                  request->target_pose.pose.orientation.y,
-                  request->target_pose.pose.orientation.z);
-
-      if (request->initial_gripper_state) {
-        arm.Open();
-      } else {
-        arm.Close();
-      }
-
-      {
-        using std::min;
-        using std::max;
+        // Print current pose
         auto current_pose = arm.GetEffectorPose();
-        auto above_current = current_pose;
-        above_current[2] = min(0.4, max(above_current[2] + 0.1, 0.3));
-        auto above_target = request->target_pose.pose;
+        auto [current_x, current_y, current_z, current_rx, current_ry,
+              current_rz] =
+            std::make_tuple(current_pose[0], current_pose[1], current_pose[2],
+                            current_pose[3], current_pose[4], current_pose[5]);
 
-        above_target.position.z = min(0.4, max(above_target.position.z + 0.1, 0.3));
-        if (!arm.MoveThroughWaypoints(
-                {arm.CalculatePose(above_current[0], above_current[1],
-                                   above_current[2]),
-                 above_target, request->target_pose.pose}))
-          return;
+        RCLCPP_INFO(logger, "Current pose: %f %f %f %f %f %f", current_x,
+                    current_y, current_z, current_rx, current_ry, current_rz);
+        RCLCPP_INFO(logger, "Target pose: %f %f %f %f %f %f",
+                    request->target_pose.pose.position.x,
+                    request->target_pose.pose.position.y,
+                    request->target_pose.pose.position.z,
+                    request->target_pose.pose.orientation.x,
+                    request->target_pose.pose.orientation.y,
+                    request->target_pose.pose.orientation.z);
 
-        if (request->final_gripper_state) {
+        if (request->initial_gripper_state) {
           arm.Open();
         } else {
           arm.Close();
         }
-      }
 
-      if (!arm.MoveThroughWaypoints({request->target_pose.pose}))
-        return;
+        {
+          using std::min;
+          using std::max;
+          auto current_pose = arm.GetEffectorPose();
+          auto above_current = current_pose;
+          above_current[2] = min(0.4, max(above_current[2] + 0.1, 0.3));
+          auto above_target = request->target_pose.pose;
 
-      response->success = true;
-    }
-  );
+          above_target.position.z =
+              min(0.4, max(above_target.position.z + 0.1, 0.3));
+          if (!arm.MoveThroughWaypoints(
+                  {arm.CalculatePose(above_current[0], above_current[1],
+                                     above_current[2]),
+                   above_target, request->target_pose.pose}))
+            return;
+
+          if (request->final_gripper_state) {
+            arm.Open();
+          } else {
+            arm.Close();
+          }
+        }
+
+        if (!arm.MoveThroughWaypoints({request->target_pose.pose}))
+          return;
+
+        response->success = true;
+      });
 
   RCLCPP_INFO(logger, "Service /manipulator_move_to is ready");
 
   auto reset_service = m_node->create_service<std_srvs::srv::Trigger>(
-    "/reset_manipulator",
-    [&]([[maybe_unused]] const std::shared_ptr<std_srvs::srv::Trigger::Request> request,
-        std::shared_ptr<std_srvs::srv::Trigger::Response> response) {
-      RCLCPP_INFO(logger, "Received reset request");
-      response->success = arm.SetJointValues(m_startingPose);
-    }
-  );
+      "/reset_manipulator",
+      [&]([[maybe_unused]] std::shared_ptr<
+              std_srvs::srv::Trigger::Request> const request,
+          std::shared_ptr<std_srvs::srv::Trigger::Response> response) {
+        RCLCPP_INFO(logger, "Received reset request");
+        response->success = arm.SetJointValues(m_startingPose);
+      });
 
   // Add node to executor and spin in the main thread
   m_executor.add_node(m_node);

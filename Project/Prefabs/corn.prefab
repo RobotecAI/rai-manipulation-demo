@@ -99,7 +99,7 @@
                     "Id": 7857151619435228126,
                     "Parent Entity": "ContainerEntity",
                     "Transform Data": {
-                        "UniformScale": 0.05999999865889549
+                        "UniformScale": 0.10000000149011612
                     }
                 }
             }
@@ -226,9 +226,9 @@
                             },
                             "Configuration": {
                                 "Scale": [
-                                    0.10199999809265137,
-                                    0.10199999809265137,
-                                    0.10199999809265137
+                                    0.10000000149011612,
+                                    0.10000000149011612,
+                                    0.10000000149011612
                                 ],
                                 "PhysicsAsset": {
                                     "assetId": {
@@ -260,26 +260,36 @@
                         "Compute Mass": false,
                         "Mass": 0.20000000298023224,
                         "Centre of mass offset": [
-                            -0.0003767325251828879,
-                            -0.0012333319755271077,
-                            -0.0012046174379065633
+                            -0.0002216073771705851,
+                            -0.0007254894007928669,
+                            -0.0007085984689183533
                         ],
                         "Inertia tensor": [
-                            0.0001341252209385857,
+                            0.000046410106733674183,
                             0.0,
                             0.0,
                             0.0,
-                            0.00013628810120280832,
+                            0.000047158508095890284,
                             0.0,
                             0.0,
                             0.0,
-                            0.00003456683407421224
+                            0.00001196084213006543
                         ]
                     }
                 },
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 12802023452715689730
+                },
+                "ROS2FrameEditorComponent": {
+                    "$type": "ROS2FrameEditorComponent",
+                    "Id": 16221295209102460307,
+                    "ROS2FrameConfiguration": {
+                        "Namespace Configuration": {
+                            "Namespace Strategy": 2
+                        },
+                        "Frame Name": ""
+                    }
                 },
                 "TransformComponent": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",

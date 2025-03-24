@@ -24,15 +24,7 @@
                     "Instance_[7284038842499]/ContainerEntity",
                     "Entity_[29280789665071]",
                     "Entity_[3876413040103]",
-                    "Entity_[20588120919860]",
-                    "Instance_[442304042823]/ContainerEntity",
-                    "Instance_[459483912007]/ContainerEntity",
-                    "Instance_[476663781191]/ContainerEntity",
-                    "Instance_[493843650375]/ContainerEntity",
-                    "Instance_[511023519559]/ContainerEntity",
-                    "Instance_[528203388743]/ContainerEntity",
-                    "Instance_[545383257927]/ContainerEntity",
-                    "Instance_[562563127111]/ContainerEntity"
+                    "Entity_[20588120919860]"
                 ]
             },
             "Component_[15230859088967841193]": {
@@ -70,7 +62,7 @@
     "Entities": {
         "Entity_[20588120919860]": {
             "Id": "Entity_[20588120919860]",
-            "Name": "TableObjects",
+            "Name": "Spawner",
             "Components": {
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
@@ -1098,321 +1090,6 @@
         }
     },
     "Instances": {
-        "Instance_[442304042823]": {
-            "Source": "Prefabs/red_cube.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[485314884190]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[485314884190]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 0.00010416667646495624
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[485314884190]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 0.00010416667646495624
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[1146574390643]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.8172777891159055
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.1458497047424316
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7639328241348267
-                }
-            ]
-        },
-        "Instance_[459483912007]": {
-            "Source": "Prefabs/carrot.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[1146574390643]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.8849838972091677
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.2588577270507813
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7433563470840454
-                }
-            ]
-        },
-        "Instance_[476663781191]": {
-            "Source": "Prefabs/tomato.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[1146574390643]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 2.006192445755005
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.185022354125977
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7724111676216125
-                }
-            ]
-        },
-        "Instance_[493843650375]": {
-            "Source": "Prefabs/green_cube.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[5420232307294]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[5420232307294]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 0.00010416667646495624
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[5420232307294]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 0.00010416667646495624
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[1146574390643]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 2.0850744247436523
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.474576950073242
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7579933404922485
-                }
-            ]
-        },
-        "Instance_[511023519559]": {
-            "Source": "Prefabs/apple.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[1146574390643]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 2.0923409461975098
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.6094510555267334
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7605859041213989
-                }
-            ]
-        },
-        "Instance_[528203388743]": {
-            "Source": "Prefabs/corn.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[1146574390643]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.989781379699707
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.664381504058838
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7500010132789612
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Rotate/1",
-                    "value": 89.99994659423828
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/UniformScale",
-                    "value": 1.5
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorMeshColliderComponent/ShapeConfiguration/PhysicsAsset/Configuration/Scale/0",
-                    "value": 0.08999999612569809
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorMeshColliderComponent/ShapeConfiguration/PhysicsAsset/Configuration/Scale/1",
-                    "value": 0.08999999612569809
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorMeshColliderComponent/ShapeConfiguration/PhysicsAsset/Configuration/Scale/2",
-                    "value": 0.08999999612569809
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
-                    "value": -0.00033241105847992003
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
-                    "value": -0.0010882341302931309
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
-                    "value": -0.0010628976160660386
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 0.00010442275379318744
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 0.00010610664321575314
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
-                    "value": 0.00002691189365577884
-                }
-            ]
-        },
-        "Instance_[545383257927]": {
-            "Source": "Prefabs/blue_cube.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1152437262922]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1152437262922]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 0.00010416667646495624
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1152437262922]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 0.00010416667646495624
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[1146574390643]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.938651204109192
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 3.140611410140991
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.757392168045044
-                }
-            ]
-        },
-        "Instance_[562563127111]": {
-            "Source": "Prefabs/black_cube.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[9165443789406]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
-                    "value": 0.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[9165443789406]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 0.00010416667646495624
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[9165443789406]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 0.00010416667646495624
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[1146574390643]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 1.9836251735687256
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 2.8270816802978516
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.7531893849372864
-                }
-            ]
-        },
         "Instance_[6618318911619]": {
             "Source": "Assets/SceneAssets.prefab",
             "Patches": [
@@ -2432,161 +2109,44 @@
                     "value": "panda_link2"
                 },
                 {
-                    "op": "add",
-                    "path": "/Entities/Entity_[755939860208]/Components/EditorColliderComponent",
-                    "value": {
-                        "$type": "EditorColliderComponent",
-                        "Id": 13507121597919349583,
-                        "ColliderConfiguration": {
-                            "CollisionLayer": {
-                                "Index": 0
-                            },
-                            "CollisionGroupId": {
-                                "GroupId": "{00000000-0000-0000-0000-000000000000}"
-                            },
-                            "Visible": false,
-                            "Trigger": false,
-                            "Simulated": true,
-                            "DummySimulated": false,
-                            "InSceneQueries": true,
-                            "Exclusive": true,
-                            "Position": [
-                                0.0,
-                                -0.004999999888241291,
-                                0.05000000074505806
-                            ],
-                            "Rotation": [
-                                0.0,
-                                0.0,
-                                0.0,
-                                1.0
-                            ],
-                            "MaterialSlots": {
-                                "Slots": [
-                                    {
-                                        "Name": "Entire object",
-                                        "MaterialAsset": {
-                                            "assetId": {
-                                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                                "subId": 0
-                                            },
-                                            "loadBehavior": "QueueLoad",
-                                            "assetHint": ""
-                                        }
-                                    }
-                                ]
-                            },
-                            "propertyVisibilityFlags": 255,
-                            "ColliderTag": "",
-                            "RestOffset": 0.0,
-                            "ContactOffset": 0.019999999552965164
-                        },
-                        "ShapeConfiguration": {
-                            "ShapeType": 1,
-                            "Sphere": {
-                                "Scale": [
-                                    1.0,
-                                    1.0,
-                                    1.0
-                                ],
-                                "Radius": 0.5
-                            },
-                            "Box": {
-                                "Scale": [
-                                    1.0,
-                                    1.0,
-                                    1.0
-                                ],
-                                "Configuration": [
-                                    0.07000000029802322,
-                                    0.009999999776482582,
-                                    0.009999999776482582
-                                ]
-                            },
-                            "Capsule": {
-                                "Scale": [
-                                    1.0,
-                                    1.0,
-                                    1.0
-                                ],
-                                "Height": 1.0,
-                                "Radius": 0.25
-                            },
-                            "Cylinder": {
-                                "Configuration": {
-                                    "Scale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "CookedData": "",
-                                    "Type": 0
-                                },
-                                "Subdivision": 16,
-                                "Height": 1.0,
-                                "Radius": 1.0
-                            },
-                            "PhysicsAsset": {
-                                "Asset": {
-                                    "assetId": {
-                                        "guid": "{00000000-0000-0000-0000-000000000000}",
-                                        "subId": 0
-                                    },
-                                    "loadBehavior": "QueueLoad",
-                                    "assetHint": ""
-                                },
-                                "Configuration": {
-                                    "Scale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "PhysicsAsset": {
-                                        "assetId": {
-                                            "guid": "{00000000-0000-0000-0000-000000000000}",
-                                            "subId": 0
-                                        },
-                                        "loadBehavior": "PreLoad",
-                                        "assetHint": ""
-                                    },
-                                    "AssetScale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "UseMaterialsFromAsset": true,
-                                    "SubdivisionLevel": 4
-                                }
-                            },
-                            "HasNonUniformScale": false,
-                            "SubdivisionLevel": 4
-                        },
-                        "DebugDrawSettings": {
-                            "LocallyEnabled": true
-                        },
-                        "ComponentMode": {},
-                        "HasNonUniformScale": false
-                    }
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/0/1",
+                    "value": 1.5709999799728394
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/guid",
-                    "value": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}"
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/1/1",
+                    "value": 1.5709999799728394
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/subId",
-                    "value": 1
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/2/1",
+                    "value": -1.5709999799728394
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetHint",
-                    "value": "physx/rubber.physicsmaterial"
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/3/1",
+                    "value": -2.450000047683716
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/ContactOffset",
-                    "value": 0.05999999865889549
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/4/1",
+                    "value": 1.5709999799728394
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/6/1",
+                    "value": -0.10000000149011612
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/7/1",
+                    "value": 0.019999999552965164
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[824659336944]/Components/JointsManipulationEditorComponent/Initial positions/8/1",
+                    "value": 0.019999999552965164
                 },
                 {
                     "op": "add",
@@ -2751,6 +2311,163 @@
                     "value": "panda_leftfinger"
                 },
                 {
+                    "op": "add",
+                    "path": "/Entities/Entity_[755939860208]/Components/EditorColliderComponent",
+                    "value": {
+                        "$type": "EditorColliderComponent",
+                        "Id": 13507121597919349583,
+                        "ColliderConfiguration": {
+                            "CollisionLayer": {
+                                "Index": 0
+                            },
+                            "CollisionGroupId": {
+                                "GroupId": "{00000000-0000-0000-0000-000000000000}"
+                            },
+                            "Visible": false,
+                            "Trigger": false,
+                            "Simulated": true,
+                            "DummySimulated": false,
+                            "InSceneQueries": true,
+                            "Exclusive": true,
+                            "Position": [
+                                0.0,
+                                -0.004999999888241291,
+                                0.05000000074505806
+                            ],
+                            "Rotation": [
+                                0.0,
+                                0.0,
+                                0.0,
+                                1.0
+                            ],
+                            "MaterialSlots": {
+                                "Slots": [
+                                    {
+                                        "Name": "Entire object",
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                                "subId": 0
+                                            },
+                                            "loadBehavior": "QueueLoad",
+                                            "assetHint": ""
+                                        }
+                                    }
+                                ]
+                            },
+                            "propertyVisibilityFlags": 255,
+                            "ColliderTag": "",
+                            "RestOffset": 0.0,
+                            "ContactOffset": 0.019999999552965164
+                        },
+                        "ShapeConfiguration": {
+                            "ShapeType": 1,
+                            "Sphere": {
+                                "Scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ],
+                                "Radius": 0.5
+                            },
+                            "Box": {
+                                "Scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ],
+                                "Configuration": [
+                                    0.07000000029802322,
+                                    0.009999999776482582,
+                                    0.009999999776482582
+                                ]
+                            },
+                            "Capsule": {
+                                "Scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ],
+                                "Height": 1.0,
+                                "Radius": 0.25
+                            },
+                            "Cylinder": {
+                                "Configuration": {
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "CookedData": "",
+                                    "Type": 0
+                                },
+                                "Subdivision": 16,
+                                "Height": 1.0,
+                                "Radius": 1.0
+                            },
+                            "PhysicsAsset": {
+                                "Asset": {
+                                    "assetId": {
+                                        "guid": "{00000000-0000-0000-0000-000000000000}",
+                                        "subId": 0
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": ""
+                                },
+                                "Configuration": {
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "PhysicsAsset": {
+                                        "assetId": {
+                                            "guid": "{00000000-0000-0000-0000-000000000000}",
+                                            "subId": 0
+                                        },
+                                        "loadBehavior": "PreLoad",
+                                        "assetHint": ""
+                                    },
+                                    "AssetScale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "UseMaterialsFromAsset": true,
+                                    "SubdivisionLevel": 4
+                                }
+                            },
+                            "HasNonUniformScale": false,
+                            "SubdivisionLevel": 4
+                        },
+                        "DebugDrawSettings": {
+                            "LocallyEnabled": true
+                        },
+                        "ComponentMode": {},
+                        "HasNonUniformScale": false
+                    }
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/guid",
+                    "value": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetId/subId",
+                    "value": 1
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset/assetHint",
+                    "value": "physx/rubber.physicsmaterial"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[755939860208]/Components/EditorMeshColliderComponent/ColliderConfiguration/ContactOffset",
+                    "value": 0.05999999865889549
+                },
+                {
                     "op": "remove",
                     "path": "/Entities/Entity_[751644892912]/Components/EditorEntitySortComponent/Child Entity Order/3"
                 },
@@ -2768,25 +2485,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[1146574390643]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/0",
-                    "value": "Entity_[7296923744387]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/1",
-                    "value": "Entity_[7301218711683]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/2",
-                    "value": "Entity_[9526011771011]"
-                },
-                {
-                    "op": "remove",
-                    "path": "/Entities/Entity_[7292628777091]/Components/Component_[5855590796136709437]/Child Entity Order/3"
                 },
                 {
                     "op": "remove",

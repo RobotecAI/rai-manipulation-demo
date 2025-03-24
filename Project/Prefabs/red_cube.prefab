@@ -58,11 +58,6 @@
                     "$type": "EditorColliderComponent",
                     "Id": 11542677749643201060,
                     "ColliderConfiguration": {
-                        "Position": [
-                            0.0,
-                            0.0,
-                            0.02500000037252903
-                        ],
                         "MaterialSlots": {
                             "Slots": [
                                 {
@@ -266,6 +261,11 @@
                     "Id": 16843170302531117928,
                     "Parent Entity": "Entity_[485314884190]",
                     "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            -0.02500000037252903
+                        ],
                         "UniformScale": 0.05000000074505806
                     }
                 }

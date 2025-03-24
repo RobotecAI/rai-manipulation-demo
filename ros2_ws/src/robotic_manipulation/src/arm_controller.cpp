@@ -2,7 +2,7 @@
 
 #include <rosgraph_msgs/msg/clock.hpp>
 
-ArmController::ArmController() {
+void ArmController::Initialize() {
   m_node = rclcpp::Node::make_shared("arm_controller");
   m_node->set_parameter(rclcpp::Parameter("use_sim_time", true));
 

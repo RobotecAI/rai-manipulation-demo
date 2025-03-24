@@ -4,8 +4,10 @@
 
 class ArmController {
 public:
-  ArmController();
+  ArmController() = default;
   ~ArmController();
+
+  void Initialize();
 
   geometry_msgs::msg::Pose CalculatePose(double x, double y, double z,
                                          double r = 0.0);
@@ -23,9 +25,9 @@ public:
 
   void SetReferenceFrame(std::string const &frame);
 
+private:
   void WaitForClockMessage();
 
-private:
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_pandaArm;
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_hand;
 

@@ -151,13 +151,13 @@ void ArmController::SetReferenceFrame(std::string const &frame) {
 }
 
 void ArmController::WaitForClockMessage() {
-  bool clock_received = false;
+  bool clockReceived = false;
   auto qos = rclcpp::QoS(rclcpp::KeepLast(1));
   qos.best_effort();
   auto subscription = m_node->create_subscription<rosgraph_msgs::msg::Clock>(
       "/clock", qos,
-      [&](rosgraph_msgs::msg::Clock::SharedPtr) { clock_received = true; });
-  while (!clock_received) {
+      [&](rosgraph_msgs::msg::Clock::SharedPtr) { clockReceived = true; });
+  while (!clockReceived) {
     rclcpp::spin_some(m_node);
   }
   subscription.reset();

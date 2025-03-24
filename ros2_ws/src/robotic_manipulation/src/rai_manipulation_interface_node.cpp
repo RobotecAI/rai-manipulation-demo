@@ -25,18 +25,18 @@ RaiManipulationInterfaceNode::RaiManipulationInterfaceNode()
 void RaiManipulationInterfaceNode::Initialize(ArmController &arm) {
   auto logger = m_node->get_logger();
 
-  auto current_pose = arm.GetEffectorPose();
-  auto [current_x, current_y, current_z, current_rx, current_ry, current_rz] =
-      std::make_tuple(current_pose[0], current_pose[1], current_pose[2],
-                      current_pose[3], current_pose[4], current_pose[5]);
+  auto currentPose = arm.GetEffectorPose();
+  auto [currentX, currentY, currentZ, currentRX, currentRY, currentRZ] =
+      std::make_tuple(currentPose[0], currentPose[1], currentPose[2],
+                      currentPose[3], currentPose[4], currentPose[5]);
 
-  auto current_gripper_state = arm.GetGripper();
+  auto currentGripperState = arm.GetGripper();
 
   m_startingPose = arm.CaptureJointValues();
 
-  RCLCPP_INFO(logger, "Current pose: %f %f %f %f %f %f", current_x, current_y,
-              current_z, current_rx, current_ry, current_rz);
-  RCLCPP_INFO(logger, "Current gripper state: %d", current_gripper_state);
+  RCLCPP_INFO(logger, "Current pose: %f %f %f %f %f %f", currentX, currentY,
+              currentRZ, currentRX, currentRY, currentRZ);
+  RCLCPP_INFO(logger, "Current gripper state: %d", currentGripperState);
 
   m_moveToService = m_node->create_service<
       rai_interfaces::srv::ManipulatorMoveTo>(
@@ -54,14 +54,13 @@ void RaiManipulationInterfaceNode::Initialize(ArmController &arm) {
                     request->target_pose.header.frame_id.c_str());
 
         // Print current pose
-        auto current_pose = arm.GetEffectorPose();
-        auto [current_x, current_y, current_z, current_rx, current_ry,
-              current_rz] =
-            std::make_tuple(current_pose[0], current_pose[1], current_pose[2],
-                            current_pose[3], current_pose[4], current_pose[5]);
+        auto currentPose = arm.GetEffectorPose();
+        auto [currentX, currentY, currentZ, currentRX, currentRY, currentRZ] =
+            std::make_tuple(currentPose[0], currentPose[1], currentPose[2],
+                            currentPose[3], currentPose[4], currentPose[5]);
 
-        RCLCPP_INFO(logger, "Current pose: %f %f %f %f %f %f", current_x,
-                    current_y, current_z, current_rx, current_ry, current_rz);
+        RCLCPP_INFO(logger, "Current pose: %f %f %f %f %f %f", currentX,
+                    currentY, currentRZ, currentRX, currentRY, currentRZ);
         RCLCPP_INFO(logger, "Target pose: %f %f %f %f %f %f",
                     request->target_pose.pose.position.x,
                     request->target_pose.pose.position.y,
@@ -79,24 +78,24 @@ void RaiManipulationInterfaceNode::Initialize(ArmController &arm) {
         {
           using std::min;
           using std::max;
-          auto current_pose = arm.GetEffectorPose();
-          auto above_current = current_pose;
-          auto calculate_z_above_target = [&](double target_z) {
-            double const minimum_z = 0.3;
-            double const maximum_z = 0.4;
-            double const z_offset = 0.1;
+          auto currentPose = arm.GetEffectorPose();
+          auto aboveCurrent = currentPose;
+          auto calculateZAboveTarget = [&](double targetZ) {
+            double const MinimumZ = 0.3;
+            double const MaximumZ = 0.4;
+            double const ZOffset = 0.1;
 
-            return min(maximum_z, max(target_z + z_offset, minimum_z));
+            return min(MaximumZ, max(targetZ + ZOffset, MinimumZ));
           };
-          above_current[2] = calculate_z_above_target(above_current[2]);
-          auto above_target = request->target_pose.pose;
+          aboveCurrent[2] = calculateZAboveTarget(aboveCurrent[2]);
+          auto aboveTarget = request->target_pose.pose;
 
-          above_target.position.z =
-              calculate_z_above_target(above_target.position.z);
+          aboveTarget.position.z =
+              calculateZAboveTarget(aboveTarget.position.z);
           if (!arm.MoveThroughWaypoints(
-                  {arm.CalculatePose(above_current[0], above_current[1],
-                                     above_current[2]),
-                   above_target, request->target_pose.pose}))
+                  {arm.CalculatePose(aboveCurrent[0], aboveCurrent[1],
+                                     aboveCurrent[2]),
+                   aboveTarget, request->target_pose.pose}))
             return;
 
           if (request->final_gripper_state) {

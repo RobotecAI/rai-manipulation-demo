@@ -17,6 +17,18 @@
 
 #include <rosgraph_msgs/msg/clock.hpp>
 
+#include <numbers>
+
+// The joint values for the gripper to be open and closed.
+double const OpenGripperJointValue = 0.038;
+double const ClosedGripperJointValue = 0.002;
+
+// The base orientation of the end effector resulting in the gripper pointing
+// straight down.
+double const EndEffectorBaseRoll = 0.0;
+double const EndEffectorBasePitch = std::numbers::pi;
+double const EndEffectorBaseYaw = tf2Radians(45.0);
+
 void ArmController::Initialize() {
   m_node = rclcpp::Node::make_shared("arm_controller");
   m_node->set_parameter(rclcpp::Parameter("use_sim_time", true));
@@ -50,7 +62,8 @@ geometry_msgs::msg::Pose ArmController::CalculatePose(double x, double y,
   pose.position.z = z;
 
   auto quat = tf2::Quaternion();
-  quat.setEuler(0.0, M_PI, tf2Radians(45.0) + r);
+  quat.setEuler(EndEffectorBaseRoll, EndEffectorBasePitch,
+                EndEffectorBaseYaw + r);
   pose.orientation.x = quat.x();
   pose.orientation.y = quat.y();
   pose.orientation.z = quat.z();
@@ -90,8 +103,7 @@ bool ArmController::MoveThroughWaypoints(
 
 void ArmController::Open() {
   gripper.store(true);
-  // m_hand->setNamedTarget("open");
-  m_hand->setJointValueTarget("panda_finger_joint1", 0.038);
+  m_hand->setJointValueTarget("panda_finger_joint1", OpenGripperJointValue);
   while (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to open hand");
   }
@@ -99,8 +111,7 @@ void ArmController::Open() {
 
 void ArmController::Close() {
   gripper.store(false);
-  m_hand->setJointValueTarget("panda_finger_joint1", 0.002);
-  // m_hand->setNamedTarget("close");
+  m_hand->setJointValueTarget("panda_finger_joint1", ClosedGripperJointValue);
   while (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to close hand");
   }
@@ -112,9 +123,12 @@ std::vector<double> ArmController::GetEffectorPose() {
                                   pose.orientation.z, pose.orientation.w);
   tf2::Matrix3x3 m(rotation);
   m.getRPY(pose.orientation.x, pose.orientation.y, pose.orientation.z, 0);
-  return {pose.position.x,           pose.position.y,
-          pose.position.z,           pose.orientation.x,
-          pose.orientation.y - M_PI, pose.orientation.z - tf2Radians(135.0)};
+  return {pose.position.x,
+          pose.position.y,
+          pose.position.z,
+          pose.orientation.x,
+          pose.orientation.y - EndEffectorBasePitch,
+          pose.orientation.z - (tf2Radians(180.0) - EndEffectorBaseYaw)};
 };
 
 bool ArmController::GetGripper() { return gripper.load(); }

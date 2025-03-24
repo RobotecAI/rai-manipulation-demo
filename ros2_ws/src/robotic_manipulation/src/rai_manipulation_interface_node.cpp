@@ -38,7 +38,8 @@ void RaiManipulationInterfaceNode::Initialize(ArmController &arm) {
               current_z, current_rx, current_ry, current_rz);
   RCLCPP_INFO(logger, "Current gripper state: %d", current_gripper_state);
 
-  m_moveToService = m_node->create_service<rai_interfaces::srv::ManipulatorMoveTo>(
+  m_moveToService = m_node->create_service<
+      rai_interfaces::srv::ManipulatorMoveTo>(
       "/manipulator_move_to",
       [&](std::shared_ptr<rai_interfaces::srv::ManipulatorMoveTo::Request> const
               request,
@@ -80,11 +81,18 @@ void RaiManipulationInterfaceNode::Initialize(ArmController &arm) {
           using std::max;
           auto current_pose = arm.GetEffectorPose();
           auto above_current = current_pose;
-          above_current[2] = min(0.4, max(above_current[2] + 0.1, 0.3));
+          auto calculate_z_above_target = [&](double target_z) {
+            double const minimum_z = 0.3;
+            double const maximum_z = 0.4;
+            double const z_offset = 0.1;
+
+            return min(maximum_z, max(target_z + z_offset, minimum_z));
+          };
+          above_current[2] = calculate_z_above_target(above_current[2]);
           auto above_target = request->target_pose.pose;
 
           above_target.position.z =
-              min(0.4, max(above_target.position.z + 0.1, 0.3));
+              calculate_z_above_target(above_target.position.z);
           if (!arm.MoveThroughWaypoints(
                   {arm.CalculatePose(above_current[0], above_current[1],
                                      above_current[2]),

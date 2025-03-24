@@ -16,23 +16,13 @@
 #include "robotic_manipulation/rai_manipulation_interface_node.h"
 
 #include <std_msgs/msg/float32_multi_array.hpp>
-#include <std_srvs/srv/trigger.hpp>
-
-#include "rai_interfaces/srv/manipulator_move_to.hpp"
 
 RaiManipulationInterfaceNode::RaiManipulationInterfaceNode()
     : m_node(rclcpp::Node::make_shared("state_controller")) {
   m_node->set_parameter(rclcpp::Parameter("use_sim_time", true));
 }
 
-RaiManipulationInterfaceNode::~RaiManipulationInterfaceNode() {
-  m_executor.cancel();
-  if (m_spinner.joinable()) {
-    m_spinner.join();
-  }
-}
-
-void RaiManipulationInterfaceNode::Begin(ArmController &arm) {
+void RaiManipulationInterfaceNode::Initialize(ArmController &arm) {
   auto logger = m_node->get_logger();
 
   auto current_pose = arm.GetEffectorPose();
@@ -48,7 +38,7 @@ void RaiManipulationInterfaceNode::Begin(ArmController &arm) {
               current_z, current_rx, current_ry, current_rz);
   RCLCPP_INFO(logger, "Current gripper state: %d", current_gripper_state);
 
-  auto service = m_node->create_service<rai_interfaces::srv::ManipulatorMoveTo>(
+  m_moveToService = m_node->create_service<rai_interfaces::srv::ManipulatorMoveTo>(
       "/manipulator_move_to",
       [&](std::shared_ptr<rai_interfaces::srv::ManipulatorMoveTo::Request> const
               request,
@@ -116,7 +106,7 @@ void RaiManipulationInterfaceNode::Begin(ArmController &arm) {
 
   RCLCPP_INFO(logger, "Service /manipulator_move_to is ready");
 
-  auto reset_service = m_node->create_service<std_srvs::srv::Trigger>(
+  m_resetService = m_node->create_service<std_srvs::srv::Trigger>(
       "/reset_manipulator",
       [&]([[maybe_unused]] std::shared_ptr<
               std_srvs::srv::Trigger::Request> const request,
@@ -124,8 +114,9 @@ void RaiManipulationInterfaceNode::Begin(ArmController &arm) {
         RCLCPP_INFO(logger, "Received reset request");
         response->success = arm.SetJointValues(m_startingPose);
       });
+}
 
-  // Add node to executor and spin in the main thread
+void RaiManipulationInterfaceNode::Spin() {
   m_executor.add_node(m_node);
   m_executor.spin();
 }

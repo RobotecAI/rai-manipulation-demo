@@ -17,16 +17,23 @@
 
 #include "robotic_manipulation/arm_controller.h"
 
+#include "rai_interfaces/srv/manipulator_move_to.hpp"
+#include <std_srvs/srv/trigger.hpp>
+
 class RaiManipulationInterfaceNode {
 public:
   RaiManipulationInterfaceNode();
-  ~RaiManipulationInterfaceNode();
 
-  void Begin(ArmController &arm);
+  void Initialize(ArmController &arm);
+  void Spin();
 
 private:
   rclcpp::Node::SharedPtr m_node;
+  rclcpp::Service<rai_interfaces::srv::ManipulatorMoveTo>::SharedPtr
+      m_moveToService;
+  rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_resetService;
+
   rclcpp::executors::SingleThreadedExecutor m_executor;
-  std::thread m_spinner;
+
   std::vector<double> m_startingPose;
 };

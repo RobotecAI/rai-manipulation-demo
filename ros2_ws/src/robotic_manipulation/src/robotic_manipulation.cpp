@@ -17,7 +17,7 @@
 #include <std_msgs/msg/float32_multi_array.hpp>
 
 #include "robotic_manipulation/arm_controller.h"
-#include "robotic_manipulation/state_controller.h"
+#include "robotic_manipulation/rai_manipulation_interface_node.h"
 
 int main(int argc, char *argv[]) {
   // Initialize ROS and create the Node
@@ -35,8 +35,11 @@ int main(int argc, char *argv[]) {
   armController->SetJointValues(startingPose);
   armController->Close();
 
-  StateController state;
-  state.Begin(*armController);
+  {
+    RaiManipulationInterfaceNode raiInterface;
+    raiInterface.Initialize(*armController);
+    raiInterface.Spin();
+  }
 
   armController->SetJointValues(startingPose);
 

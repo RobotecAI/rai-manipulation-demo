@@ -13,26 +13,26 @@
  * limitations under the License.
  */
 
-#include "robotic_manipulation/state_controller.h"
+#include "robotic_manipulation/rai_manipulation_interface_node.h"
 
 #include <std_msgs/msg/float32_multi_array.hpp>
 #include <std_srvs/srv/trigger.hpp>
 
 #include "rai_interfaces/srv/manipulator_move_to.hpp"
 
-StateController::StateController()
+RaiManipulationInterfaceNode::RaiManipulationInterfaceNode()
     : m_node(rclcpp::Node::make_shared("state_controller")) {
   m_node->set_parameter(rclcpp::Parameter("use_sim_time", true));
 }
 
-StateController::~StateController() {
+RaiManipulationInterfaceNode::~RaiManipulationInterfaceNode() {
   m_executor.cancel();
   if (m_spinner.joinable()) {
     m_spinner.join();
   }
 }
 
-void StateController::Begin(ArmController &arm) {
+void RaiManipulationInterfaceNode::Begin(ArmController &arm) {
   auto logger = m_node->get_logger();
 
   auto current_pose = arm.GetEffectorPose();

@@ -17,10 +17,10 @@
 
 #include "robotic_manipulation/arm_controller.h"
 
-class StateController {
+class RaiManipulationInterfaceNode {
 public:
-  StateController();
-  ~StateController();
+  RaiManipulationInterfaceNode();
+  ~RaiManipulationInterfaceNode();
 
   void Begin(ArmController &arm);
 

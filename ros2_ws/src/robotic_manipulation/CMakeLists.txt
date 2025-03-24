@@ -14,7 +14,7 @@ find_package(vision_msgs REQUIRED)
 find_package(rosbag2_cpp REQUIRED)
 find_package(rai_interfaces REQUIRED)
 
-add_executable(robotic_manipulation src/robotic_manipulation.cpp src/arm_controller.cpp src/state_controller.cpp)
+add_executable(robotic_manipulation src/robotic_manipulation.cpp src/arm_controller.cpp src/rai_manipulation_interface_node.cpp)
 target_include_directories(robotic_manipulation PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)

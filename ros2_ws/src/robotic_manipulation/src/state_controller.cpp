@@ -1,6 +1,7 @@
 #include "robotic_manipulation/state_controller.h"
 
 #include <std_msgs/msg/float32_multi_array.hpp>
+#include <std_srvs/srv/trigger.hpp>
 #include "rai_interfaces/srv/manipulator_move_to.hpp"
 
 StateController::StateController() 
@@ -25,6 +26,8 @@ void StateController::Begin(ArmController &arm) {
                       current_pose[3], current_pose[4], current_pose[5]);
 
   auto current_gripper_state = arm.GetGripper();
+
+  m_startingPose = arm.CaptureJointValues();
 
   RCLCPP_INFO(logger, "Current pose: %f %f %f %f %f %f", current_x, current_y,
               current_z, current_rx, current_ry, current_rz);
@@ -93,6 +96,15 @@ void StateController::Begin(ArmController &arm) {
   );
 
   RCLCPP_INFO(logger, "Service /manipulator_move_to is ready");
+
+  auto reset_service = m_node->create_service<std_srvs::srv::Trigger>(
+    "/reset_manipulator",
+    [&]([[maybe_unused]] const std::shared_ptr<std_srvs::srv::Trigger::Request> request,
+        std::shared_ptr<std_srvs::srv::Trigger::Response> response) {
+      RCLCPP_INFO(logger, "Received reset request");
+      response->success = arm.SetJointValues(m_startingPose);
+    }
+  );
 
   // Add node to executor and spin in the main thread
   m_executor.add_node(m_node);

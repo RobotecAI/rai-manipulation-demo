@@ -10,6 +10,7 @@ int main(int argc, char *argv[]) {
   rclcpp::init(argc, argv);
 
   auto armController = std::make_shared<ArmController>();
+  armController->Initialize();
 
   armController->MoveThroughWaypoints({armController->CalculatePose(0.3, 0.0, 0.35)});
 
@@ -17,6 +18,7 @@ int main(int argc, char *argv[]) {
   startingPose = armController->CaptureJointValues();
 
   armController->SetJointValues(startingPose);
+  armController->Close();
 
   StateController state;
   state.Begin(*armController);

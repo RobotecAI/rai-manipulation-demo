@@ -19,16 +19,6 @@
 
 #include <numbers>
 
-// The joint values for the gripper to be open and closed.
-double const OpenGripperJointValue = 0.038;
-double const ClosedGripperJointValue = 0.002;
-
-// The base orientation of the end effector resulting in the gripper pointing
-// straight down.
-double const EndEffectorBaseRoll = 0.0;
-double const EndEffectorBasePitch = std::numbers::pi;
-double const EndEffectorBaseYaw = tf2Radians(45.0);
-
 void ArmController::Initialize() {
   m_node = rclcpp::Node::make_shared("arm_controller");
   m_node->set_parameter(rclcpp::Parameter("use_sim_time", true));

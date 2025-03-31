@@ -42,6 +42,16 @@ public:
   void SetReferenceFrame(std::string const &frame);
 
 private:
+  // The joint values for the gripper to be open and closed.
+  static double constexpr OpenGripperJointValue = 0.038;
+  static double constexpr ClosedGripperJointValue = 0.002;
+
+  // The base orientation of the end effector resulting in the gripper pointing
+  // straight down.
+  static double constexpr EndEffectorBaseRoll = 0.0;
+  static double constexpr EndEffectorBasePitch = std::numbers::pi;
+  static double constexpr EndEffectorBaseYaw = 45.0 * std::numbers::pi / 180.0;
+
   void WaitForClockMessage();
 
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_pandaArm;

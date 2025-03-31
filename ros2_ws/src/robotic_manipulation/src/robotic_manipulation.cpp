@@ -26,8 +26,12 @@ int main(int argc, char *argv[]) {
   auto armController = std::make_shared<ArmController>();
   armController->Initialize();
 
-  armController->MoveThroughWaypoints(
-      {armController->CalculatePose(0.3, 0.0, 0.35)});
+  constexpr double EndEffectorBaseX = 0.3;
+  constexpr double EndEffectorBaseY = 0.0;
+  constexpr double EndEffectorBaseZ = 0.35;
+
+  armController->MoveThroughWaypoints({armController->CalculatePose(
+      EndEffectorBaseX, EndEffectorBaseY, EndEffectorBaseZ)});
 
   std::vector<double> startingPose;
   startingPose = armController->CaptureJointValues();

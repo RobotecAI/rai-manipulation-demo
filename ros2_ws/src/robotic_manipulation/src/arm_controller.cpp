@@ -66,7 +66,7 @@ bool ArmController::MoveThroughWaypoints(
     std::vector<geometry_msgs::msg::Pose> const &waypoints) {
   auto logger = m_node->get_logger();
 
-  int const NumTries = 10;
+  int constexpr NumTries = 10;
   for (int i = 0; i < NumTries; i++) {
     moveit_msgs::msg::RobotTrajectory trajectory;
     if (m_pandaArm->computeCartesianPath(waypoints, 0.01, 0.0, trajectory) ==

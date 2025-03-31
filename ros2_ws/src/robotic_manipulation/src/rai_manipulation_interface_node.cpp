@@ -81,9 +81,9 @@ void RaiManipulationInterfaceNode::Initialize(ArmController &arm) {
           auto currentPose = arm.GetEffectorPose();
           auto aboveCurrent = currentPose;
           auto calculateZAboveTarget = [&](double targetZ) {
-            double const MinimumZ = 0.3;
-            double const MaximumZ = 0.4;
-            double const ZOffset = 0.1;
+            double constexpr MinimumZ = 0.3;
+            double constexpr MaximumZ = 0.4;
+            double constexpr ZOffset = 0.1;
 
             return min(MaximumZ, max(targetZ + ZOffset, MinimumZ));
           };

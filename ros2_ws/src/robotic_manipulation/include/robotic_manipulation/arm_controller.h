@@ -17,18 +17,17 @@
 
 #include <moveit/move_group_interface/move_group_interface.h>
 
-class ArmController {
+class ArmController
+{
 public:
   ArmController() = default;
   ~ArmController();
 
   void Initialize();
 
-  geometry_msgs::msg::Pose CalculatePose(double x, double y, double z,
-                                         double r = 0.0);
+  geometry_msgs::msg::Pose CalculatePose(double x, double y, double z, double r = 0.0);
 
-  bool
-  MoveThroughWaypoints(std::vector<geometry_msgs::msg::Pose> const &waypoints);
+  bool MoveThroughWaypoints(std::vector<geometry_msgs::msg::Pose> const & waypoints);
 
   void Open();
   void Close();
@@ -37,9 +36,9 @@ public:
   bool GetGripper();
 
   std::vector<double> CaptureJointValues();
-  bool SetJointValues(std::vector<double> const &jointValues);
+  bool SetJointValues(std::vector<double> const & jointValues);
 
-  void SetReferenceFrame(std::string const &frame);
+  void SetReferenceFrame(std::string const & frame);
 
 private:
   // The joint values for the gripper to be open and closed.

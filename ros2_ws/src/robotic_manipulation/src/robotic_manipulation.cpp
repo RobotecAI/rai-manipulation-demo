@@ -19,19 +19,20 @@
 #include "robotic_manipulation/arm_controller.h"
 #include "robotic_manipulation/rai_manipulation_interface_node.h"
 
-int main(int argc, char *argv[]) {
+int main(int argc, char * argv[])
+{
   // Initialize ROS and create the Node
   rclcpp::init(argc, argv);
 
   auto armController = std::make_shared<ArmController>();
   armController->Initialize();
 
-  constexpr double EndEffectorBaseX = 0.3;
-  constexpr double EndEffectorBaseY = 0.0;
-  constexpr double EndEffectorBaseZ = 0.35;
+  double constexpr EndEffectorBaseX = 0.3;
+  double constexpr EndEffectorBaseY = 0.0;
+  double constexpr EndEffectorBaseZ = 0.35;
 
-  armController->MoveThroughWaypoints({armController->CalculatePose(
-      EndEffectorBaseX, EndEffectorBaseY, EndEffectorBaseZ)});
+  armController->MoveThroughWaypoints(
+    {armController->CalculatePose(EndEffectorBaseX, EndEffectorBaseY, EndEffectorBaseZ)});
 
   std::vector<double> startingPose;
   startingPose = armController->CaptureJointValues();

@@ -1674,32 +1674,6 @@
                     "$type": "EditorVisibilityComponent",
                     "Id": 7783387967197486627
                 },
-                "LEDStrip": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 4193157760936481090,
-                    "m_template": {
-                        "$type": "LEDStrip",
-                        "Leds": [
-                            [
-                                {},
-                                "Entity_[1802776662498]"
-                            ],
-                            [
-                                3,
-                                "Entity_[1798481695202]"
-                            ],
-                            [
-                                8,
-                                "Entity_[1695402480098]"
-                            ],
-                            [
-                                13,
-                                "Entity_[1716877316578]"
-                            ]
-                        ],
-                        "intensity": 10.0
-                    }
-                },
                 "ROS2FrameEditorComponent": {
                     "$type": "ROS2FrameEditorComponent",
                     "Id": 16913189684188927069,

@@ -213,7 +213,28 @@ def generate_launch_description():
             
     for cmd in bringup_cmd_group:
         ld.add_action(cmd)
-    
+
+    launch_dir = os.path.join(get_package_share_directory('rosbots_bringup'), 'launch')
+    launch_moveit = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            [
+                os.path.join(launch_dir, "panda_moveit_config_demo.launch.py"),
+            ]
+        )
+    )
+
+    launch_robotic_manipulation = Node(
+        package="robotic_manipulation",
+        executable="robotic_manipulation",
+        # name="robotic_manipulation_node",
+        output="screen",
+        parameters=[
+            {"use_sim_time": True},
+        ],
+    )
+
+    ld.add_action(launch_moveit)
+    ld.add_action(launch_robotic_manipulation)
 
     navigate_to_picking_point = Node(
         package='rosbot_xl_demo',

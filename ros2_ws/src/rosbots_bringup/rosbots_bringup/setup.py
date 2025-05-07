@@ -23,6 +23,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'manipulator_move_to = rosbots_bringup.manipulator_move_to:main',
         ],
     },
 )

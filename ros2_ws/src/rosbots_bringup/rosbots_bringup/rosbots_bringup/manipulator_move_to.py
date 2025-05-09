@@ -15,7 +15,7 @@ from geometry_msgs.msg import Point, Pose, PoseStamped, Quaternion
 
 class ManipulationClient(Node):
     def __init__(self):
-        super().__init__('navigator')
+        super().__init__('manipulator_move_to_client')
 
         self.declare_parameter('robot_namespace', '')
         self.declare_parameter('position', [0.0, 0.0, 0.0])

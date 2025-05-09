@@ -260,10 +260,21 @@ def generate_launch_description():
         ],
     )
 
+    move_manipulator = Node(
+        package='rosbots_bringup',
+        executable='manipulator_move_to',
+        output='screen',
+        parameters=[
+            {
+                'position': [0.5,0.3,0.2]
+            }
+        ],
+    )
+
     ld.add_action(
         TimerAction(
             period=5.0,
-            actions=sequential_launch([navigate_to_picking_point, navigate_back])
+            actions=sequential_launch([navigate_to_picking_point, move_manipulator, navigate_back])
         )
     )
 

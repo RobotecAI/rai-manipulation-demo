@@ -206,10 +206,10 @@
                                     "Name": "material_0",
                                     "MaterialAsset": {
                                         "assetId": {
-                                            "guid": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}",
+                                            "guid": "{4AA4CDBD-C088-5288-95CA-BF2CF11615B5}",
                                             "subId": 1
                                         },
-                                        "assetHint": "physx/rubber.physicsmaterial"
+                                        "assetHint": "assets/materials/tableitem.physicsmaterial"
                                     }
                                 }
                             ]
@@ -226,9 +226,9 @@
                             },
                             "Configuration": {
                                 "Scale": [
-                                    0.10000000149011612,
-                                    0.10000000149011612,
-                                    0.10000000149011612
+                                    0.15000000596046448,
+                                    0.15000000596046448,
+                                    0.15000000596046448
                                 ],
                                 "PhysicsAsset": {
                                     "assetId": {
@@ -237,7 +237,8 @@
                                     },
                                     "loadBehavior": "QueueLoad",
                                     "assetHint": "assets/edibleitems/corn_0/visual/model_normalized_0.obj.pxmesh"
-                                }
+                                },
+                                "UseMaterialsFromAsset": false
                             }
                         }
                     }
@@ -260,20 +261,20 @@
                         "Compute Mass": false,
                         "Mass": 0.20000000298023224,
                         "Centre of mass offset": [
-                            -0.0002216073771705851,
-                            -0.0007254894007928669,
-                            -0.0007085984689183533
+                            -0.0005540184793062508,
+                            -0.0018137235892936587,
+                            -0.0017714963760226965
                         ],
                         "Inertia tensor": [
-                            0.000046410106733674183,
+                            0.00029006320983171463,
                             0.0,
                             0.0,
                             0.0,
-                            0.000047158508095890284,
+                            0.0002947407483588904,
                             0.0,
                             0.0,
                             0.0,
-                            0.00001196084213006543
+                            0.00007475527672795579
                         ]
                     }
                 },

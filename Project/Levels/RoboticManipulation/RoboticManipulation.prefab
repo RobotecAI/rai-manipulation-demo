@@ -1285,51 +1285,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/UniformScale",
                     "value": 1.5
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorMeshColliderComponent/ShapeConfiguration/PhysicsAsset/Configuration/Scale/0",
-                    "value": 0.08999999612569809
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorMeshColliderComponent/ShapeConfiguration/PhysicsAsset/Configuration/Scale/1",
-                    "value": 0.08999999612569809
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorMeshColliderComponent/ShapeConfiguration/PhysicsAsset/Configuration/Scale/2",
-                    "value": 0.08999999612569809
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/0",
-                    "value": -0.00033241105847992003
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/1",
-                    "value": -0.0010882341302931309
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Centre of mass offset/2",
-                    "value": -0.0010628976160660386
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/0",
-                    "value": 0.00010442275379318744
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/4",
-                    "value": 0.00010610664321575314
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[46547825714465]/Components/EditorRigidBodyComponent/Configuration/Inertia tensor/8",
-                    "value": 0.00002691189365577884
                 }
             ]
         },
@@ -2756,8 +2711,8 @@
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[751644892912]/Components/FingerGripperComponent/m_template/InitialPosition",
-                    "value": 0.004999999888241291
+                    "path": "/Entities/Entity_[751644892912]/Components/FingerGripperComponent/m_template/DistanceEpsilon",
+                    "value": 0.05000000074505806
                 }
             ]
         },

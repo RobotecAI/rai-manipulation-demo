@@ -87,10 +87,10 @@
                                     "Name": "material_0",
                                     "MaterialAsset": {
                                         "assetId": {
-                                            "guid": "{6D9F8E0A-466E-5774-8974-FC7F0872FD00}",
+                                            "guid": "{4AA4CDBD-C088-5288-95CA-BF2CF11615B5}",
                                             "subId": 1
                                         },
-                                        "assetHint": "physx/rubber.physicsmaterial"
+                                        "assetHint": "assets/materials/tableitem.physicsmaterial"
                                     }
                                 }
                             ]
@@ -118,7 +118,8 @@
                                     },
                                     "loadBehavior": "QueueLoad",
                                     "assetHint": "assets/edibleitems/apple_0/visual/model_normalized_0.obj.pxmesh"
-                                }
+                                },
+                                "UseMaterialsFromAsset": false
                             }
                         }
                     }
@@ -136,7 +137,7 @@
                     "Id": 11883532161581818420,
                     "Configuration": {
                         "entityId": "",
-                        "Linear damping": 20.0,
+                        "Linear damping": 1.0,
                         "Angular damping": 200.0,
                         "Compute Mass": false,
                         "Mass": 0.125,

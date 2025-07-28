@@ -64,10 +64,10 @@
                                     "Name": "Entire object",
                                     "MaterialAsset": {
                                         "assetId": {
-                                            "guid": "{B8BE26BD-EFF9-51A7-8F47-43676FD82A2A}",
+                                            "guid": "{4AA4CDBD-C088-5288-95CA-BF2CF11615B5}",
                                             "subId": 1
                                         },
-                                        "assetHint": "assets/materials/block.physicsmaterial"
+                                        "assetHint": "assets/materials/tableitem.physicsmaterial"
                                     }
                                 }
                             ]
@@ -142,17 +142,12 @@
                         "Sleep threshold": 0.0,
                         "Compute Mass": false,
                         "Mass": 0.25,
-                        "Centre of mass offset": [
-                            0.0,
-                            0.0,
-                            0.02500000037252903
-                        ],
                         "Inertia tensor": [
-                            0.00010416666918899864,
+                            0.00010416667646495625,
                             0.0,
                             0.0,
                             0.0,
-                            0.00010416666918899864,
+                            0.00010416667646495625,
                             0.0,
                             0.0,
                             0.0,

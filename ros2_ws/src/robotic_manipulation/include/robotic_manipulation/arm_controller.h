@@ -17,6 +17,18 @@
 
 #include <moveit/move_group_interface/move_group_interface.h>
 
+#include <memory>
+#include <vector>
+#include <string>
+#include <atomic>
+#include <numbers>
+
+#include <rclcpp/rclcpp.hpp>
+#include <rclcpp_action/rclcpp_action.hpp>
+#include <control_msgs/action/gripper_command.hpp>
+#include <geometry_msgs/msg/pose.hpp>
+#include <tf2/LinearMath/Quaternion.h>
+
 class ArmController
 {
 public:
@@ -54,7 +66,13 @@ private:
   void WaitForClockMessage();
 
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_pandaArm;
-  std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_hand;
+
+  using GripperCommand = control_msgs::action::GripperCommand;
+  using GripperCommandClient = rclcpp_action::Client<GripperCommand>;
+  std::shared_ptr<GripperCommandClient> m_gripperClient;
+  std::string ActionName;
+
+  bool SendGripperCommand(double position);
 
   std::atomic_bool gripper = false;
 

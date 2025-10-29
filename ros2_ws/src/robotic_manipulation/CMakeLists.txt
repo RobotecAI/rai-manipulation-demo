@@ -11,6 +11,7 @@ find_package(moveit_ros_planning_interface REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(gazebo_msgs REQUIRED)
 find_package(vision_msgs REQUIRED)
+find_package(control_msgs REQUIRED)
 find_package(rosbag2_cpp REQUIRED)
 find_package(rai_interfaces REQUIRED)
 
@@ -25,6 +26,7 @@ ament_target_dependencies(
   "rclcpp"
   "gazebo_msgs"
   "vision_msgs"
+  "control_msgs"
   "rosbag2_cpp"
   "rai_interfaces"
 )

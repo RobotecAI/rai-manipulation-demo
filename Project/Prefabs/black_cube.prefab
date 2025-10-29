@@ -142,23 +142,25 @@
                         "Sleep threshold": 0.0,
                         "Compute Mass": false,
                         "Mass": 0.25,
-                        "Centre of mass offset": [
-                            0.0,
-                            0.0,
-                            0.02500000037252903
-                        ],
                         "Inertia tensor": [
-                            0.00010416666918899864,
+                            0.00010416667646495625,
                             0.0,
                             0.0,
                             0.0,
-                            0.00010416666918899864,
+                            0.00010416667646495625,
                             0.0,
                             0.0,
                             0.0,
                             0.00010416667646495625
                         ]
                     }
+                },
+                "EditorTagComponent": {
+                    "$type": "EditorTagComponent",
+                    "Id": 761707688382702289,
+                    "Tags": [
+                        "Grippable"
+                    ]
                 },
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",

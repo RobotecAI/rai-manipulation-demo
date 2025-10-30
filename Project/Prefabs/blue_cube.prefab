@@ -137,28 +137,30 @@
                     "Id": 13561659260120629871,
                     "Configuration": {
                         "entityId": "",
-                        "Linear damping": 10.0,
-                        "Angular damping": 10.0,
+                        "Linear damping": 1.0,
+                        "Angular damping": 1.0,
                         "Sleep threshold": 0.0,
                         "Compute Mass": false,
                         "Mass": 0.25,
-                        "Centre of mass offset": [
-                            0.0,
-                            0.0,
-                            0.02500000037252903
-                        ],
                         "Inertia tensor": [
-                            0.00010416666918899864,
+                            0.00010416667646495625,
                             0.0,
                             0.0,
                             0.0,
-                            0.00010416666918899864,
+                            0.00010416667646495625,
                             0.0,
                             0.0,
                             0.0,
                             0.00010416667646495625
                         ]
                     }
+                },
+                "EditorTagComponent": {
+                    "$type": "EditorTagComponent",
+                    "Id": 6285042727213339555,
+                    "Tags": [
+                        "Grippable"
+                    ]
                 },
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",

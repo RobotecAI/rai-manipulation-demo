@@ -17,11 +17,18 @@
 
 #include <numbers>
 #include <rosgraph_msgs/msg/clock.hpp>
+#include <control_msgs/action/gripper_command.hpp>
+#include <chrono>
+#include <functional>
+#include <thread>
+#include <future>
 
 void ArmController::Initialize()
 {
   m_node = rclcpp::Node::make_shared("arm_controller");
   m_node->set_parameter(rclcpp::Parameter("use_sim_time", true));
+
+  ActionName = "panda_hand_controller/vacuum_gripper_cmd";
 
   WaitForClockMessage();
 
@@ -31,6 +38,7 @@ void ArmController::Initialize()
   m_pandaArm =
     std::make_shared<moveit::planning_interface::MoveGroupInterface>(m_node, "panda_arm");
   m_hand = std::make_shared<moveit::planning_interface::MoveGroupInterface>(m_node, "hand");
+  m_gripperClient = rclcpp_action::create_client<GripperCommand>(m_node, ActionName);
 
   m_pandaArm->setMaxVelocityScalingFactor(1.0);
   m_pandaArm->setMaxAccelerationScalingFactor(1.0);
@@ -90,19 +98,86 @@ bool ArmController::MoveThroughWaypoints(std::vector<geometry_msgs::msg::Pose> c
 void ArmController::Open()
 {
   gripper.store(true);
+
   m_hand->setJointValueTarget("panda_finger_joint1", OpenGripperJointValue);
   while (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to open hand");
+  }
+
+  // Use action client to send open command. Small max_effort allows free opening.
+  if (!SendGripperCommand(1.0)) {
+    RCLCPP_ERROR(m_node->get_logger(), "Failed to open hand via gripper action");
   }
 }
 
 void ArmController::Close()
 {
   gripper.store(false);
-  m_hand->setJointValueTarget("panda_finger_joint1", ClosedGripperJointValue);
+
+  m_hand->setJointValueTarget("panda_finger_joint1", 0.02);
   while (m_hand->move() != moveit::core::MoveItErrorCode::SUCCESS) {
     RCLCPP_ERROR(m_node->get_logger(), "Failed to close hand");
   }
+
+  // Use action client to send close command. Increase max_effort for gripping.
+  if (!SendGripperCommand(0.0)) {
+    RCLCPP_ERROR(m_node->get_logger(), "Failed to close hand via gripper action");
+  }
+}
+
+bool ArmController::SendGripperCommand(double position)
+{
+  auto logger = m_node->get_logger();
+  if (!m_gripperClient) {
+    RCLCPP_ERROR(logger, "Gripper action client not initialized");
+    return false;
+  }
+
+  // Wait a short time for the action server to be available.
+  if (!m_gripperClient->wait_for_action_server(std::chrono::seconds(5))) {
+    RCLCPP_ERROR(logger, "Gripper action server '%s' not available", ActionName.c_str());
+    return false;
+  }
+
+  GripperCommand::Goal goal_msg;
+  goal_msg.command.position = position;
+
+  auto goal_handle_future = m_gripperClient->async_send_goal(goal_msg);
+  {
+    auto const timeout = std::chrono::milliseconds(10);
+    while (goal_handle_future.wait_for(timeout) != std::future_status::ready) {
+      // Give up CPU briefly — the other thread runs the executor and will
+      // make the future ready when the goal is accepted/rejected.
+      std::this_thread::yield();
+    }
+    if (goal_handle_future.wait_for(std::chrono::seconds(0)) !=
+        std::future_status::ready) {
+      RCLCPP_ERROR(logger, "Failed to send gripper goal");
+      return false;
+    }
+  }
+
+  auto goal_handle = goal_handle_future.get();
+  if (!goal_handle) {
+    RCLCPP_ERROR(logger, "Goal was rejected by gripper action server");
+    return false;
+  }
+
+  auto result_future = m_gripperClient->async_get_result(goal_handle);
+  {
+    auto const timeout = std::chrono::milliseconds(10);
+    while (result_future.wait_for(timeout) != std::future_status::ready) {
+      std::this_thread::yield();
+    }
+    if (result_future.wait_for(std::chrono::seconds(0)) !=
+        std::future_status::ready) {
+      RCLCPP_ERROR(logger, "Failed to get result from gripper action server");
+      return false;
+    }
+  }
+
+  auto result = result_future.get();
+  return result.code == rclcpp_action::ResultCode::SUCCEEDED;
 }
 
 std::vector<double> ArmController::GetEffectorPose()

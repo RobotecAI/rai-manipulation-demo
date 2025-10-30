@@ -42,9 +42,11 @@ void RaiManipulationInterfaceNode::Initialize(ArmController & arm)
 
   m_moveToService = m_node->create_service<rai_interfaces::srv::ManipulatorMoveTo>(
     "/manipulator_move_to",
-    [&](
+    [&arm, this](
       std::shared_ptr<rai_interfaces::srv::ManipulatorMoveTo::Request> const request,
       std::shared_ptr<rai_interfaces::srv::ManipulatorMoveTo::Response> response) {
+      auto logger = m_node->get_logger();
+
       RCLCPP_INFO(logger, "Received move request");
 
       response->success = false;
@@ -111,9 +113,10 @@ void RaiManipulationInterfaceNode::Initialize(ArmController & arm)
 
   m_resetService = m_node->create_service<std_srvs::srv::Trigger>(
     "/reset_manipulator",
-    [&](
+    [&arm, this](
       [[maybe_unused]] std::shared_ptr<std_srvs::srv::Trigger::Request> const request,
       std::shared_ptr<std_srvs::srv::Trigger::Response> response) {
+      auto logger = m_node->get_logger();
       RCLCPP_INFO(logger, "Received reset request");
       response->success = arm.SetJointValues(m_startingPose);
     });

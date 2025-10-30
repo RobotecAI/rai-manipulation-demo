@@ -57,6 +57,110 @@
         }
     },
     "Entities": {
+        "Entity_[442577414367]": {
+            "Id": "Entity_[442577414367]",
+            "Name": "VacuumGripperCollider",
+            "Components": {
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 3531814366370572486,
+                    "ArticulationConfiguration": {
+                        "entityId": ""
+                    }
+                },
+                "EditorColliderComponent": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 12351851051671595279,
+                    "ColliderConfiguration": {
+                        "Trigger": true,
+                        "Position": [
+                            0.0017166784964501858,
+                            0.002191312611103058,
+                            0.09619167447090149
+                        ],
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 1,
+                        "Box": {
+                            "Configuration": [
+                                0.037391602993011475,
+                                0.06567616015672684,
+                                0.07587969303131104
+                            ]
+                        }
+                    }
+                },
+                "EditorDisabledCompositionComponent": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 90872317953177292
+                },
+                "EditorEntityIconComponent": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 5018623141682882007
+                },
+                "EditorEntitySortComponent": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 1618039179704572555
+                },
+                "EditorInspectorComponent": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 12001657184987035074
+                },
+                "EditorLockComponent": {
+                    "$type": "EditorLockComponent",
+                    "Id": 17643161545594275496
+                },
+                "EditorOnlyEntityComponent": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 11503912829485453596
+                },
+                "EditorPendingCompositionComponent": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 12229601031183600214
+                },
+                "EditorVisibilityComponent": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 6855335127572019342
+                },
+                "GripperActionServerComponent": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 17486607982153163131,
+                    "m_template": {
+                        "$type": "GripperActionServerComponent",
+                        "ActionServerName": "panda_hand_controller/vacuum_gripper_cmd"
+                    }
+                },
+                "ROS2FrameEditorComponent": {
+                    "$type": "ROS2FrameEditorComponent",
+                    "Id": 15458865587954632038,
+                    "ROS2FrameConfiguration": {
+                        "Frame Name": "",
+                        "Publish Transform": false
+                    }
+                },
+                "TransformComponent": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 6038403422994208093,
+                    "Parent Entity": "Entity_[751644892912]"
+                },
+                "VacuumGripperComponent": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 10195472909881418480,
+                    "m_template": {
+                        "$type": "VacuumGripperComponent",
+                        "EffectorCollider": "Entity_[442577414367]",
+                        "EffectorArticulation": "Entity_[442577414367]"
+                    }
+                }
+            }
+        },
         "Entity_[721580121840]": {
             "Id": "Entity_[721580121840]",
             "Name": "panda_link5",
@@ -938,7 +1042,8 @@
                         "Entity_[811774435056]",
                         "Entity_[755939860208]",
                         "Entity_[807479467760]",
-                        "Entity_[768824762096]"
+                        "Entity_[768824762096]",
+                        "Entity_[442577414367]"
                     ]
                 },
                 "EditorInspectorComponent": {
@@ -1005,7 +1110,7 @@
                 },
                 "GripperActionServerComponent": {
                     "$type": "GenericComponentWrapper",
-                    "Id": 17571685017909850211,
+                    "Id": 18293067359305499582,
                     "m_template": {
                         "$type": "GripperActionServerComponent",
                         "ActionServerName": "panda_hand_controller/gripper_cmd"
@@ -1061,7 +1166,50 @@
                 },
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 7186072487014280539
+                    "Id": 7186072487014280539,
+                    "DisabledComponents": {
+                        "EditorMeshColliderComponent": {
+                            "$type": "EditorMeshColliderComponent",
+                            "Id": 3514899211479848914,
+                            "ColliderConfiguration": {
+                                "Rotation": [
+                                    -0.0,
+                                    0.0,
+                                    1.0,
+                                    -1.0341155557737347e-13
+                                ],
+                                "MaterialSlots": {
+                                    "Slots": [
+                                        {
+                                            "Name": "DefaultMaterial"
+                                        }
+                                    ]
+                                }
+                            },
+                            "ShapeConfiguration": {
+                                "PhysicsAsset": {
+                                    "Asset": {
+                                        "assetId": {
+                                            "guid": "{68A1F12D-6DF9-545E-B0E2-F8FCB87D86D0}",
+                                            "subId": 3263612836
+                                        },
+                                        "assetHint": "assets/urdfimporter/1440394708_panda/finger.stl.pxmesh"
+                                    },
+                                    "Configuration": {
+                                        "PhysicsAsset": {
+                                            "assetId": {
+                                                "guid": "{68A1F12D-6DF9-545E-B0E2-F8FCB87D86D0}",
+                                                "subId": 3263612836
+                                            },
+                                            "loadBehavior": "QueueLoad",
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/finger.stl.pxmesh"
+                                        },
+                                        "UseMaterialsFromAsset": false
+                                    }
+                                }
+                            }
+                        }
+                    }
                 },
                 "EditorEntityIconComponent": {
                     "$type": "EditorEntityIconComponent",
@@ -1081,47 +1229,6 @@
                 "EditorLockComponent": {
                     "$type": "EditorLockComponent",
                     "Id": 13150366325223744978
-                },
-                "EditorMeshColliderComponent": {
-                    "$type": "EditorMeshColliderComponent",
-                    "Id": 3514899211479848914,
-                    "ColliderConfiguration": {
-                        "Rotation": [
-                            -0.0,
-                            0.0,
-                            1.0,
-                            -1.0341155557737347e-13
-                        ],
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "DefaultMaterial"
-                                }
-                            ]
-                        }
-                    },
-                    "ShapeConfiguration": {
-                        "PhysicsAsset": {
-                            "Asset": {
-                                "assetId": {
-                                    "guid": "{68A1F12D-6DF9-545E-B0E2-F8FCB87D86D0}",
-                                    "subId": 3263612836
-                                },
-                                "assetHint": "assets/urdfimporter/1440394708_panda/finger.stl.pxmesh"
-                            },
-                            "Configuration": {
-                                "PhysicsAsset": {
-                                    "assetId": {
-                                        "guid": "{68A1F12D-6DF9-545E-B0E2-F8FCB87D86D0}",
-                                        "subId": 3263612836
-                                    },
-                                    "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/urdfimporter/1440394708_panda/finger.stl.pxmesh"
-                                },
-                                "UseMaterialsFromAsset": false
-                            }
-                        }
-                    }
                 },
                 "EditorOnlyEntityComponent": {
                     "$type": "EditorOnlyEntityComponent",
@@ -2592,7 +2699,44 @@
                 },
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 16198926508553308877
+                    "Id": 16198926508553308877,
+                    "DisabledComponents": {
+                        "EditorMeshColliderComponent": {
+                            "$type": "EditorMeshColliderComponent",
+                            "Id": 5443421632475784076,
+                            "ColliderConfiguration": {
+                                "MaterialSlots": {
+                                    "Slots": [
+                                        {
+                                            "Name": "DefaultMaterial"
+                                        }
+                                    ]
+                                }
+                            },
+                            "ShapeConfiguration": {
+                                "PhysicsAsset": {
+                                    "Asset": {
+                                        "assetId": {
+                                            "guid": "{68A1F12D-6DF9-545E-B0E2-F8FCB87D86D0}",
+                                            "subId": 3263612836
+                                        },
+                                        "assetHint": "assets/urdfimporter/1440394708_panda/finger.stl.pxmesh"
+                                    },
+                                    "Configuration": {
+                                        "PhysicsAsset": {
+                                            "assetId": {
+                                                "guid": "{68A1F12D-6DF9-545E-B0E2-F8FCB87D86D0}",
+                                                "subId": 3263612836
+                                            },
+                                            "loadBehavior": "QueueLoad",
+                                            "assetHint": "assets/urdfimporter/1440394708_panda/finger.stl.pxmesh"
+                                        },
+                                        "UseMaterialsFromAsset": false
+                                    }
+                                }
+                            }
+                        }
+                    }
                 },
                 "EditorEntityIconComponent": {
                     "$type": "EditorEntityIconComponent",
@@ -2612,41 +2756,6 @@
                 "EditorLockComponent": {
                     "$type": "EditorLockComponent",
                     "Id": 10109227038479545756
-                },
-                "EditorMeshColliderComponent": {
-                    "$type": "EditorMeshColliderComponent",
-                    "Id": 5443421632475784076,
-                    "ColliderConfiguration": {
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "DefaultMaterial"
-                                }
-                            ]
-                        }
-                    },
-                    "ShapeConfiguration": {
-                        "PhysicsAsset": {
-                            "Asset": {
-                                "assetId": {
-                                    "guid": "{68A1F12D-6DF9-545E-B0E2-F8FCB87D86D0}",
-                                    "subId": 3263612836
-                                },
-                                "assetHint": "assets/urdfimporter/1440394708_panda/finger.stl.pxmesh"
-                            },
-                            "Configuration": {
-                                "PhysicsAsset": {
-                                    "assetId": {
-                                        "guid": "{68A1F12D-6DF9-545E-B0E2-F8FCB87D86D0}",
-                                        "subId": 3263612836
-                                    },
-                                    "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/urdfimporter/1440394708_panda/finger.stl.pxmesh"
-                                },
-                                "UseMaterialsFromAsset": false
-                            }
-                        }
-                    }
                 },
                 "EditorOnlyEntityComponent": {
                     "$type": "EditorOnlyEntityComponent",

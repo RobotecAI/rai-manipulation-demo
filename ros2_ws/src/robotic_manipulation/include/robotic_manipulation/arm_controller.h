@@ -66,6 +66,7 @@ private:
   void WaitForClockMessage();
 
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_pandaArm;
+  std::shared_ptr<moveit::planning_interface::MoveGroupInterface> m_hand;
 
   using GripperCommand = control_msgs::action::GripperCommand;
   using GripperCommandClient = rclcpp_action::Client<GripperCommand>;

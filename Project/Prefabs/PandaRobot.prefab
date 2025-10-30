@@ -134,7 +134,7 @@
                     "Id": 17486607982153163131,
                     "m_template": {
                         "$type": "GripperActionServerComponent",
-                        "ActionServerName": "panda_hand_controller/gripper_cmd"
+                        "ActionServerName": "panda_hand_controller/vacuum_gripper_cmd"
                     }
                 },
                 "ROS2FrameEditorComponent": {
@@ -1029,16 +1029,7 @@
                 },
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 6243996962595125816,
-                    "DisabledComponents": {
-                        "FingerGripperComponent": {
-                            "$type": "GenericComponentWrapper",
-                            "Id": 4674038609218834419,
-                            "m_template": {
-                                "$type": "FingerGripperComponent"
-                            }
-                        }
-                    }
+                    "Id": 6243996962595125816
                 },
                 "EditorEntityIconComponent": {
                     "$type": "EditorEntityIconComponent",
@@ -1109,6 +1100,21 @@
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 16131636600576526944
+                },
+                "FingerGripperComponent": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 4674038609218834419,
+                    "m_template": {
+                        "$type": "FingerGripperComponent"
+                    }
+                },
+                "GripperActionServerComponent": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 18293067359305499582,
+                    "m_template": {
+                        "$type": "GripperActionServerComponent",
+                        "ActionServerName": "panda_hand_controller/gripper_cmd"
+                    }
                 },
                 "ROS2FrameEditorComponent": {
                     "$type": "ROS2FrameEditorComponent",

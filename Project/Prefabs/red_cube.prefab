@@ -137,8 +137,8 @@
                     "Id": 13561659260120629871,
                     "Configuration": {
                         "entityId": "",
-                        "Linear damping": 10.0,
-                        "Angular damping": 10.0,
+                        "Linear damping": 1.0,
+                        "Angular damping": 1.0,
                         "Sleep threshold": 0.0,
                         "Compute Mass": false,
                         "Mass": 0.25,

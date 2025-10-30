@@ -353,8 +353,8 @@
                     "Id": 14790875665153150865,
                     "Configuration": {
                         "entityId": "",
-                        "Linear damping": 20.0,
-                        "Angular damping": 200.0,
+                        "Linear damping": 1.0,
+                        "Angular damping": 1.0,
                         "Compute Mass": false,
                         "Mass": 0.15000000596046448,
                         "Centre of mass offset": [
